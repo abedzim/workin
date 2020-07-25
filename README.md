@@ -14,6 +14,8 @@ Workin is a simple professional social-network and job portal.
 
 # Installation 
 
+Below are the steps for starting up the workin app locally for development.
+
 Server
 ```
 pip install -r requirements.txt
