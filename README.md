@@ -1,6 +1,6 @@
-# workin
+# workin - Social Network
 
-# Introduction
+## Introduction
 
 Workin is a simple professional social-network website and ios-android app.
 
@@ -12,9 +12,11 @@ Workin is a simple professional social-network website and ios-android app.
 ![kk3](https://user-images.githubusercontent.com/48800269/88468224-9f5eae80-cee0-11ea-9d84-6423b4e4d169.png)
 
 
-# Installation 
+## Installation 
 
-Below are the steps for starting up the workin app locally for development.
+requires python > 3 django 2.0
+
+Below are the steps for starting up the workin app locally for development after cloning repo.
 
 Server
 ```
@@ -24,6 +26,7 @@ python manage.py migrate
 
 python manage.py runserver
 ```
+Open browser to http://localhost:8000/
 
 Mobile App
 ```
