@@ -1,0 +1,234 @@
+#generique header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 125px;
+	width: 100%;
+	background: #1A95B6 url('../img/logo_wi.png') no-repeat 30px 50px;
+	border-bottom: 2px solid red
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+	font-size: 12px;
+	color: #000333;
+	background: #e6ecf0;
+}
+
+#generique section#content {
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	width: 500px;
+	margin: 0 0 0 -250;
+	padding: O;
+	#transform:translate(-50%, -50%);
+}
+
+form label {
+	display: block;
+	width: 150px;
+	float: left;
+	text-align: right;
+	padding: 4px 10px 0 0;
+}
+
+form input[type="email"], form input[type="text"], form input[type="password"]{
+	display: block;
+	width: 250px;
+	padding: 2px;
+}
+
+form input[type="submit"]{
+	margin: 0 20px 0 160px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d9dfea #0e1f5b #0e1f5b #d9dfea;
+	background-color: #1A95B6;
+	color: FFFFFF;
+	padding: 2px 15px 3px 15px;
+	text-align: center;
+}
+
+form.inlineForm label{
+	display: inline;
+	float: none;
+	padding: O;
+}
+ .inlineForm {
+ 	background-color: #FFFFFF;
+ 	padding: 15px;
+ 	border-bottom: 0.5px solid #1A95B6
+ }
+form.inlineForm input[type="text"] {
+	display: inline-block;
+	width: 150px
+}
+
+form.inlineForm textarea {
+	display: inline-block;
+	width: 250px
+}
+
+form.inlineForm input[type="submit"] {
+	margin: 0;
+}
+
+#wlc section#content {
+	width: 90%;
+	margin: 0 0 0 45;
+}
+
+#wlc div#messageList {
+	float: left;
+	width: 500px;
+	margin-left: 325px;
+	
+}
+#wlc div#navigation {
+	position: fixed;
+	top: 60px;
+	padding: 15px;
+	width: 280px;
+	background-color: #FFFFFF;
+}
+
+#friendList {
+	margin-top: 60px;
+	margin-left: 841px;
+	width: 280px;
+	padding: 15px;
+	background-color: #FFFFFF;
+}
+
+#wlc div#messageList ul {
+	margin: 15px 0 0 0;
+	list_style: none;
+	padding: 0;
+}
+
+div#messageList ul li {
+	margin-bottom: 10px;
+	list-style-type: none;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 8px 8px 12px #aaa;
+	background-color: #FFFFFF;
+}
+
+div#messageList ul li p {
+	margin: 8px 0 0 0
+}
+
+div#friendList p.title {
+	font-size: 22px;
+	color: #3b5998;
+	border-bottom: 1px solid #3b5998;
+	margin: 0 0 20px 0;
+}
+
+div#friendList ul {
+	margin: 20px 0 0 0;
+	list-style: none;
+	padding: 0;
+}
+
+div#friendList ul li {
+	margin: 0 0 5px 0;
+}
+
+a {
+	color: #1A95B6;
+	font-weight: bold;
+}
+
+ul.errorlist {
+	margin-left: 160px;
+	padding: 0;
+	list-style-type: none;
+	color: #d23d24
+}
+
+h1 {
+	text-align: center;
+	font-size: 22px;
+	margin: 0px 60px 30px 60px;
+	padding: 0 0 5px 0;
+	color: #1A95B6;
+	border-bottom: 1px solid #1A95B6
+}
+
+#wlc header {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 44px;
+	width: 100%;
+	background: #1A95B6 url('../img/wi.png') no-repeat 65px 7px;
+	border-bottom: 1px solid #3b5998 ;
+	color : #FFFFFF
+}
+
+#wlc header p#name {
+	font-size: 22px;
+	margin: 10px 10px 0 70px;
+	padding-left: 75px;
+}
+
+#wlc header p#function {
+	margin: 0 0 0 70px;
+	padding-left: 75px;
+}
+
+#wlc header p#profileLinks {
+	position: absolute;
+	right: 40px;
+	top: 4px;
+}
+
+.search {
+	position: absolute;
+	left: 25%;
+	top: 11px;
+}
+
+a.buttonLink {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d9dfea #0e1f5b #0e1f5b #d9dfea;
+	background-color: #1A95B6;
+	color: #FFFFFF;
+	padding: 2px 15px 3px 15px;
+	text-align: center;
+	text-decoration: none;
+}
+
+dl.fieldList {
+	block:block;
+  	width: 100%;
+ 	overflow: hidden;
+}
+
+dl.fieldList dt {
+  	float: left;
+ 	width: 50%;
+ 	text-align: right;
+ 	/* adjust the width; make sure the total of both is 100% */
+ 	padding: 0 0 20px 0;
+ 	margin: 0 ;
+ 	font-weight: bold;
+}
+
+dl.fieldList dd {
+ 	float: left;
+ 	width: 50%;
+  	/* adjust the width; make sure the total of both is 100% */
+ 	padding: 0 0 20px 0;
+	 margin: 0 
+}
+
+p#showProfileNavigationButtons {
+	margin: 20px 0 0 50%;
+}

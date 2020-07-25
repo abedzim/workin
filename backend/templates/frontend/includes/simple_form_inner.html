@@ -1,0 +1,17 @@
+{% load i18n bootstrap3 %}
+
+<div class="row">
+    <div class="col-sm-8">
+        <form action="{% url 'frontend:simple-form' %}" method="post" class="form" novalidate>
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <div class="form-submit-row">
+                    <button type="submit" class="btn btn-primary">
+                        {% bootstrap_icon "star" %} {% trans 'Send' %}
+                    </button>
+                </div>
+            {% endbuttons %}
+        </form>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+{% extends "index.html" %}
+{% load humanize custom_tags %}
+{% load i18n %}
+{% block title %}{% blocktrans with profile.user.username as username %}{{ username }}'s profile.{% endblocktrans %}{% endblock %}
+{% block section %}	
+	<section>
+		<div class="feature-photo follow__card"  id="{{ profile.user.username}}">
+			<figure>
+				{% if profile.get_cover_url %}
+					<img style="heigth:379.5px;" src="{{ profile.get_cover_url }}" alt="" class="cover" />
+				{% else %}
+					<img src="/static/img/resources/timeline-1.jpg" alt="" class="cover" />
+				{% endif %}
+			</figure>
+
+			<div class="add-btn follow-toggle__container" id="add">
+			{% if profile.user.username != request.user.username %}
+				<a href="#" class="btn-msg btn-sm">
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+				</a>
+			
+				{% is_following request.user.profile profile as following %}
+				<button class="btn btn-sm pull-right {% if not following %}btn-primary follow-user{% else %}btn-light unfollow-user{% endif %}">
+					{% if not following %}
+					  Follow
+					{% else %}
+					  Following
+					{% endif %}
+				</button>
+			{% endif %}
+			</div>
+
+			{% if profile.user.username == request.user.username %}
+			<form class="edit-phto">
+				<i class="fa fa-camera-retro"></i>
+				<label class="fileContainer">
+					Edit Cover Photo
+				<input type="file"/>
+				</label>
+			</form>
+			{% endif %}
+
+			<div class="container-fluid" id="cf">
+				<div class="row merged">
+					<div class="col-lg-2 col-sm-3">
+						<div class="user-avatar" id="user-avatar">
+							<figure>
+								{% if profile.get_mugshot_url %}
+									<img src="{{ profile.get_mugshot_url }}" alt="" class="avatar" />
+								{% else %}
+									<img src="/static/img/user1.png" alt="" class="avatar" />
+								{% endif %}
+								{% if profile.user.username == request.user.username %}
+								<form class="edit-phto">
+									<i class="fa fa-camera-retro"></i>
+									<label class="fileContainer">
+										Edit Display Photo
+										<input type="file"/>
+									</label>
+								</form>
+								{% endif %}
+							</figure>
+						</div>
+					</div>
+					<div class="col-lg-10 col-sm-9">
+						<div class="timeline-info">
+							<ul>
+								<li class="admin-name" id="ti">
+								{% if profile.user.get_full_name %}
+								    <h5>{{ profile.user.get_full_name }} {% if request.user.username == profile.user.username %}<a href="{% url 'userena_profile_edit' profile.user.username %}"><i class="fas fa-user-edit" style="font-size:16px;margin-left:10px;"></i></a>{% endif %}</h5>
+								{% else %}
+									<h5>@{{ profile.user.username }} {% if request.user.username == profile.user.username %}<a href="{% url 'userena_profile_edit' profile.user.username %}"><i class="fas fa-user-edit" style="font-size:16px;margin-left:10px;"></i></a>{% endif %}</h5>
+								{% endif %}
+								{% if profile.about_me %}
+								  <span><b>{{ profile.about_me }}</b></span>
+								{% endif %}
+								</li>
+								<li>
+									<a class="active" href="{% url 'userena_profile_detail' profile.user.username %}" title="" data-ripple="">time line</a>
+									<a class="" href="{% url 'user_infos' username=profile.user.username %}"title="" data-ripple="">about</a>
+									<a class="" href="#" title=""  data-ripple="">Photos</a>
+									<a class="" href="#" title="" data-ripple="">Videos</a>
+									<a class="" href="{% url 'following' username=profile.user.username %}" title="" data-ripple="">Friends</a>
+									<a id="blog" href="#" title="" data-ripple="">Blog</a>
+									{% if user.username != profile.user.username %}
+									<a id="plus-infos" href="#" title="" data-ripple=""><i class="fa fa-info-circle"></i></a>
+									{% endif %}
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- top area -->
+{% endblock %}

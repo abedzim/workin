@@ -1,0 +1,4 @@
+https://github.com/mojodna/heroku-buildpack-gdal.git
+https://github.com/danstiner/heroku-buildpack-geoip-geolite2.git
+https://github.com/heroku/heroku-buildpack-python.git
+http://github.com/dulaccc/heroku-buildpack-geodjango/

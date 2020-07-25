@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load feeder %}
+{% block title %}{% trans "Index of external feeds" %}{% endblock %}
+{% block content %}
+    <h2>{% trans "External feeds" %}</h2>
+    {% feeds "full" %}
+{% endblock %}

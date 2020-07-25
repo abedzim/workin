@@ -1,0 +1,243 @@
+/*
+AI-------------------------------------------------------------------
+	Chat section of a chat window
+-------------------------------------------------------------------AI
+*/
+
+:root {
+  --main-bg-color: #08d18e;
+  --bg-grey: #f0f0f0;
+}
+
+/*Chatter's container. Contains chatroom-list and chat-dialog*/
+.app-container {
+	height: 100%;
+	max-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*Both chatroom list and chat dialog have these settings*/
+.chat-subsection {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--bg-grey);
+	border-radius: 2px;
+}
+
+.chatroom-list-container {
+  flex-basis: 0;
+	flex-grow: 1.5;
+	border-right: 0;
+  max-width: 40%;
+}
+
+
+/*Container of chat box. Includes the dialog and input field and button*/
+.chat-container {
+	width: 100%;
+	max-width: 1200px;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.dialog-container {
+	flex-grow: 2.5;
+  flex-basis: 0;
+  width: 100px; /*Placeholder to enable max-width*/
+  max-width: 60%;
+  border-left: 1px solid #bebebe;
+}
+
+.back-button-container {
+  height: 25px;
+  position: absolute;
+  left: 20px;
+}
+#back-button {
+  position: absolute;
+  height: 100%;
+  left: 5px;
+}
+#room-title {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+  flex-direction: row;
+	height: 60px;
+	border-bottom: 2px solid var(--bg-grey);
+  font-size: 20px;
+  -webkit-box-shadow: 0 5px 10px -2px var(--bg-grey);
+	   -moz-box-shadow: 0 5px 10px -2px var(--bg-grey);
+	        box-shadow: 0 5px 10px -2px var(--bg-grey);
+}
+
+/*This is the setting for the chat history dialog.*/
+#chat-dialog {
+	overflow: auto;
+	height: 96%;
+  max-width: 100%;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+AI-------------------------------------------------------------------
+	The messages inside the chat-dialog have the following settings
+-------------------------------------------------------------------AI
+*/
+
+.message-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+/*Generic message setting that applies to all messages*/
+.message {
+	max-width: 60%;
+	padding: 15px 15px 15px 15px;
+  margin: 3px 10px 3px 10px;
+	border-radius: 20px;
+	vertical-align: bottom;
+	word-wrap: break-word;
+}
+
+/*Messages sent by current user has these settings.*/
+.message-sent {
+	background: var(--main-bg-color);
+	color: white;
+  margin-left: auto;
+}
+
+.message-received-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.receiver-bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  background: var(--main-bg-color);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+/*Messages received by other users in the chat have these settings.*/
+.message-received {
+	background: var(--bg-grey);
+	color: black;
+  margin-right: auto;
+  margin-left: 5px;
+  max-width: 45%;
+}
+
+/* custom margins for multiple message bubbles sent by the same user */
+.sent-reduced-bottom-margin {
+  margin-bottom: 0.8px;
+  border-bottom-right-radius: 5px;
+}
+
+.sent-reduced-top-margin {
+  margin-top: 0.8px;
+  border-top-right-radius: 5px;
+}
+
+.received-reduced-bottom-margin {
+  margin-bottom: 0.8px;
+  border-bottom-left-radius: 5px;
+}
+
+.received-reduced-top-margin {
+  margin-top: 0.8px;
+  border-top-left-radius: 5px;
+}
+
+/* Created time styles */
+.message-date-created {
+  font-size: 0.8rem;
+  background: transparent;
+  color: #606060;
+  padding: 5px 0 5px 0;
+  display: none;
+  height: 1rem;
+}
+
+/* Custom class to process date on message received  */
+.message-received-date-created {
+  margin-left: 45px;
+}
+
+/*
+AI-------------------------------------------------------------------
+	The following contains settings for the input field and button.
+-------------------------------------------------------------------AI
+*/
+.input-container {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	display: flex;
+	justify-content: center;
+	border-top: 2px solid var(--bg-grey);
+	height: 50px;
+}
+
+/*This is the text box where the user inputs the messages to send.
+It's a textarea element to enable scroll.*/
+#send-message {
+	width: calc(100% - 50px);
+	height: 100%;
+	font-size: 1rem;
+	overflow: auto;
+	resize: none;
+	border: none;
+	padding: 0 10px;
+}
+
+/*Send button's parent*/
+#send-btn-parent {
+	width: 50px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+/*Send button settings*/
+#send-button {
+	background: transparent;
+	font-weight: bold;
+	font-size: 1rem;
+	color: var(--bg-grey);
+	border: none;
+	width: 50px;
+}
+
+@media only screen and (min-width: 577px) {
+  #back-button {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+	.chat-container {
+		min-width: 768px;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.chatroom-list-container {
+		display: none;
+	}
+  .dialog-container {
+    max-width: 100%;
+  }
+}

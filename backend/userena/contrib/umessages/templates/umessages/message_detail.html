@@ -1,0 +1,16 @@
+{% extends 'umessages/base_message.html' %}
+{% load i18n %}
+
+{% block content_title %}<h2>{% blocktrans %}Conversation with {{ recipient }}{% endblocktrans %}</h2>{% endblock %}
+
+{% block content %}
+
+<ul>
+{% for message in message_list %}
+<li>
+  {{ message }}
+  <p>{% blocktrans with message.sent_at as sent_at %}Received on {{ sent_at }}{% endblocktrans %}</p>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

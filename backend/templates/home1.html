@@ -1,0 +1,227 @@
+{% extends "index.html" %}
+{% load humanize %}
+{% load static i18n %}
+
+
+{% block title %}Accueil{% endblock %}
+{% block extrastyle %}
+
+{% endblock extrastyle %}
+	
+{% block content %}
+<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row merged20" id="page-contents">
+							<div class="col-lg-0 zim"></div>
+							<div class="col-lg-2 zim">
+								<aside class="sidebar static sb_13">
+									<div class="widget nobg stick-widget">
+										<div class="userpic">
+											<a href="{% url 'userena_profile_detail' request.user.username %}">
+												{% if user.profile.get_mugshot_url %}
+													<img src="{{ user.profile.get_mugshot_url }}" alt="" />
+												{% else %}
+													<img src="/static/img/user1.png" alt="">
+												{% endif %}
+												<span><a href="#">@{{ user.username}}</a></span>
+											</a>
+										</div>
+										<ul class="naves">
+											<li>
+												<i class="ti-clipboard" style="color:orange;"></i>&nbsp;
+												<a class="active" href="{% url 'welcome' %}" title=""><strong style="color:orange">W</strong>-News</a>
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="ti-shift-right-alt" style="color:orange;"></i>
+											</li>
+											<li>
+												<i class="fas fa-comment" style="color:orange;"></i>&nbsp;
+												<a href="{% url 'direct-chat:index' %}" title=""><strong style="color:orange">W</strong>-Messages</a>
+											</li>
+											<li>
+												<i class="far fa-bell" style="color:orange;"></i>&nbsp;
+												<a href="#" title=""><strong style="color:orange">W</strong>-Mail</a><!--&nbsp; <i class="wn" style="color:#fff;"><strong>7</strong></i>-->
+											</li>
+											<li>
+												<i class="fas fa-blog cl-success" style="color:#ff1a1a;"></i>&nbsp;
+												<a href="{% url 'blog:list' %}" title=""><strong style="color:orange">W</strong>-Blog</a>
+											</li>
+											<li>
+												<i class="fas fa-briefcase" style="color:#00e600;"></i>&nbsp;
+												<a href="{% url 'jobs:search' %}" title=""><strong style="color:orange">W</strong>-Jobs</a>
+											</li>
+											<li>
+												<i class="fas fa-project-diagram" style="color:#4d79ff;"></i>
+												<a href="#" title=""><strong style="color:orange">W</strong>-Projets</a>
+											</li>
+											<li>
+												<i class="fas fa-headset" style="color:#737373;"></i>&nbsp;
+												<a href="#" title=""><strong style="color:orange">W</strong>-Assistance</a>
+											</li>
+											<li>
+												<i class="fas fa-users" style="color:orange;"></i>
+												<a href="{% url 'qa:index_all' %}"><strong style="color:orange">W</strong>-Q/A</a>
+											</li>
+											<li>
+												<i class="fa fa-bar-chart-o"></i>
+												<a href="#" title="">insights</a>
+											</li>
+										</ul>
+									</div><!-- Shortcuts -->
+								</aside>
+							</div><!-- sidebar -->
+							<div class="col-lg-4b">
+								<div class="central-meta post-job">
+									<div class="new-postbox">
+										<figure>
+											{% if user.profile.get_mugshot_url %}
+											<img src="{{ user.profile.get_mugshot_url }}" alt="" />
+											{% else %}
+											<img src="/static/img/user1.png" alt="">
+											{% endif %}
+										</figure>
+										<div class="newpst-input">
+											<a class="" href="#" title="" data-toggle="modal" data-target="#newsFormModal"><i class="fas fa-edit fa-2x"></i></a>
+										</div>
+									</div>
+								</div><!-- add post new box -->
+								
+
+                                {% include 'news/news_form_modal.html' %}
+           		                {% include 'news/news_thread_modal.html' %}
+
+                                <div class="stream-update">
+								    <a href="{% url 'welcome' %}"><span class="new-posts"></span>There are new posts</a>
+								</div>
+                                
+								<div class="stream">
+                                {% for news in nws|slice:":2" %}
+                                	{% include 'news/news_single.html' with news=news %}
+                                {% endfor %}
+								</div>
+							{% comment %} ---------Top Profil---------- {% endcomment %}
+								<div class="top-profiles">
+									<div class="pf-hd">
+										<h3>Suggestions</h3>
+										<i class="fas fa-ellipsis-v"></i>
+									</div>
+									<div class="profiles-slider">
+										<div class="user-profy">
+											<img src="static/img/resources/profil1.png" alt="">
+											<h3><a href="#">Chancel Zim</a></h3>
+											<span>Stylist Model</span>
+											<a href="#" title="">follow</a>
+										</div><!--user-profy end-->
+										<div class="user-profy">
+											<img src="static/img/resources/zim.jpg" alt="">
+											<h3><a href="#">Abed Zim</a></h3>
+											<span>Ingénieur Web</span>
+											<a href="#" title="">follow</a>
+										</div><!--user-profy end-->
+										<div class="user-profy">
+											<img src="static/img/resources/profil2.png" alt="">
+											<h3><a href="#">Sasha Grims</a></h3>
+											<span>Etudiante</span>
+											<a href="#" title="">follow</a>
+										</div><!--user-profy end-->
+												
+										<div class="user-profy">
+											<img src="static/img/resources/profil3.jpg" alt="">
+											<h3><a href="#">John Doe</a></h3>
+											<span>Professeur des écoles</span>
+											<a href="#" title="">follow</a>
+										</div><!--user-profy end-->
+									</div><!--profiles-slider end-->
+											
+								</div><!--top-profiles end-->
+
+								{% comment %} <div class="top-profile">
+									<div class="pf-hd">
+										<h3>Suggestions</h3>
+										<i class="fas fa-ellipsis-v"></i>
+									</div>
+									<ul class="list-inline">
+										<li class="list-inline-item user-profy">
+											<img src="static/img/resources/profil1.png" alt="">
+											<h3><a href="#">Chancel Zim</a></h3>
+											<span>Stylist Model</span>
+											<a href="#" title="">follow</a>
+										</li><!--user-profy end-->
+
+										<li class="list-inline-item user-profy">
+											<img src="static/img/resources/zim.jpg" alt="">
+											<h3><a href="#">Abed Zim</a></h3>
+											<span>Ingénieur Web</span>
+											<a href="#" title="">follow</a>
+										</li><!--user-profy end-->
+										
+										<li class="list-inline-item user-profy">
+											<img src="static/img/resources/profil2.png" alt="">
+											<h3><a href="#">Sasha Grims</a></h3>
+											<span>Etudiante</span>
+											<a href="#" title="">follow</a>
+										</li><!--user-profy end-->
+									</ul><!--profiles-slider end-->
+											
+								</div><!--top-profiles end--> {% endcomment %}
+									
+								<div class="stream">
+									{% for news in nws|slice:"2:" %}
+										{% include 'news/news_single.html' with news=news %}
+										{% endfor %}
+									<p> C'est dèja la fin !</p>
+								</div>
+							</div><!-- centerl meta -->
+
+							<div class="col-lg-3 col-md-3 zim">
+								<aside class="sidebar static">
+									<div class="widget">
+										<div>
+											<ul class="dernierjob">
+												<li style="margin-top:5px; margin-bottom:-10px;">
+													<div class="activity-meta">
+														<span><i style="color:#e67300;" class="fas fa-briefcase"></i> <a href="#"  title="" style="font-weight: 400;color:#61EBA8;">Particulier à la recherche d'un babysitter </a></span>
+														<h6>
+																<img src="/static/img/resources/profil2.png" style='width:27px;height:27px;border-radius:100%' alt="">
+															<a href="#">@nina
+															</a> - <i class="fas fa-map-pin" style="color:red;"></i> Paris, France - <i>Il y a 13min</i>
+														</h6> 
+													</div>
+												</li>
+										</div>
+											
+									</div><!-- recent activites -->
+									<div class="widget">
+										<div class="banner">
+											<div class="bg-image" style="background-image: url(/static/img/Featured5.jpg)"></div>
+											<br><br><br><br>
+											<div class="banermeta">
+											</div>
+										</div>											
+									</div>
+
+									<div class="widget stick-widget1">
+										<h4 class="widget-title">Latest news</h4>
+										{% for item in items %}
+										<ul class="activitiez">
+											<li>
+												<div class="activity-meta">
+													<i>{{ item.title}}</i>
+													<span><a href="{{ item.link }}" target="_blank" title="">{{ item.description|truncatechars:90 }} </a></span>
+													 <h6>by <a href="https://www.lemonde.fr/" target="_blank">Le Figaro</a></h6>
+												</div>
+											</li>
+										</ul>
+										{% endfor %}
+									</div><!-- recent activites -->
+								</aside>
+							</div><!-- sidebar -->
+							<div class="col-lg-1 zim"></div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

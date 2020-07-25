@@ -1,0 +1,299 @@
+{% extends "index.html" %}
+{% load humanize custom_tags %}
+{% load static %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block section %}
+	<section>
+		<div class="feature-photo follow__card"  id="{{ user_f.profile.user.username}}">
+			<figure>
+				{% if user_f.profile.get_cover_url %}
+					<img style="heigth:379.5px;" src="{{ user_f.profile.get_cover_url }}" alt="" class="cover" />
+				{% else %}
+					<img src="/static/img/resources/timeline-1.jpg" alt="" class="cover" />
+				{% endif %}
+			</figure>
+
+			<div class="add-btn follow-toggle__container" id="add">
+			{% if user_f.profile.user.username != request.user.username %}
+				<a href="#" class="btn-msg btn-sm">
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+				</a>
+
+				{% is_following request.user.profile user_f.profile as following %}
+				<button class="btn btn-sm pull-right {% if not following %}btn-primary follow-user{% else %}btn-light unfollow-user{% endif %}">
+					{% if not following %}
+					  Follow
+					{% else %}
+					  Following
+					{% endif %}
+				</button>
+			{% endif %}
+			</div>
+
+			{% if user_f.profile.user.username == request.user.username %}
+			<form class="edit-phto">
+				<i class="fa fa-camera-retro"></i>
+				<label class="fileContainer">
+					Edit Cover Photo
+				<input type="file"/>
+				</label>
+			</form>
+			{% endif %}
+
+			<div class="container-fluid" id="cf">
+				<div class="row merged">
+					<div class="col-lg-2 col-sm-3">
+						<div></div>
+						<div class="user-avatar" id="user-avatar">
+							<figure>
+								{% if user_f.profile.get_mugshot_url %}
+									<img src="{{ user_f.profile.get_mugshot_url }}" alt="" class="avatar" />
+								{% else %}
+									<img src="/static/img/user1.png" alt="" class="avatar" />
+								{% endif %}
+								{% if user_f.profile.user.username == request.user.username %}
+								<form class="edit-phto">
+									<i class="fa fa-camera-retro"></i>
+									<label class="fileContainer">
+										Edit Display Photo
+										<input type="file"/>
+									</label>
+								</form>
+								{% endif %}
+							</figure>
+						</div>
+					</div>
+					<div class="col-lg-10 col-sm-9">
+						<div class="timeline-info">
+							<ul>
+								<li class="admin-name"  id="ti">
+								{% if user_f.profile.user.get_full_name %}
+								    <h5>{{ user_f.profile.user.get_full_name }} {% if request.user.username == user_f.profile.user.username %}<a href="{% url 'userena_profile_edit' user_f.profile.user.username %}"><i class="fas fa-user-edit" style="font-size:16px;margin-left:10px;"></i></a>{% endif %}</h5>
+								{% else %}
+									<h5>@{{ user_f.profile.user.username }} {% if request.user.username == user_f.profile.user.username %}<a href="{% url 'userena_profile_edit' user_f.profile.user.username %}"><i class="fas fa-user-edit" style="font-size:16px;margin-left:10px;"></i></a>{% endif %}</h5>
+								{% endif %}
+								{% if user_f.profile.about_me %}
+								  <span><b>{{ user_f.profile.about_me }}</b></span>
+								{% endif %}
+								</li>
+								<li>
+									<a class="" href="{% url 'userena_profile_detail' user_f.username %}" title="" data-ripple="">time line</a>
+									<a class="" href="{% url 'user_infos' username=user_f.profile.user.username %}"title="" data-ripple="">about</a>
+									<a class="" href="#" title=""  data-ripple="">Photos</a>
+									<a class="" href="timeline-videos.html" title="" data-ripple="">Videos</a>
+									<a class="active" href="{% url 'following' username=user_f.profile.user.username %}" title="" data-ripple="">Friends</a>
+									{% if user.username != user_f.profile.user.username %}
+									<a id="plus-infos" href="#" title="" data-ripple=""><i class="fa fa-info-circle"></i></a>
+									{% endif %}
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- top area -->
+{% endblock %}
+
+{% block content %}
+	<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row merged2" id="page-contents">
+
+							<div class="col-lg-3 zim">
+								<aside class="sidebar static">
+									<div class="widget">
+											<h4 class="widget-title">Shortcuts</h4>
+											<ul class="naves">
+												<li>
+													<i class="ti-clipboard"></i>
+													<a href="newsfeed.html" title="">News feed</a>
+												</li>
+												<li>
+													<i class="ti-mouse-alt"></i>
+													<a href="inbox.html" title="">Inbox</a>
+												</li>
+												<li>
+													<i class="ti-files"></i>
+													<a href="fav-page.html" title="">My pages</a>
+												</li>
+												<li>
+													<i class="ti-user"></i>
+													<a href="timeline-friends.html" title="">friends</a>
+												</li>
+												<li>
+													<i class="ti-image"></i>
+													<a href="timeline-photos.html" title="">images</a>
+												</li>
+												<li>
+													<i class="ti-video-camera"></i>
+													<a href="timeline-videos.html" title="">videos</a>
+												</li>
+												<li>
+													<i class="ti-comments-smiley"></i>
+													<a href="messages.html" title="">Messages</a>
+												</li>
+												<li>
+													<i class="ti-bell"></i>
+													<a href="notifications.html" title="">Notifications</a>
+												</li>
+												<li>
+													<i class="ti-share"></i>
+													<a href="people-nearby.html" title="">People Nearby</a>
+												</li>
+												<li>
+													<i class="fa fa-bar-chart-o"></i>
+													<a href="insights.html" title="">insights</a>
+												</li>
+												<li>
+													<i class="ti-power-off"></i>
+													<a href="landing.html" title="">Logout</a>
+												</li>
+											</ul>
+										</div><!-- Shortcuts -->
+									<div class="widget stick-widget">
+										<h4 class="widget-title">Profile intro</h4>
+										<ul class="short-profile">
+											<li>
+												<span>about</span>
+												<p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft company. </p>
+											</li>
+											<li>
+												<span>fav tv show</span>
+												<p>Sacred Games, Spartcus Blood, Games of theron</p>
+											</li>
+											<li>
+												<span>favourit music</span>
+												<p>Justin Biber, Nati Natsha, Shakira</p>
+											</li>
+										</ul>
+									</div><!-- profile intro widget -->
+
+								</aside>
+							</div><!-- sidebar -->
+
+                            {% comment %} <div class="col-lg-6">
+								<div class="central-meta">
+									<div class="frnds">
+										<ul class="nav nav-tabs">
+											 <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">Likers</a> <span>55</span></li>
+											 <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Follwers</a><span>60</span></li>
+										</ul>
+                                    </div>
+                                </div>
+                            </div> {% endcomment %}
+
+							<div class="col-lg-6">
+								<div class="central-meta">
+									<div class="frnds">
+										<ul class="nav nav-tabs">
+											 <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">Following</a> <span>{{nb}}</span></li>
+											 <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Followers</a><span>{{nbs}}</span></li>
+											 <li class="nav-item"><a class="" href="#" data-toggle="tab">Communs</a><span>{{nbs}}</span></li>
+										</ul>
+
+										<!-- Tab panes -->
+										<div class="tab-content">
+										  <div class="tab-pane active fade show " id="frends" >
+										  {% for profil in profiles %}
+											<ul class="nearby-contct follow__card" id="{{ profil.username}}">
+												<li>
+													<div class="nearly-pepls">
+														<figure>
+															<a href="{% url 'userena_profile_detail' profil.username %}" title="">
+																{% if profil.profile.get_mugshot_url %}
+																<img src="{{ profil.profile.get_mugshot_url }}" alt="" />
+																{% else %}
+																<img src="{% static 'img/user1.png' %}" alt="">
+																{% endif %}
+															</a>
+														</figure>
+														<div class="pepl-info follow-toggle__container">
+															<h4><a href="{% url 'userena_profile_detail' profil.username %}" title="">@{{profil.username}}</a></h4>
+															{% if profil.profile.about_me %}
+															<span>{{ profil.profile.about_me }}</span>
+															{% endif %}
+															{% if profil.username != request.user.username %}
+																{% comment %} <a href="#" class="btn-msg btn-sm pull-right">
+																	<i class="fa fa-envelope" aria-hidden="true"></i>
+																</a> {% endcomment %}
+
+																{% is_following request.user.profile profil.profile as following %}
+
+																<button class="btn btn-sm pull-right {% if not following %}btn-primary follow-user{% else %}btn-light unfollow-user{% endif %}" id="addd">
+																	{% if not following %}
+																	Follow
+																	{% else %}
+																	Following
+																	{% endif %}
+																</button>
+
+															{% endif %}
+														</div>
+													</div>
+												</li>
+											</ul>
+											{% empty %}
+											<p>Aucun résultat trouvé ! </p>
+											{% endfor %}
+											<div class="lodmore"><button class="btn-view btn-load-more"></button></div>
+										  </div>
+
+										<!--#########################################################################-->
+										  <div class="tab-pane fade" id="frends-req" >
+											{% for profil in profiless %}
+											<ul class="nearby-contct follow__card" id="{{ profil.username}}">
+												<li>
+													<div class="nearly-pepls" id="aaa">
+														<figure>
+															<a href="{% url 'userena_profile_detail' profil.username %}" title="">
+																{% if profil.profile.get_mugshot_url %}
+																<img src="{{ profil.profile.get_mugshot_url }}" alt="" />
+																{% else %}
+																<img src="{% static 'img/user1.png' %}" alt="">
+																{% endif %}
+															</a>
+														</figure>
+														<div class="pepl-info follow-toggle__container">
+															<h4><a href="{% url 'userena_profile_detail' profil.username %}" title="">@{{profil.username}}</a></h4>
+															{% if profil.profile.about_me %}
+															<span>{{ profil.profile.about_me }}</span>
+															{% endif %}
+															{% if profil.username != request.user.username %}
+
+																{% is_following request.user.profile profil.profile as following %}
+
+																<button class="btn pull-right {% if not following %}btn-primary follow-user{% else %}btn-light unfollow-user{% endif %}">
+																	{% if not following %}
+																	Follow
+																	{% else %}
+																	Following
+																	{% endif %}
+																</button>
+
+															{% endif %}
+														</div>
+													</div>
+												</li>
+											</ul>
+                                            {% empty %}
+                                                </br>
+											    <p>Nothing here ! </p>
+											{% endfor %}
+										  </div>
+										</div>
+									</div>
+								</div>
+							</div><!-- centerl meta -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,317 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+{% block title %}Jobs{% endblock %}
+
+<body>	
+
+	{% block content %}
+		<div class="search-sec">
+			<div class="container">
+				<div class="search-box">
+					<form class="search-form-container" action="{% url 'jobsearch:haystack_search' %}" method="get" >
+						<input type="text" placeholder="what are you looking for ?" class="form-control" name="q" id="q" autocomplete="on">
+						<div id="selction-ajax"></div>
+						<button type="submit">Search</button>
+					</form>
+				</div><!--search-box end-->
+			</div>
+		</div><!--search-sec end-->
+
+		<main>
+			<div class="main-section">
+				<div class="container">
+					<div class="main-section-data">
+						<div class="row">
+							<div class="col-lg-3">
+							{% if  page_obj.object_list %}
+								<div class="filter-secs">
+									<div class="filter-heading">
+										<h3>Filters</h3>
+										<a href="#" title="">Clear all filters</a>
+									</div><!--filter-heading end-->
+									<div class="paddy">
+									<dl>
+										{% if facets.fields.category %}
+										<div class="filter-dd">
+											<div class="filter-ttl">
+												<dt><h3>Category</h3></dt>
+												<a href="#" title="">Clear</a>
+											</div>
+											{% for category in facets.fields.category %}
+        									{% if category.1 != 0 %}
+											<dd>
+												<input class="facet" id="{{category.0|cut:" "}}" type="radio" name="category" value="{{ category.0 }}" 
+        										data-toggle="toggle" /> {{ category.0 }} ({{ category.1 }})
+											</dd>
+											{% endif %}
+        									{% endfor %}
+										</div>
+										{% endif %}
+									</dl>
+
+						
+										{% if facets.fields.price %}
+										<div class="filter-dd">
+											<div class="filter-ttl">
+												<h3>Price</h3>
+												<a href="#" title="">Clear</a>
+											</div>
+											{% for price in facets.fields.price %}
+        									{% if category.1 != 0 %}
+											<ul class="avail-checks">
+												<li>
+													<input class="facet c2" id="{{price.0|cut:" "}}" type="radio" name="price" value="{{ price.0 }}" 
+													data-toggle="toggle" /> 
+													<label for="c2">
+															<span></span>
+													</label>
+													<small>{{ price.0 }} ({{ price.1 }})</small>
+												</li>
+											</ul>
+											{% endif %}
+        									{% endfor %}
+										</div>
+										{% endif %}
+									
+
+												{% comment %} <li>
+													<input type="radio" name="cc" id="c2">
+													<label for="c2">
+														<span></span>
+													</label>
+													<small>{{ price.0 }} ({{ price.1 }})</small>
+												</li> {% endcomment %}
+
+									<dl>
+										{% if facets.fields.country%}
+										<div class="filter-dd">
+											<div class="filter-ttl">
+												<dt><h3>Country</h3></dt>
+												<a href="#" title="">Clear</a>
+											</div>
+											{% for country in facets.fields.country %}
+        									{% if category.1 != 0 %}
+											<dd>
+												<input class="facet" id="{{country.0|cut:" "}}" type="radio" name="country" value="{{ country.0 }}" 
+        										data-toggle="toggle" /> {{ country.0 }} ({{ country.1 }})
+											</dd>
+											{% endif %}
+        									{% endfor %}
+										</div>
+										{% endif %}
+									</dl>
+									
+										<div class="filter-dd">
+											<div class="filter-ttl">
+												<h3>Experience Level</h3>
+												<a href="#" title="">Clear</a>
+											</div>
+											<form class="job-tp">
+												<select>
+													<option>Select a experience level</option>
+													<option>3 years</option>
+													<option>4 years</option>
+													<option>5 years</option>
+												</select>
+												<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+											</form>
+										</div>
+										<div class="filter-dd">
+											<div class="filter-ttl">
+												<h3>Countries</h3>
+												<a href="#" title="">Clear</a>
+											</div>
+											<form class="job-tp">
+												<select>
+													<option>Select a country</option>
+													<option>United Kingdom</option>
+													<option>United States</option>
+													<option>Russia</option>
+												</select>
+												<i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+											</form>
+										</div>
+									</div>
+								</div><!--filter-secs end-->
+							{% endif %}
+							</div>
+							{% comment %} ------------------------end filters------------------------- {% endcomment %}
+							<div class="col-lg-6">
+								<div class="main-ws-sec">
+	    							
+									<div class="posts-section">
+										{% if  page_obj.object_list %}
+										{% for obj in page_obj.object_list %}
+										<div class="post-bar">
+										
+											<div class="post_topbar">
+												<div class="usy-dt">
+													
+													{% if obj.object.user.profile.get_mugshot_url %}
+													<img src="{{ obj.object.user.profile.get_mugshot_url }}" alt="" />
+													{% else %}
+													<img src="{% static 'img/user.png' %}" alt="">
+													{% endif %}
+													<div class="usy-name">
+														<h3><a style="text-decoration:none" href="{% url 'show_profile' %}?userToShow={{ obj.object.user.username }}">{{ obj.object.user.username }}</a></h3>
+														<span><i class="fas fa-clock"></i>{{ obj.object.publish }}</span>
+													</div>
+												</div>
+												<div class="ed-opts">
+													<a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+													<ul class="ed-options">
+														<li><a href="#" title="">Edit Post</a></li>
+														<li><a href="#" title="">Unsaved</a></li>
+														<li><a href="#" title="">Unbid</a></li>
+														<li><a href="#" title="">Close</a></li>
+														<li><a href="#" title="">Hide</a></li>
+													</ul>
+												</div>
+											</div>
+											<div class="epi-sec">
+												<ul class="descp">
+													<li><img src="{% static 'img/icon8.png' %}" alt=""><span>{{obj.object.category}}</span></li>
+													<li><img src="{% static 'img/icon9.png' %}" alt=""><span>{{obj.object.country}}</span></li>
+												</ul>
+												<ul class="bk-links">
+													<li><a href="#" title=""><i class="la la-bookmark"></i></a></li>
+													<li><a href="#" title=""><i class="la la-envelope"></i></a></li>
+												</ul>
+											</div>
+											<div class="job_descp">
+												<h3>{{ obj.object.title }}</h3>
+												<ul class="job-dt">
+													<li><a href="#" title="">Full Time</a></li>
+													<li><span>${{obj.object.price}} / hr</span></li>
+												</ul>
+												<p>{{ obj.object.get_markdown|truncatechars_html:120 }}</p>
+												<ul class="skill-tags">
+													{% for i in obj.object.skills.all %}
+													<li><a href="#" title="">{{i}}</a></li>
+													{% endfor %}
+												</ul>
+											</div>
+											<div class="job-status-bar">
+												<ul class="like-com">
+													<li>
+														<a href="#"><i class="la la-heart"></i> Like</a>
+														<img src="{% static 'img/liked-img.png' %}" alt="">
+														<span>25</span>
+													</li> 
+													<li><a href="#" title="" class="com"><img src="{% static 'img/com.png' %}" alt=""> Comment 15</a></li>
+												</ul>
+												<a><i class="la la-eye"></i>Views 50</a>
+											</div>
+										
+										</div><!--post-bar end-->
+										{% endfor %}
+									{% else %}
+	    								<p> Sorry, no result found for the search term  <strong>{{query}} </strong></p>
+									{% endif %}
+									</div><!--posts-section end-->
+									
+								</div><!--main-ws-sec end-->
+							</div>
+
+							{% comment %} --------------------------------job list end-------------------------------- {% endcomment %}
+							
+							<div class="col-lg-3">
+								<div class="right-sidebar">
+									
+									<div class="widget widget-jobs">
+										<div class="sd-title">
+											<h3>Top Jobs</h3>
+											<i class="la la-ellipsis-v"></i>
+										</div>
+										<div class="jobs-list">
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior Product Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior UI / UX Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Junior Seo Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior PHP Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior Developer Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+										</div><!--jobs-list end-->
+									</div><!--widget-jobs end-->
+									<div class="widget widget-jobs">
+										<div class="sd-title">
+											<h3>Most Viewed This Week</h3>
+											<i class="la la-ellipsis-v"></i>
+										</div>
+										<div class="jobs-list">
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior Product Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior UI / UX Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Junior Seo Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+										</div><!--jobs-list end-->
+									</div><!--widget-jobs end-->
+								</div><!--right-sidebar end-->
+							</div>
+						</div>
+					</div><!-- main-section-data end-->
+				</div> 
+			</div>
+		</main>
+	{% endblock %}
+</body>

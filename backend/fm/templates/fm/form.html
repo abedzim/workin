@@ -1,0 +1,11 @@
+{% load crispy_forms_tags %}
+<div id="form-container">
+    <form role="form" class="form" method="POST" enctype="multipart/form-data" action="">
+        {{ form.media }}
+        {% if form.helper %}
+            {% crispy form form.helper %}
+        {% else %}
+            {% crispy form %}
+        {% endif %}
+    </form>
+</div>

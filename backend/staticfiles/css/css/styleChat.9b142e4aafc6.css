@@ -1,0 +1,77 @@
+.messages-container {
+  height: 300px;
+  border: 1px solid #DDD;
+  border-radius: 10px;
+  position: relative;
+}
+
+#zim {
+  top:100px;
+}
+
+#zim1 {
+  top:30px;
+}
+
+#ab {
+  width: 300px;
+  background-color: teal;
+  border-radius: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding: 5px;
+}
+
+.messages {
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: auto;
+  height: 300px;
+}
+
+.user-list {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 20%;
+  height: 498px;
+  overflow: auto;
+  background: #EFEFEF;
+  margin: 0;
+  padding: 20px;
+  border-left: 1px solid #DDD;
+}
+
+.user-list li {
+  display: block;
+  color: orange;
+  font-weight: bold;
+}
+
+.username {
+  font-weight: bold;
+  color: orange;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.add-message {
+  margin-top: 20px;
+}
+
+.away span {
+  color: #666;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.msg-read {
+  background-color: lightgray;
+}
+
+.msg-unread {
+  background-color: rgba(170, 204, 153, 0.3);
+}

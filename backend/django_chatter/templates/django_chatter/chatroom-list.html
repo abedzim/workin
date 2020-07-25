@@ -1,0 +1,82 @@
+<!--AI==========================================================
+	This template displays the chat room list in every page
+	that inherits in. The rooms_list variable is universal
+	as it is created by chat/context_processors.py file.
+===========================================================AI-->
+
+
+{% load static %}
+<link rel = "stylesheet" href = "{% static 'css/chatroom-list.css' %}">
+
+<!-- select2 used to accommodate group chats later -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+
+<!--AI==========================================================
+	The following div describes the Search bar to search
+	for users as well as the name of the chatroom.
+	===========================================================AI-->
+	<div class="chatroom-list-title">Chats</div>
+	<div class="search">
+		<form class="search-form" action="{% url 'django_chatter:get_chat_url' %}" method="post">
+			{% csrf_token %}
+			<!-- <input id = "searchbar" placeholder = "Username"></input>
+			<button id = "user-selected">Go</button><br /> -->
+			<select class="select-chat-user" name="target_user">
+				<option></option>
+			</select>
+			<button type="submit" name="button" class="select-chat-button">Go</button>
+		</form>
+	</div>
+
+<!--AI==========================================================
+	The following block represents the list of chatrooms at the left
+===========================================================AI-->
+<div class = "chatroom-list">
+	{% for room in rooms_list %}
+		<a class="chat-link list-room" id='{{room.id}}'
+			href="{% url 'django_chatter:chatroom' uuid=room.id %}">
+
+			{% if room.id in rooms_with_unread %}
+			<div style='font-weight: bold;' class = 'chat-list-item'>
+			{% else %}
+			<div class='chat-list-item'>
+			{% endif %}
+				<div class="chat-list-title">
+					{% if room.members.all|length == 2 %}
+
+						{% for user in room.members.all %}
+
+							{% if user != request.user %}
+								{{user}}
+							{% endif %}
+
+						{% endfor %}
+
+					{% else %}
+							{{room}}
+					{% endif %}
+				</div>
+
+				<div class="chat-list-last-message">
+					{% with room.message_set.all.0 as message %}
+						{% if message.sender == request.user %}
+							You: {{message.text}}
+						{% else %}
+							{{message.sender}}: {{message.text}}
+						{% endif %}
+					{% endwith %}
+				</div>
+
+			</div>
+		</a>
+
+	{% endfor %}
+</div>
+
+<script>
+	var get_user_url = '{% url "django_chatter:users_list" %}';
+	var get_chat_url = '{% url "django_chatter:get_chat_url" %}';
+	var chatter_index = '{% url "django_chatter:index" %}';
+</script>
+<script src = "{% static 'js/searchUser.js' %}"></script>

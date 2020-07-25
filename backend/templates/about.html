@@ -1,0 +1,271 @@
+{% extends 'index.html' %}
+{% load humanize custom_tags %}
+{% load i18n %}
+{% block title %}{% blocktrans with him_her.profile.user.username as username %}{{ username }}'s profile.{% endblocktrans %}-Infos{% endblock %}
+
+{% block section %}
+	<section>
+		<div class="feature-photo follow__card"  id="{{ him_her.profile.user.username}}">
+			<figure>
+				{% if him_her.profile.get_cover_url %}
+					<img style="heigth:379.5px;" src="{{ him_her.profile.get_cover_url }}" alt="" class="cover" />
+				{% else %}
+					<img src="/static/img/resources/timeline-1.jpg" alt="" class="cover" />
+				{% endif %}
+			</figure>
+
+			<div class="add-btn follow-toggle__container" id="add">
+			{% if him_her.profile.user.username != request.user.username %}
+				<a href="#" class="btn-msg btn-sm">
+					<i class="fa fa-envelope" aria-hidden="true"></i>
+				</a>
+			
+				{% is_following request.user.profile him_her.profile as following %}
+				<button class="btn btn-sm pull-right {% if not following %}btn-primary follow-user{% else %}btn-light unfollow-user{% endif %}">
+					{% if not following %}
+					  Follow
+					{% else %}
+					  Following
+					{% endif %}
+				</button>
+			{% endif %}
+			</div>
+
+			{% if him_her.profile.user.username == request.user.username %}
+			<form class="edit-phto" id="edit-cover">
+				<i class="fa fa-camera-retro"></i>
+				<label class="fileContainer">
+					Edit Cover Photo
+				<input type="file"/>
+				</label>
+			</form>
+			{% endif %}
+
+			<div class="container-fluid" id="cf">
+				<div class="row merged">
+					<div class="col-lg-2 col-sm-3">
+						<div class="user-avatar" id="user-avatar">
+							<figure>
+								{% if him_her.profile.get_mugshot_url %}
+									<img src="{{ him_her.profile.get_mugshot_url }}" alt="" class="avatar" />
+								{% else %}
+									<img src="/static/img/user1.png" alt="" class="avatar" />
+								{% endif %}
+								{% if him_her.profile.user.username == request.user.username %}
+								<form class="edit-phto">
+									<i class="fa fa-camera-retro"></i>
+									<label class="fileContainer">
+										Edit Display Photo
+										<input type="file"/>
+									</label>
+								</form>
+								{% endif %}
+							</figure>
+						</div>
+					</div>
+					<div class="col-lg-10 col-sm-9">
+						<div class="timeline-info">
+							<ul>
+								<li class="admin-name" id="ti">
+								{% if him_her.profile.user.get_full_name %}
+								    <h5>{{ him_her.profile.user.get_full_name }} {% if request.user.username == him_her.profile.user.username %}<a href="{% url 'userena_profile_edit' him_her.profile.user.username %}"><i class="fas fa-user-edit" style="font-size:16px;margin-left:10px;"></i></a>{% endif %}</h5>
+								{% else %}
+									<h5>@{{ him_her.profile.user.username }} {% if request.user.username == him_her.profile.user.username %}<a href="{% url 'userena_profile_edit' him_her.profile.user.username %}"><i class="fas fa-user-edit" style="font-size:16px;margin-left:10px;"></i></a>{% endif %}</h5>
+								{% endif %}
+								{% if him_her.profile.about_me %}
+								  <span><b>{{ him_her.profile.about_me }}</b></span>
+								{% endif %}
+								</li>
+								<li>
+									<a class="" href="{% url 'userena_profile_detail' him_her.username %}" title="" data-ripple="">time line</a>
+									<a class="active" href="{% url 'user_infos' username=him_her.profile.user.username %}"title="" data-ripple="">about</a>
+									<a class="" href="#" title=""  data-ripple="">Photos</a>
+									<a class="" href="#" title="" data-ripple="">Blog</a>
+									<a class="" href="{% url 'following' username=him_her.profile.user.username %}" title="" data-ripple="">Friends</a>
+									<a id="blog" href="#" title="" data-ripple="">Blog</a>
+									{% if user.username != him_her.profile.user.username %}
+									<a id="plus-infos" href="#" title="" data-ripple=""><i class="fa fa-info-circle"></i></a>
+									{% endif %}
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- top area -->
+{% endblock %}
+{% block content %}	
+	<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row merged2" id="page-contents">
+							
+							<div class="col-lg-8">
+								<div class="central-meta">
+									<div class="about">
+
+										<div class="personal">
+											<h5 class="f-title">
+												<i class="ti-info-alt"></i> Overview &nbsp;
+												
+												{% if bio %}
+												{% for i in bio %}
+												{% if him_her.profile.user.username == request.user.username %}
+												<a href="{% url 'users-infos:bio_update' bio_pk=i.pk %}" class="fm-update" data-fm-callback="replace" data-fm-target="{{ i.pk }}"><i class="fas fa-pencil-alt"></i></a>
+												{% endif %}
+											</h5>
+											
+											<p>
+												{{ i.content }} 
+											</p>
+											{% endfor %}
+											{% else %}
+											{% if him_her.profile.user.username == request.user.username %}
+											<a href="{% url 'users-infos:bio_create' %}" class="fm-create"  data-fm-callback="reload"><i class="fa fa-plus-square"></i></a>
+											{% endif %}
+											{% endif %}
+
+										</div><br><br>
+
+										<div class="personal">
+											<h5 class="f-title">
+												<i class="ti-info-alt"></i> Experience &nbsp;
+												{% if him_her.profile.user.username == request.user.username %}
+												<a href="{% url 'users-infos:experience_create' %}" class="fm-create"  data-fm-callback="reload"><i class="fa fa-plus-square"></i></a>
+												{% endif %}
+											</h5>
+											{% for experience in exp %}
+											<h6>
+												<b>{{ experience.titre }}</b> &nbsp;
+												{% if him_her.profile.user.username == request.user.username %}
+												<a href="{% url 'users-infos:experience_update' experience_pk=experience.pk %}" class="fm-update" data-fm-callback="replace" data-fm-target="{{ experience.pk }}"><i class="fas fa-pencil-alt"></i></a>
+												{% endif %}
+											</h6>
+											<p>
+												{{ experience.content|linebreaks }}
+											</p>
+											{% endfor %}
+										</div><br><br>
+								
+										<div class="personal">
+											<h5 class="f-title">
+												<i class="ti-info-alt"></i> Education &nbsp;
+												{% if him_her.profile.user.username == request.user.username %}
+												<a href="{% url 'users-infos:education_create' %}" class="fm-create"  data-fm-callback="reload"><i class="fa fa-plus-square"></i></a>
+												{% endif %}
+											</h5>
+											{% for education in ed %}
+											<h6>
+												<b>{{ education.title }}</b> &nbsp;
+												{% if him_her.profile.user.username == request.user.username %}
+												<a class="cv_add" href="#" title=""><i class="fas fa-pencil-alt"></i></a>
+												{% endif %}
+											</h6>
+											<span>{{ education.from_year }}-{{ education.to_year }}</span>
+											<p>
+												{{ education.content|linebreaks }}
+											</p>
+											{% endfor %}
+										</div><br><br>
+
+										<div class="personal">
+											<h5 class="f-title">
+												<i class="ti-info-alt"></i> Location & Languages &nbsp;
+												{% if him_her.profile.user.username == request.user.username %}
+												<a class="cv_add" href="#" title=""><i class="fa fa-plus-square"></i></a> &nbsp;
+												<a class="cv_add" href="#" title=""><i class="fas fa-pencil-alt"></i></a>
+												{% endif %}
+											</h5>
+											<p>
+												<i class="fas fa-map-pin"></i> Paris / Français, Anglais, Espagnol
+
+											</p>
+										</div><br><br>
+
+										<div class="personal">
+											<h5 class="f-title">
+												<i class="ti-info-alt"></i> Skills &nbsp;
+												{% if him_her.profile.user.username == request.user.username %}
+												<a href="{% url 'users-infos:skills_create' %}" class="fm-create"  data-fm-callback="reload"><i class="fa fa-plus-square"></i></a>
+												<a class="cv_add" href="#" title=""><i class="fas fa-pencil-alt"></i></a>
+												{% endif %}
+											</h5>
+											<ul class="sociaz-media">
+											{% for ski in sk %}
+											{% for i in ski.skills.all %}
+												<li><a title="" href="#">{{i}}</a></li>
+											{% endfor %}
+											{% endfor %}
+											</ul>
+										</div>
+										
+									</div>
+									
+								</div>	
+							</div><!-- centerl meta -->
+							<div class="col-lg-4 zim">
+								
+								<aside class="sidebar static">
+									{% comment %} <div class="widgets infos">
+										<ul class="flw-status">
+											<li class="">
+												<a href="" class="flw">
+													<b>57</b>
+													<span>Followers</span>
+												</a>
+											</li>
+											<li class="">
+												<a href="" class="flw">
+													<b>63</b>
+													<span>Following</span>
+												</a>
+											</li>
+										</ul>
+									</div> {% endcomment %}
+
+									<div class="widget stick-widget" style="border-radius:13px;">
+
+										<h4 class="widget-title">User's Infos</h4>
+										<ul class="naves">
+											<li>
+												{% trans "Name" %} : 
+												<a>{{ him_her.profile.user.get_full_name }}</a>
+											</li>
+											<li>
+												{% trans "Age" %} : 
+												<a>23</a>
+												{% comment %} <a>{{ profile.age }}</a> {% endcomment %}
+											</li>
+											<li>
+												<i class="fa fa-map-marker cl-success"></i>
+												<a>{{ him_her.profile.location.name }}</a>
+											</li>
+											<li class="website">
+												<i class="fa fa-globe cl-success"></i>
+												<a>{{ him_her.profile.website|urlize }}</a>
+											</li>
+											<li class="">
+												<i class="fas fa-blog cl-success"></i>
+												<a>My blog</a>
+											</li>
+											<li>
+												{% trans "About me" %} : 
+												<a>{{ him_her.profile.about_me }}</a>
+											</li>
+										</ul>
+									</div><!-- who's following -->									
+								</aside>
+							</div><!-- sidebar -->
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>	
+		
+	</section>
+	
+
+{% endblock %}

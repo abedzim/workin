@@ -1,0 +1,36 @@
+{% extends "base/base.html" %}
+{% block title %}
+<title>Edit post</title>
+{% endblock %}
+{% block content %}
+    <div id="wrapper" style="margin: auto; max-width: 45em;">
+
+
+             <form class="form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <h3>Title:</h3>
+                    <input type="text" id="id_title" value="{{ upd_post.title }}" maxlength="60" class="form-control" autofocus name="title"/>
+                </div>
+                <div class="form-group">
+                    <h3>Content:</h3>
+                    <textarea cols="40" id="id_content" maxlength="1000" name="content" rows="10" class="form-control">{{ upd_post.content }}</textarea>
+                </div>
+                <div class="form-group">
+                    <h3>Image:</h3>
+                    <center>
+                    {% if upd_post.image %}
+                    <h4>Current image:</h4>
+                    <img src="{{ upd_post.image.url }}" name="dp" width="150" height="150" class="img-rounded">
+                    <h4>Change:</h4>
+                    {% endif %}
+                    <input class="form-control" id="id_image" name="image" type="file"/>
+                    </center>
+                </div>
+
+                <button class="btn btn-lg btn-block btn-primary" type="submit">
+                    Update</button>
+                </form>
+
+    </div>
+{% endblock %}

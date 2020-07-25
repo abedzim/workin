@@ -1,0 +1,24 @@
+.stats-panel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.stats-widget {
+    float: left;
+    text-align: center;
+}
+
+.graph-widget {
+  font: 10px sans-serif;
+}
+
+.graph-widget .axis path,
+.graph-widget .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.graph-widget .area {
+  fill: steelblue;
+}

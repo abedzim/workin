@@ -1,0 +1,15 @@
+<h3>{{ feed.feed.title }}</h3>
+{% if as_list %}
+    <ul>
+    {% for entry in entries %}
+        <li><a href="{{ entry.local_link }}">{{ entry.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    {% for entry in entries %}
+      <h4><a href="{{ entry.local_link }}">{{ entry.title }}</a></h4>
+      {% if full %}
+          <p>{{ entry.summary|safe }}</p>
+      {% endif %}
+    {% endfor %}
+{% endif %}

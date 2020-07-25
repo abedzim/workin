@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+
+        <h2>(7) Creating and updating a Django Model in the front-end</h2>
+
+        <div class="col-sm-6">
+            <h1>Artists</h1>
+            {% if not artists %}
+                <div>No artists availalbe yet</div>
+            {% else %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Edit</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for artist in artists %}
+                        <tr>
+                            <td>
+                                <a href=""
+                                   data-action="{% url 'frontend:artist-update' artist.id %}"
+                                   onclick="onArtistUpdate(event); return false;"
+                                   data-title="Update artist: {{ artist }}"
+                                >
+                                    <i class="fa fa-edit"></i> Edit
+                                </a>
+                            </td>
+                            <td>{{ artist }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            <div>
+                <button
+                    href=""
+                    data-action="{% url 'frontend:artist-create' %}"
+                    data-title="New artist"
+                    onclick="onArtistCreate(event); return false;"
+                    type="button"class="btn btn-primary">
+                    New
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block extrajs %}
+
+    <script language="javascript">
+
+        function onArtistCreate(event) {
+            var modal = initModalDialog(event, '#modal_generic');
+            var url = $(event.target).data('action');
+            $.ajax({
+                type: "GET",
+                url: url
+            }).done(function(data, textStatus, jqXHR) {
+                modal.find('.modal-body').html(data);
+                modal.modal('show');
+                formAjaxSubmit(modal, url, null, afterModalCreateSuccess);
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                alert("SERVER ERROR: " + errorThrown);
+            });
+        }
+
+        function onArtistUpdate(event) {
+            var modal = initModalDialog(event, '#modal_generic');
+            var url = $(event.target).data('action');
+            $.ajax({
+                type: "GET",
+                url: url
+            }).done(function(data, textStatus, jqXHR) {
+                modal.find('.modal-body').html(data);
+                modal.modal('show');
+                formAjaxSubmit(modal, url, null, afterModalUpdateSuccess);
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                alert("SERVER ERROR: " + errorThrown);
+            });
+        }
+
+        function afterModalCreateSuccess(modal) {
+            var object_id = modal.find('input[name=object_id]').val();
+            alert('New artist created: id=' + object_id);
+            location.reload(true);
+        }
+
+        function afterModalUpdateSuccess(modal) {
+            var object_id = modal.find('input[name=object_id]').val();
+            alert('Artist updated: id=' + object_id);
+            location.reload(true);
+        }
+
+    </script>
+
+{% endblock extrajs %}
+

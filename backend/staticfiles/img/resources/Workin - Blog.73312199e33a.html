@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+	<title>Workin - Blog</title>
+    <link rel="icon" href="http://127.0.0.1:8000/static/img/resources/fav-min.png" type="image/png" sizes="17x17"> 
+    
+    <link rel="stylesheet" href="Workin%20-%20Blog_fichiers/main.css">
+    <link rel="stylesheet" href="Workin%20-%20Blog_fichiers/strip.css">
+    <link rel="stylesheet" href="Workin%20-%20Blog_fichiers/styleb.css">
+    <link rel="stylesheet" href="Workin%20-%20Blog_fichiers/responsive.css">
+	<link href="Workin%20-%20Blog_fichiers/ace.css" type="text/css" media="all" rel="stylesheet">
+  <link href="Workin%20-%20Blog_fichiers/semantic.css" type="text/css" media="all" rel="stylesheet">
+  <link href="Workin%20-%20Blog_fichiers/martor.css" type="text/css" media="all" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="Workin%20-%20Blog_fichiers/ajaxcomments.html">
+
+<style>
+	pre, .hljs {
+		background-color: #E8E8E8;
+		border: 1px solid #E0E0E0;
+		border-radius: 3px;
+		padding:15px
+  }
+</style></head>
+ 
+<body><nav id="shoppingbag" class="mm-menu mm-offcanvas mm-right" aria-hidden="true"><div class="mm-panels"><div class="mm-panel mm-hasnavbar mm-opened" id="mm-11"><div class="mm-navbar"><a class="mm-title">General Setting</a></div>
+				<div class="">
+					<form method="post">
+						<div class="setting-row">
+							<span>use night mode</span>
+							<input type="checkbox" id="nightmode"> 
+							<label for="nightmode" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+						<div class="setting-row">
+							<span>Notifications</span>
+							<input type="checkbox" id="switch2"> 
+							<label for="switch2" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+						<div class="setting-row">
+							<span>Notification sound</span>
+							<input type="checkbox" id="switch3"> 
+							<label for="switch3" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+						<div class="setting-row">
+							<span>My profile</span>
+							<input type="checkbox" id="switch4"> 
+							<label for="switch4" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+						<div class="setting-row">
+							<span>Show profile</span>
+							<input type="checkbox" id="switch5"> 
+							<label for="switch5" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+					</form>
+					<h4 class="panel-title">Account Setting</h4>
+					<form method="post">
+						<div class="setting-row">
+							<span>Sub users</span>
+							<input type="checkbox" id="switch6"> 
+							<label for="switch6" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+						<div class="setting-row">
+							<span>personal account</span>
+							<input type="checkbox" id="switch7"> 
+							<label for="switch7" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+						<div class="setting-row">
+							<span>Business account</span>
+							<input type="checkbox" id="switch8"> 
+							<label for="switch8" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+						<div class="setting-row">
+							<span>Show me online</span>
+							<input type="checkbox" id="switch9"> 
+							<label for="switch9" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+						<div class="setting-row">
+							<span>Delete history</span>
+							<input type="checkbox" id="switch10"> 
+							<label for="switch10" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+						<div class="setting-row">
+							<span>Expose author name</span>
+							<input type="checkbox" id="switch11"> 
+							<label for="switch11" data-on-label="ON" data-off-label="OFF"></label>
+						</div>
+					</form>
+				</div>
+			</div></div>
+			
+		</nav><nav id="menu" class="res-menu mm-menu mm-offcanvas" aria-hidden="true"><div class="mm-panels"><div class="mm-panel mm-hasnavbar mm-opened" id="mm-1"><div class="mm-navbar"><a class="mm-title">Menu</a></div><ul class="mm-listview">
+				<li><a class="mm-next mm-fullsubopen" href="#mm-2" aria-owns="mm-2" aria-haspopup="true"><span class="mm-sronly">Open submenu (Home)</span></a><span>Home</span>
+					
+				</li>
+				<li><a class="mm-next mm-fullsubopen" href="#mm-3" aria-owns="mm-3" aria-haspopup="true"><span class="mm-sronly">Open submenu (Time Line)</span></a><span>Time Line</span>
+					
+				</li>
+				<li><a class="mm-next mm-fullsubopen" href="#mm-4" aria-owns="mm-4" aria-haspopup="true"><span class="mm-sronly">Open submenu (Account Setting)</span></a><span>Account Setting</span>
+					
+				</li>
+				<li><a class="mm-next mm-fullsubopen" href="#mm-5" aria-owns="mm-5" aria-haspopup="true"><span class="mm-sronly">Open submenu (forum)</span></a><span>forum</span>
+					
+				</li>
+				<li><a class="mm-next mm-fullsubopen" href="#mm-6" aria-owns="mm-6" aria-haspopup="true"><span class="mm-sronly">Open submenu (Our Shop)</span></a><span>Our Shop</span>
+					
+				</li>
+				<li><a class="mm-next mm-fullsubopen" href="#mm-7" aria-owns="mm-7" aria-haspopup="true"><span class="mm-sronly">Open submenu (Our Blog)</span></a><span>Our Blog</span>
+					
+				</li>
+				<li><a class="mm-next mm-fullsubopen" href="#mm-8" aria-owns="mm-8" aria-haspopup="true"><span class="mm-sronly">Open submenu (Portfolio)</span></a><span>Portfolio</span>
+					
+				</li>
+				<li><a class="mm-next mm-fullsubopen" href="#mm-9" aria-owns="mm-9" aria-haspopup="true"><span class="mm-sronly">Open submenu (Support &amp; Help)</span></a><span>Support &amp; Help</span>
+					
+				</li>
+				<li><a class="mm-next mm-fullsubopen" href="#mm-10" aria-owns="mm-10" aria-haspopup="true"><span class="mm-sronly">Open submenu (More pages)</span></a><span>More pages</span>
+					
+				</li>
+				<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/about.html" title="">about</a></li>
+				<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/about-company.html" title="">About Us2</a></li>
+				<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/contact.html" title="">contact</a></li>
+				<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/contact-branches.html" title="">Contact Us2</a></li>
+				<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/widgets.html" title="">Widgts</a></li>
+			</ul></div><div class="mm-panel mm-hidden mm-hasnavbar" id="mm-2" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-prev" href="#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu (Home)</span></a><a class="mm-title" href="#mm-1" aria-hidden="true">Home</a></div><ul class="mm-listview">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/index-2.html" title="">Home Social</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/index2.html" title="">Home Social 2</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/index-company.html" title="">Home Company</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/landing.html" title="">Login page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/logout.html" title="">Logout Page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/newsfeed.html" title="">news feed</a></li>
+					</ul></div><div class="mm-panel mm-hidden mm-hasnavbar" id="mm-3" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-prev" href="#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu (Time Line)</span></a><a class="mm-title" href="#mm-1" aria-hidden="true">Time Line</a></div><ul class="mm-listview">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/time-line.html" title="">timeline</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/timeline-friends.html" title="">timeline friends</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/timeline-groups.html" title="">timeline groups</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/timeline-pages.html" title="">timeline pages</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/timeline-photos.html" title="">timeline photos</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/timeline-videos.html" title="">timeline videos</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/fav-page.html" title="">favourit page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/groups.html" title="">groups page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/page-likers.html" title="">Likes page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/people-nearby.html" title="">people nearby</a></li>
+						
+						
+					</ul></div><div class="mm-panel mm-hidden mm-hasnavbar" id="mm-4" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-prev" href="#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu (Account Setting)</span></a><a class="mm-title" href="#mm-1" aria-hidden="true">Account Setting</a></div><ul class="mm-listview">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/create-fav-page.html" title="">create fav page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/edit-account-setting.html" title="">edit account setting</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/edit-interest.html" title="">edit-interest</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/edit-password.html" title="">edit-password</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/edit-profile-basic.html" title="">edit profile basics</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/edit-work-eductation.html" title="">edit work educations</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/messages.html" title="">message box</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/inbox.html" title="">Inbox</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/notifications.html" title="">notifications page</a></li>
+					</ul></div><div class="mm-panel mm-hidden mm-hasnavbar" id="mm-5" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-prev" href="#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu (forum)</span></a><a class="mm-title" href="#mm-1" aria-hidden="true">forum</a></div><ul class="mm-listview">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/forum.html" title="">Forum Page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/forums-category.html" title="">Fourm Category</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/forum-open-topic.html" title="">Forum Open Topic</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/forum-create-topic.html" title="">Forum Create Topic</a></li>
+					</ul></div><div class="mm-panel mm-hidden mm-hasnavbar" id="mm-6" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-prev" href="#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu (Our Shop)</span></a><a class="mm-title" href="#mm-1" aria-hidden="true">Our Shop</a></div><ul class="mm-listview">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop.html" title="">Shop Products</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop-masonry.html" title="">Shop Masonry Products</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop-single.html" title="">Shop Detail Page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop-cart.html" title="">Shop Product Cart</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop-checkout.html" title="">Product Checkout</a></li>
+					</ul></div><div class="mm-panel mm-hidden mm-hasnavbar" id="mm-7" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-prev" href="#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu (Our Blog)</span></a><a class="mm-title" href="#mm-1" aria-hidden="true">Our Blog</a></div><ul class="mm-listview">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-grid-wo-sidebar.html" title="">Our Blog</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-grid-right-sidebar.html" title="">Blog with R-Sidebar</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-grid-left-sidebar.html" title="">Blog with L-Sidebar</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-masonry.html" title="">Blog Masonry Style</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-list-wo-sidebar.html" title="">Blog List Style</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-list-right-sidebar.html" title="">Blog List with R-Sidebar</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-list-left-sidebar.html" title="">Blog List with L-Sidebar</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-detail.html" title="">Blog Post Detail</a></li>
+					</ul></div><div class="mm-panel mm-hidden mm-hasnavbar" id="mm-8" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-prev" href="#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu (Portfolio)</span></a><a class="mm-title" href="#mm-1" aria-hidden="true">Portfolio</a></div><ul class="mm-listview">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/portfolio-2colm.html" title="">Portfolio 2col</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/portfolio-3colm.html" title="">Portfolio 3col</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/portfolio-4colm.html" title="">Portfolio 4col</a></li>
+					</ul></div><div class="mm-panel mm-hidden mm-hasnavbar" id="mm-9" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-prev" href="#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu (Support &amp; Help)</span></a><a class="mm-title" href="#mm-1" aria-hidden="true">Support &amp; Help</a></div><ul class="mm-listview">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/support-and-help.html" title="">Support &amp; Help</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/support-and-help-detail.html" title="">Support &amp; Help Detail</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/support-and-help-search-result.html" title="">Support &amp; Help Search Result</a></li>
+					</ul></div><div class="mm-panel mm-hidden mm-hasnavbar" id="mm-10" aria-hidden="true"><div class="mm-navbar"><a class="mm-btn mm-prev" href="#mm-1" aria-owns="mm-1" aria-haspopup="true"><span class="mm-sronly">Close submenu (More pages)</span></a><a class="mm-title" href="#mm-1" aria-hidden="true">More pages</a></div><ul class="mm-listview">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/careers.html" title="">Careers</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/career-detail.html" title="">Career Detail</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/404.html" title="">404 error page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/404-2.html" title="">404 Style2</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/faq.html" title="">faq's page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/insights.html" title="">insights</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/knowledge-base.html" title="">knowledge base</a></li>
+					</ul></div></div>
+			
+		</nav>
+<!--<div class="se-pre-con"></div>-->
+<div id="mm-0" class="mm-page mm-slideout" style=""><div class="theme-layout">
+	
+	<div class="responsive-header">
+		<div class="mh-head first mm-sticky mh-btns-left mh-btns-right mh-sticky mh-scrolledout">
+			<span class="mh-btns-left">
+				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
+			</span>
+			<span class="mh-text">
+				<a title="" href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/newsfeed.html"><img src="Workin%20-%20Blog_fichiers/logo2-min.png" alt="" style="width:31px;height:31px;"></a>
+			</span>
+			<span class="mh-btns-right">
+				<a class="fa fa-sliders" href="#shoppingbag"></a>
+			</span>
+		</div>
+		<div class="mh-head second">
+			<form class="mh-form">
+				<input placeholder="search">
+				<a href="#/" class="fa fa-search"></a>
+			</form>
+		</div>
+		
+		
+	</div><!-- responsive header -->
+	
+	<div class="topbar transparent">
+		<div class="logo">
+			<a title="" href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/newsfeed.html"><img src="Workin%20-%20Blog_fichiers/logo2-min.png" alt="" style="width:31px;height:31px;"></a>
+		</div>
+		<div class="menu-container" id="toggle">
+		  <a href="#" class="canvas-menu">
+			<i class="fa fa-times fa-bars" aria-hidden="true"></i></a>
+		</div>
+		<div class="overlay" id="overlay">
+		  <nav class="overlay-menu">
+			<ul class="offcanvas-menu">
+				<li class="menu-item-has-children">
+					<a href="#" title="">Home</a>
+					<ul>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/index-2.html" title="">Home Social</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/index2.html" title="">Home Social 2</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/index-company.html" title="">Home Company</a></li>
+					</ul>
+				</li>
+				<li class="menu-item-has-children">
+					<a href="#" title="">Our Blog</a>
+					<ul>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-grid-wo-sidebar.html" title="">Our Blog</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-grid-right-sidebar.html" title="">Blog with R-Sidebar</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-grid-left-sidebar.html" title="">Blog with L-Sidebar</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-masonry.html" title="">Blog Masonry Style</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-list-wo-sidebar.html" title="">Blog List Style</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-list-right-sidebar.html" title="">Blog List with R-Sidebar</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-list-left-sidebar.html" title="">Blog List with L-Sidebar</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/blog-detail.html" title="">Blog Post Detail</a></li>
+					</ul>
+				</li>
+				<li class="menu-item-has-children">
+					<a href="#" title="">Shop Pages</a>
+					<ul>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop.html" title="">Shop Products</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop-masonry.html" title="">Shop Masonry Products</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop-single.html" title="">Shop Detail Page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop-cart.html" title="">Shop Product Cart</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/shop-checkout.html" title="">Product Checkout</a></li>
+					</ul>
+				</li>
+				<li class="menu-item-has-children">
+					<a href="#" title="">Our Portfolio</a>
+					<ul>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/portfolio-2colm.html" title="">Portfolio 2col</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/portfolio-3colm.html" title="">Portfolio 3col</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/portfolio-4colm.html" title="">Portfolio 4col</a></li>
+					</ul>
+				</li>
+				<li class="menu-item-has-children">
+					<a href="#" title="">Support &amp; Help</a>
+					<ul>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/support-and-help.html" title="">Support &amp; Help</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/support-and-help-detail.html" title="">Support &amp; Help Detail</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/support-and-help-search-result.html" title="">Support &amp; Help Search Result</a></li>
+					</ul>
+				</li>
+				<li class="menu-item-has-children">
+					<a href="#" title="">Company Forum</a>
+					<ul>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/forum.html" title="">Forum Page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/forums-category.html" title="">Fourm Category</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/forum-open-topic.html" title="">Forum Open Topic</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/forum-create-topic.html" title="">Forum Create Topic</a></li>
+					</ul>
+				</li>
+				<li class="menu-item-has-children">
+					<a href="#" title="">Featured Pages</a>
+					<ul>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/careers.html" title="">Careers</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/career-detail.html" title="">Career Detail</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/logout.html" title="">Logout Page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/404-2.html" title="">404 Errro Page</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/about-company.html" title="">About Us</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/contact-branches.html" title="">Contact Us</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+		  </nav>
+		</div>
+	</div><!-- topbar transparent header -->
+	
+	<section>
+		<div class="ext-gap bluesh high-opacity">
+			<div class="content-bg-wrap" style="background: url(/static/img/resources/animated-bg2.png)"></div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="top-banner">
+							<h1>Blog Detail</h1>
+							<nav class="breadcrumb">
+							  <a class="breadcrumb-item" href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/index-2.html">Home</a>
+							  <a class="breadcrumb-item" href="http://127.0.0.1:8000/en/blog/">Blog</a>
+							  <span class="breadcrumb-item active">Comment Écrire Et Partager Son Article</span>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- top area animated -->
+	
+	<section>
+		<div class="gap ext-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="offset-lg-1 col-lg-10">
+						<div class="detail-page">
+							<div class="detail-top">
+								
+								<img src="Workin%20-%20Blog_fichiers/82226ae995314bab12091f4184119cd8.jpg" alt="Featured Image" class="card-img-top">
+								
+							<div class="detail-meta">
+								<h2>Comment Écrire Et Partager Son Article</h2>
+								
+								<div class="post-time">
+									<div class="author-thumb">
+									  
+											<img src="Workin%20-%20Blog_fichiers/082b4fc4c6.jpg" alt="" style="width:36px;height:36px">
+										
+									<span><a href="#" title="">by Abed</a></span>
+								</div>
+									<span class="post-date">
+										<i class="fa fa-calendar"></i>
+										<a title="" href="#">2&nbsp;weeks, 2&nbsp;days ago</a>
+									</span>
+									<span class="coments">
+										<i class="fa fa-comments"></i>
+										<a title="" href="#">25</a>
+									</span>
+								</div>
+								<p>
+									</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+ Sed vitae augue sollicitudin, laoreet felis sit amet, aliquet ex. 
+Mauris purus ante, tincidunt vel feugiat fringilla, vulputate vel 
+lectus. Maecenas urna nisl, maximus nec lacus eget, sagittis rhoncus 
+arcu. Praesent in risus a lectus imperdiet commodo. Cras eu felis id 
+arcu aliquet malesuada. Etiam auctor dictum turpis, tempor fermentum 
+libero commodo quis. Nulla pulvinar odio vel justo lobortis cursus. Duis
+ viverra eros sed purus pharetra, convallis consequat dolor feugiat. 
+Quisque consectetur lacinia enim, sed laoreet tellus imperdiet 
+fringilla. Pellentesque erat diam, ultrices eget vehicula a, volutpat 
+vel justo. Fusce a facilisis nisi, facilisis aliquam leo. Nullam 
+dignissim elementum est, non tincidunt ex bibendum auctor. In orci dui, 
+feugiat id libero vel, fermentum posuere elit. Ut maximus libero metus, 
+sed eleifend leo rhoncus rutrum. Nam vestibulum sem nec ante malesuada, 
+non vestibulum enim tempor. Nullam bibendum arcu sapien, a aliquam ipsum
+ finibus eu. </p>
+<pre class="hljs python"><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">signup</span><span class="hljs-params">(request)</span>:</span>
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">'POST'</span>:
+        form = SignUpForm(request.POST)
+        <span class="hljs-keyword">if</span> form.is_valid():
+            user = form.save()
+            auth_login(request, user)
+            <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">'home'</span>)
+    <span class="hljs-keyword">else</span>:
+        form = SignUpForm()
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">'signup.html'</span>, {<span class="hljs-string">'form'</span>: form})
+</code></pre>
+
+<h1>Comment commencer</h1>
+<ol>
+<li>Test 1</li>
+<li>Test 2</li>
+<li>Test 3</li>
+</ol>
+<blockquote>
+<p>Ceci est un ‘Quote’ c’est juste un test !</p>
+</blockquote>
+<p><a href="http://127.0.0.1:8000/accounts/abed/">Voir ma page</a></p>
+								<p></p>
+								<div class="tag-n-cat">
+									<div class="tags">
+										<span><i class="fa fa-tags"></i> Post Tags:</span>
+										
+										<a href="#" title="">python</a>
+										
+										<a href="#" title="">javascript</a>
+										
+										<a href="#" title="">django</a>
+										
+									</div>
+								</div>
+								<div class="gap-60">
+									<div class="site-admin">
+										<div class="admin-avatar">
+											
+											<img src="Workin%20-%20Blog_fichiers/082b4fc4c6.jpg" alt="">
+											
+										</div>
+										<div class="admin-postmeta">
+											<h4>Abed Zim</h4>
+											<span>Ingénieur Web</span>
+											<p>
+												I always loved computers and technology in general. In 2011 I was lucky enough to be invited.
+											</p>
+											
+										</div>
+									</div>
+								</div>
+								
+								<div class="gap-60 no-top">
+									<div class="comment-area">
+										<h4 class="comment-title has-comments-title">1 comment to Comment écrire et partager son article</h4>
+										<ul class="comments">
+											<li>
+												<div class="comment-box">
+													<div class="commenter-photo">
+														<img alt="" src="Workin%20-%20Blog_fichiers/commenter-1.html">
+													</div>
+													<div class="commenter-meta">
+														
+
+
+<div id="comments-None" data-object-id="None" class="comments ">
+  
+
+        <div id="c1" class="comment-item">
+          
+            
+              <h4>
+                
+                  
+                  Abed Zim
+                  <span class="comment-date">on July 14, 2019, 9:50 p.m.</span>
+                  
+                  
+                
+              </h4>
+
+              <div class="comment-text"><p>j'essaye juste de poster un commentaire pour voir ce que ça donne !</p></div>
+          
+        </div>
+
+</div>
+
+
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div><!-- comments sec -->
+								<div class="gap-60 no-gap">
+									<h4 class="comment-title">Leave a Comment</h4>
+									<div class="contact-form">
+										
+
+
+  
+    <form id="comment-form-2" data-object-id="2" action="/comments/post/" method="post" class="js-comments-form comments-form form-horizontal" data-ajax-action="/comments/post/ajax/">
+      
+  
+
+      
+        
+          
+
+<input type="hidden" name="csrfmiddlewaretoken" value="nGy0wQuAWKsF2AR94mIOuQapMAMTJ4tSaPcP56G9FzvjEaNDXYPCOknlz5iiEdlU"> <input type="hidden" name="content_type" value="articles.article" id="id_content_type"> <input type="hidden" name="object_pk" value="2" id="id_object_pk"> <input type="hidden" name="timestamp" value="1564586134" id="id_timestamp"> <input type="hidden" name="security_hash" value="f83bc6517e1c72a377fedb7874f4439d15794620" id="id_security_hash"> <div id="div_id_name" class="form-group"> <label for="id_name" class="form-control-label col-sm-2 requiredField">
+                Name<span class="asteriskField">*</span> </label> <div class="col-sm-10"> <input type="text" name="name" maxlength="50" class="textinput textInput form-control" required="" id="id_name"> </div> </div> <div id="div_id_email" class="form-group"> <label for="id_email" class="form-control-label col-sm-2 requiredField">
+                Email address<span class="asteriskField">*</span> </label> <div class="col-sm-10"> <input type="email" name="email" class="emailinput form-control" required="" id="id_email"> </div> </div> <div id="div_id_url" class="form-group"> <label for="id_url" class="form-control-label col-sm-2">
+                URL
+            </label> <div class="col-sm-10"> <input type="url" name="url" class="urlinput form-control" id="id_url"> </div> </div> <div id="div_id_comment" class="form-group"> <label for="id_comment" class="form-control-label col-sm-2 requiredField">
+                Comment<span class="asteriskField">*</span> </label> <div class="col-sm-10"> <textarea name="comment" cols="40" rows="10" maxlength="3000" class="textarea form-control" required="" id="id_comment"></textarea> </div> </div> <div id="div_id_honeypot" class="form-group"> <label for="id_honeypot" class="form-control-label col-sm-2">
+                If you enter anything in this field your comment will be treated as spam
+            </label> <div class="col-sm-10"> <input type="text" name="honeypot" class="textinput textInput form-control" id="id_honeypot"> </div> </div>
+
+        
+
+        
+          
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <input type="submit" name="post" class="btn btn-primary" value="Post Comment">
+                <input type="submit" name="preview" class="btn btn-default" value="Preview">
+                
+<a href="#c0" class="comment-cancel-reply-link">cancel reply</a>
+<span class="comment-waiting" id="comment-waiting-2" style="display: none;">
+  <img src="Workin%20-%20Blog_fichiers/ajax-wait.gif" alt="" class="ajax-loader">Please wait . . .
+</span>
+<span class="comment-added-message" id="comment-added-message-2" style="display: none;">Your comment has been posted!</span>
+<div class="comment-moderated-message" id="comment-moderated-message-2" style="display: none;">Your comment has been posted, it will be visible for other users after approval.</div>
+
+              </div>
+            </div>
+          
+        
+      
+
+  
+    </form>
+  
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div></section>
+	
+	<section>
+		<div class="gap no-gap bluesh high-opacity btm-mockup">
+			<div class="content-bg-wrap" style="background: url(images/resources/btm-banner.png)"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="btm-baner">
+							<div class="baner-mockup">
+								<img src="Workin%20-%20Blog_fichiers/btm-baner-avatar.png" alt="">
+							</div>
+							<div class="baner-inf">
+								<span>wana more friends?</span>
+								<a href="#" title="">Start Now</a>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!-- footer top -->
+
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4">
+				<div class="widget">
+					<div class="foot-logo">
+						<div class="logo">
+							<a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/index-2.html" title=""><img src="Workin%20-%20Blog_fichiers/logo2-min.png" alt="" style="width:34px;height:34px;box-shadow: 0.2px 0.2px 12px #ffa500;border-radius:5px;"></a>
+						</div>	
+						<p>
+							The trio took this simple idea and built it into the world’s leading carpooling platform.
+						</p>
+					</div>
+					<ul class="location">
+						<li>
+							<i class="ti-map-alt"></i>
+							<p>33 new montgomery st.750 san francisco, CA USA 94105.</p>
+						</li>
+						<li>
+							<i class="ti-mobile"></i>
+							<p>+1-56-346 345</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-4">
+				<div class="widget">
+					<div class="widget-title"><h4>follow</h4></div>
+					<ul class="list-style">
+						<li><i class="fa fa-facebook-square"></i> <a href="https://web.facebook.com/shopcircut/" title="">facebook</a></li>
+						<li><i class="fa fa-twitter-square"></i><a href="https://twitter.com/login?lang=en" title="">twitter</a></li>
+						<li><i class="fa fa-instagram"></i><a href="https://www.instagram.com/?hl=en" title="">instagram</a></li>
+						<li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/discover" title="">Google+</a></li>
+						<li><i class="fa fa-pinterest-square"></i> <a href="https://www.pinterest.com/" title="">Pintrest</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-4">
+				<div class="widget">
+					<div class="widget-title"><h4>Navigate</h4></div>
+					<ul class="list-style">
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/about.html" title="">about us</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/contact.html" title="">contact us</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/terms.html" title="">terms &amp; Conditions</a></li>
+						<li><a href="#" title="">RSS syndication</a></li>
+						<li><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/sitemap.html" title="">Sitemap</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-4">
+				<div class="widget">
+					<div class="widget-title"><h4>useful links</h4></div>
+					<ul class="list-style">
+						<li><a href="#" title="">leasing</a></li>
+						<li><a href="#" title="">submit route</a></li>
+						<li><a href="#" title="">how does it work?</a></li>
+						<li><a href="#" title="">agent listings</a></li>
+						<li><a href="#" title="">view All</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-4">
+				<div class="widget">
+					<div class="widget-title"><h4>download apps</h4></div>
+					<ul class="colla-apps">
+						<li><a href="https://play.google.com/store?hl=en" title=""><i class="fa fa-android"></i>android</a></li>
+						<li><a href="https://www.apple.com/lae/ios/app-store/" title=""><i class="ti-apple"></i>iPhone</a></li>
+						<li><a href="https://www.microsoft.com/store/apps" title=""><i class="fa fa-windows"></i>Windows</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer><!-- footer -->
+	<div class="bottombar">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<span class="copyright"><a href="http://127.0.0.1:8000/en/blog/oiuytrfghjkljyhtgr/templatespoint.net">Templates Point</a></span>
+					<i><img src="Workin%20-%20Blog_fichiers/credit-cards.html" alt=""></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><div class="side-panel">
+			<h4 class="panel-title">General Setting</h4>
+			<form method="post">
+				<div class="setting-row">
+					<span>use night mode</span>
+					<input type="checkbox" id="nightmode1"> 
+					<label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Notifications</span>
+					<input type="checkbox" id="switch22"> 
+					<label for="switch22" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Notification sound</span>
+					<input type="checkbox" id="switch33"> 
+					<label for="switch33" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>My profile</span>
+					<input type="checkbox" id="switch44"> 
+					<label for="switch44" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Show profile</span>
+					<input type="checkbox" id="switch55"> 
+					<label for="switch55" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+			</form>
+			<h4 class="panel-title">Account Setting</h4>
+			<form method="post">
+				<div class="setting-row">
+					<span>Sub users</span>
+					<input type="checkbox" id="switch66"> 
+					<label for="switch66" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>personal account</span>
+					<input type="checkbox" id="switch77"> 
+					<label for="switch77" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Business account</span>
+					<input type="checkbox" id="switch88"> 
+					<label for="switch88" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Show me online</span>
+					<input type="checkbox" id="switch99"> 
+					<label for="switch99" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Delete history</span>
+					<input type="checkbox" id="switch101"> 
+					<label for="switch101" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+				<div class="setting-row">
+					<span>Expose author name</span>
+					<input type="checkbox" id="switch111"> 
+					<label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
+				</div>
+			</form>
+		</div><div class="strp-spinner-move" style="display: none;"><div class="strp-spinner" style="display: none;"><div class="strp-spinner-rotate" style="animation: 1s steps(80) 0s infinite normal none running strp-spinner-spin;"><div class="strp-spinner-frame" style="opacity: 0.01; transform: rotate(4.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.03; transform: rotate(9deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.04; transform: rotate(13.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.05; transform: rotate(18deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.06; transform: rotate(22.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.08; transform: rotate(27deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.09; transform: rotate(31.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.1; transform: rotate(36deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.11; transform: rotate(40.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.13; transform: rotate(45deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.14; transform: rotate(49.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.15; transform: rotate(54deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.16; transform: rotate(58.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.18; transform: rotate(63deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.19; transform: rotate(67.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.2; transform: rotate(72deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.21; transform: rotate(76.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.23; transform: rotate(81deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.24; transform: rotate(85.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.25; transform: rotate(90deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.26; transform: rotate(94.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.28; transform: rotate(99deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.29; transform: rotate(103.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.3; transform: rotate(108deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.31; transform: rotate(112.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.33; transform: rotate(117deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.34; transform: rotate(121.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.35; transform: rotate(126deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.36; transform: rotate(130.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.38; transform: rotate(135deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.39; transform: rotate(139.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.4; transform: rotate(144deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.41; transform: rotate(148.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.43; transform: rotate(153deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.44; transform: rotate(157.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.45; transform: rotate(162deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.46; transform: rotate(166.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.48; transform: rotate(171deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.49; transform: rotate(175.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.5; transform: rotate(180deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.51; transform: rotate(184.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.53; transform: rotate(189deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.54; transform: rotate(193.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.55; transform: rotate(198deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.56; transform: rotate(202.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.58; transform: rotate(207deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.59; transform: rotate(211.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.6; transform: rotate(216deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.61; transform: rotate(220.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.63; transform: rotate(225deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.64; transform: rotate(229.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.65; transform: rotate(234deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.66; transform: rotate(238.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.68; transform: rotate(243deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.69; transform: rotate(247.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.7; transform: rotate(252deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.71; transform: rotate(256.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.73; transform: rotate(261deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.74; transform: rotate(265.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.75; transform: rotate(270deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.76; transform: rotate(274.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.78; transform: rotate(279deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.79; transform: rotate(283.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.8; transform: rotate(288deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.81; transform: rotate(292.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.83; transform: rotate(297deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.84; transform: rotate(301.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.85; transform: rotate(306deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.86; transform: rotate(310.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.88; transform: rotate(315deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.89; transform: rotate(319.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.9; transform: rotate(324deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.91; transform: rotate(328.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.93; transform: rotate(333deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.94; transform: rotate(337.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.95; transform: rotate(342deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.96; transform: rotate(346.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.98; transform: rotate(351deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.99; transform: rotate(355.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 1; transform: rotate(360deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div></div></div></div><div class="strp-window strp-measured strp-window-skin-strip"><div class="strp-pages"></div><div class="strp-nav strp-nav-previous" style="display: none;"><div class="strp-nav-button" style="display: none;"><div class="strp-nav-button-background"></div><div class="strp-nav-button-icon"></div></div></div><div class="strp-nav strp-nav-next" style="display: none;"><div class="strp-nav-button" style="display: none;"><div class="strp-nav-button-background"></div><div class="strp-nav-button-icon"></div></div></div><div class="strp-close"><div class="strp-close-background"></div><div class="strp-close-icon"></div></div></div><div id="topcontrol" style="position: fixed; bottom: 5px; right: 5px; opacity: 1; cursor: pointer;" title="Scroll to Top"><img src="Workin%20-%20Blog_fichiers/rocket1.png"></div><div class="strp-spinner-move" style="display: none;"><div class="strp-spinner" style="display: none;"><div class="strp-spinner-rotate" style="animation: 1s steps(80) 0s infinite normal none running strp-spinner-spin;"><div class="strp-spinner-frame" style="opacity: 0.01; transform: rotate(4.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.03; transform: rotate(9deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.04; transform: rotate(13.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.05; transform: rotate(18deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.06; transform: rotate(22.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.08; transform: rotate(27deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.09; transform: rotate(31.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.1; transform: rotate(36deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.11; transform: rotate(40.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.13; transform: rotate(45deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.14; transform: rotate(49.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.15; transform: rotate(54deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.16; transform: rotate(58.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.18; transform: rotate(63deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.19; transform: rotate(67.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.2; transform: rotate(72deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.21; transform: rotate(76.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.23; transform: rotate(81deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.24; transform: rotate(85.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.25; transform: rotate(90deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.26; transform: rotate(94.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.28; transform: rotate(99deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.29; transform: rotate(103.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.3; transform: rotate(108deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.31; transform: rotate(112.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.33; transform: rotate(117deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.34; transform: rotate(121.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.35; transform: rotate(126deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.36; transform: rotate(130.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.38; transform: rotate(135deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.39; transform: rotate(139.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.4; transform: rotate(144deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.41; transform: rotate(148.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.43; transform: rotate(153deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.44; transform: rotate(157.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.45; transform: rotate(162deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.46; transform: rotate(166.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.48; transform: rotate(171deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.49; transform: rotate(175.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.5; transform: rotate(180deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.51; transform: rotate(184.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.53; transform: rotate(189deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.54; transform: rotate(193.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.55; transform: rotate(198deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.56; transform: rotate(202.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.58; transform: rotate(207deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.59; transform: rotate(211.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.6; transform: rotate(216deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.61; transform: rotate(220.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.63; transform: rotate(225deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.64; transform: rotate(229.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.65; transform: rotate(234deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.66; transform: rotate(238.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.68; transform: rotate(243deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.69; transform: rotate(247.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.7; transform: rotate(252deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.71; transform: rotate(256.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.73; transform: rotate(261deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.74; transform: rotate(265.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.75; transform: rotate(270deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.76; transform: rotate(274.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.78; transform: rotate(279deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.79; transform: rotate(283.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.8; transform: rotate(288deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.81; transform: rotate(292.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.83; transform: rotate(297deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.84; transform: rotate(301.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.85; transform: rotate(306deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.86; transform: rotate(310.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.88; transform: rotate(315deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.89; transform: rotate(319.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.9; transform: rotate(324deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.91; transform: rotate(328.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.93; transform: rotate(333deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.94; transform: rotate(337.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.95; transform: rotate(342deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.96; transform: rotate(346.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.98; transform: rotate(351deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 0.99; transform: rotate(355.5deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div><div class="strp-spinner-frame" style="opacity: 1; transform: rotate(360deg);"><div class="strp-spinner-line" style="background: rgba(0, 0, 0, 0.87) none repeat scroll 0% 0%;"></div></div></div></div></div><div class="strp-window strp-measured strp-window-skin-strip"><div class="strp-pages"></div><div class="strp-nav strp-nav-previous" style="display: none;"><div class="strp-nav-button" style="display: none;"><div class="strp-nav-button-background"></div><div class="strp-nav-button-icon"></div></div></div><div class="strp-nav strp-nav-next" style="display: none;"><div class="strp-nav-button" style="display: none;"><div class="strp-nav-button-background"></div><div class="strp-nav-button-icon"></div></div></div><div class="strp-close"><div class="strp-close-background"></div><div class="strp-close-icon"></div></div></div></div>
+	<!-- side panel -->		
+	
+	<script src="Workin%20-%20Blog_fichiers/main.js"></script>
+	<script src="Workin%20-%20Blog_fichiers/strip.js"></script>
+	<script src="Workin%20-%20Blog_fichiers/script.js"></script>
+	 <script type="text/javascript" src="Workin%20-%20Blog_fichiers/semantic.js"></script>
+  <script type="text/javascript" src="Workin%20-%20Blog_fichiers/highlight.js"></script>
+  <script type="text/javascript" src="Workin%20-%20Blog_fichiers/ajaxcomments_002.html"></script>
+  <script>
+    $('pre').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+    $('.ui.dropdown').dropdown();
+  </script>
+
+	
+
+<div id="mm-blocker" class="mm-slideout"></div></body></html>

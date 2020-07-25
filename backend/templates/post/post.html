@@ -1,0 +1,151 @@
+{% extends 'base/base.html' %}
+
+{% load static custom_tags %}
+
+{% block content %}
+<style>
+.post
+{
+    background-color: #FFF;
+    overflow: hidden;
+    box-shadow: 0 0 1px #CCC;
+    padding: 1px;
+}
+.post .post-title b
+{
+    background-color: rgba(51, 51, 51, 0.58);
+    display: inline-block;
+    color: #FFF;
+    padding: 10px 15px;
+    margin-top: 5px;
+}
+
+</style>
+<div class="card view-update {{ post.pk }}">
+    <div class="post">
+    <div class="desktop-block">
+    <div class="col-xs-12" style="padding-bottom: 20px;">
+    <h5 style="font-size: 2em; padding-bottom: 15px;">
+        {{ post.title }} <p class="pull-right" style="color: #999; font-size: 0.5em; padding-top: 15px;"> {{ post.time_created | timesince }}</p>
+    </h5>
+    {% if post.image %}
+    <div class="col-xs-8">
+        <span class="image fit">
+            <img class="img-rounded" data-src="..." alt="Card image cap" src="{{ post.image.url }}" width=100% height="85%">
+        </span>
+    </div>
+    {% endif %}
+   <p style="color: #464744; font-size: 1.2em;">{{ post.content }}</p>
+    </div>
+    <h4 class="pull-right" style="padding: 15px 15px;">
+        <a class="pull-right" href="{% url 'likes:likes' pk=post.pk %}">Likes: {{ post.get_number_of_likes }}</a>
+    </h4>
+     <div class="card__panel-body">
+        <ul class="comment-list">
+          {% for comment in post.comment_set.all %}
+            <li class="comment-list__comment">
+              <a href="{% url 'userprofile:see_user' user_username=comment.user.username %}" class="user">
+                {{ comment.user.username }}
+              </a>
+              <span class="comment">{{ comment.comment }}</span>
+            </li>
+          {% endfor %}
+        </ul>
+        {% if request.user.is_authenticated %}
+          <section class="input-row">
+            <i class="fa {% has_user_liked_post post request.user %} submit-like" aria-hidden="true"></i>
+            <div class="comment-input-wrapper">
+              <input class="add-comment" type="text" placeholder="Add a comment...">
+            </div>
+            <div class="hidden-data {{ post.pk }}" style="display: none;">
+              <span class="post-pk">{{ post.pk }}</span>
+            </div>
+          </section>
+        {% endif %}
+        <br>
+        {% if post.user == request.user %}
+            <p class="actions pull-right">
+                <!-- Button trigger modal -->
+                <a href="{% url "posts:edit_post" id=post.id %}" class="button scrolly">edit </a>
+                |<a href="" class="button scrolly" data-toggle="modal" data-target="#myModal"> delete</a>
+            </p>
+        {% endif %}
+    </div>
+    </div>
+<div class="mobile-block">
+         <h5 style="font-size: 2em;">
+            <a href="{% url "posts:see_post" id=post.id %}">
+                <p class="pull-right" style="color: #999; font-size: 0.5em; padding-top: 15px;"> {{ post.time_created | timesince }}</p>
+            </a>
+        </h5>
+        {% if post.image %}
+            <img data-src="..." alt="Card image cap" src="{{ post.image.url }}" width=100% height="85%">
+        {% endif %}
+            <span class="post-title"><b>{{ post.title }}</b>
+            </span>
+            <br>
+            <h3 class="pull-right" style="padding: 15px 15px;">
+            Likes:
+            <a href="{% url 'likes:likes' pk=post.pk %}" class="likes">
+                 {{ post.get_number_of_likes }}
+            </a>
+            </h3>
+            <br>
+
+        <div class="content"  style="padding: 15px;">
+            <p style="color: #3a3e47;">{{ post.content }}</p>
+        </div>
+        <div class="card__panel-body">
+            <ul class="comment-list">
+              {% for comment in post.comment_set.all %}
+                <li class="comment-list__comment">
+                  <a href="{% url 'userprofile:see_user' comment.user.username %}" class="user">
+                    {{ comment.user.username }}
+                  </a>
+                  <span class="comment">{{ comment.comment }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+            {% if request.user.is_authenticated %}
+              <section class="input-row">
+                <i class="fa {% has_user_liked_post post request.user %} submit-like" aria-hidden="true"></i>
+                <div class="comment-input-wrapper">
+                  <input class="add-comment" type="text" placeholder="Add a comment...">
+                </div>
+                <div class="hidden-data {{ post.pk }}" style="display: none;">
+                  <span class="post-pk">{{ post.pk }}</span>
+                </div>
+              </section>
+            {% endif %}
+            <br>
+            {% if post.user == request.user %}
+                <p class="actions pull-right">
+                    <!-- Button trigger modal -->
+                    <a href="{% url "posts:edit_post" id=post.id %}" class="button scrolly">edit </a>
+                    |<a href="" class="button scrolly" data-toggle="modal" data-target="#myModal"> delete</a>
+                </p>
+            {% endif %}
+        </div>
+    </div>
+  </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Delete</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure to delete the post?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <a href="{% url "posts:delete_post" id=post.id %}" class="btn btn-success"><strong>Yes</strong></a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

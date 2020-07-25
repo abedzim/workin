@@ -1,0 +1,34 @@
+<!--AI==========================================================
+	This page is the index page shown right when the user
+	logs in but hasn't opened a room to chat in yet.
+	Might become redundant in the future.
+===========================================================AI-->
+
+{% extends base_template %}
+{% load static %}
+{% block extrahead %}
+	{{ block.super }}
+	<link rel="stylesheet" href = "{% static 'css/index.css' %}">
+{% endblock extrahead %}
+
+{% block content %}
+	{{ block.super }}
+	<!--AI==========================================================
+		This includes the list of rooms that the user belongs to.
+	===========================================================AI-->
+	{% include 'django_chatter/chatroom-list.html' %}
+
+	<!--AI==========================================================
+		This is the space that gives instruction to the user as to
+		what to do when the user is on the index page.
+	===========================================================AI-->
+	<div class = "chat-section">
+		<h3>Select a Chat to get started.</h3>
+		<h6>Or type in a user's username you want to chat with.</h6>
+	</div>
+
+	<!--AI==========================================================
+		JS that generates list of users for the user to search.
+	===========================================================AI-->
+	<script src = "{% static 'js/index.js' %}"></script>
+{% endblock content %}

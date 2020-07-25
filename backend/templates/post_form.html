@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+{% load static crispy_forms_tags %}
+
+
+{% block extrastyle %}
+   <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'plugins/css/semantic.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'plugins/css/resizable.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'martor/css/martor.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+{% endblock extrastyle %}
+
+{% block content %}
+<div class='col-sm-6 col-sm-offset-3'>
+<h1>Form</h1>
+
+<form class="ui form" method="post" action='' enctype='multipart/form-data'>
+{% csrf_token %}
+<div class="field">
+{{ form }}
+</div>
+<input type='submit' class='btn btn-succsess' value='Create Post' />
+</form>
+</div>
+{% endblock content %}
+{% block extrajs %}
+<script type="text/javascript" src="{% static 'plugins/js/ace.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/semantic.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/mode-markdown.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/ext-language_tools.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/theme-github.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/resizable.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/emojis.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'martor/js/martor.min.js' %}"></script>
+  <script>
+    $('form [name="title"]').attr({'placeholder': 'Post Title'});
+    $('.ui.menu .ui.dropdown.item').dropdown();
+  </script>
+{% endblock %}

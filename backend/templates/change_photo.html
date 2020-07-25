@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="image-upload">
+    <label for="file-input">
+        <img src="https://goo.gl/pB9rpQ"/>
+    </label>
+    <i class="fa fa-camera"></i>
+    <input id="file-input" name='mugshot' type="file"/>
+</div>
+<style>
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 80px;
+    cursor: pointer;
+}
+</style>
+{% endblock %}
+

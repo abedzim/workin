@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <div class="row">
+
+        <h2>(8) Editing a Django Model in the front-end, using a common basecode for creation and updating</h2>
+
+        <div class="col-sm-6">
+            <h1>Artists</h1>
+            {% if not artists %}
+                <div>No artists availalbe yet</div>
+            {% else %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Edit</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for artist in artists %}
+                        <tr>
+                            <td>
+                                <a href=""
+                                   data-action="{% url 'frontend:artist-change' artist.id %}"
+                                   onclick="openModalDialogWithForm(event, '#modal_generic', null, afterArtistEditSuccess); return false;"
+                                   data-title="Change artist: {{ artist }}"
+                                >
+                                    <i class="fa fa-edit"></i> Edit
+                                </a>
+                            </td>
+                            <td>{{ artist }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            <div>
+                <button
+                    href=""
+                    data-action="{% url 'frontend:artist-add' %}"
+                    data-title="New artist"
+                    onclick="openModalDialogWithForm(event, '#modal_generic', null, afterArtistEditSuccess); return false;"
+                    type="button"class="btn btn-primary">
+                    New
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block extrajs %}
+
+    <script language="javascript">
+
+        function afterArtistEditSuccess(modal) {
+            var object_id = modal.find('input[name=object_id]').val();
+            console.log(object_id);
+            location.reload(true);
+        }
+
+    </script>
+
+{% endblock extrajs %}
+

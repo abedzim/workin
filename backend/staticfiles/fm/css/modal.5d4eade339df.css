@@ -1,0 +1,38 @@
+/* .modal{
+  position: fixed
+  z-index: 1051;
+}
+.modal-backdrop {
+  z-index: 1;
+}  */
+
+
+
+.modal-header {
+  background-color: #ffad33;
+}
+
+.modal-buttons {
+  margin: 10px 5px;
+  padding: 10px;
+}
+
+#btnn {
+  background-color: orange ;
+  outline: none;
+  border: none;
+}
+
+#btnn:hover {
+  background-color:#ffcc80;
+}
+
+#btnnn {
+  background-color: #ff0000 ;
+  outline: none;
+  border: none;
+}
+
+#btnnn:hover {
+  background-color:#ff4d4d;
+}

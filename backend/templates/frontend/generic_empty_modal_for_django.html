@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>(4) A generic empty modal for Django</h1>
+
+    <ul>
+        <li>
+            <a href=""
+               onclick="openModalDialog(event, '#modal_generic'); return false;">
+                <i class="fa fa-keyboard-o"></i> Open generic modal (no contents, no customizations)
+            </a>
+        </li>
+        <li>
+            <a href=""
+               data-dialog-class="modal-lg"
+               data-title="Set value"
+               data-subtitle="Insert the new value to be assigned to the Register"
+               data-icon="fa-keyboard-o"
+               data-button-save-label="Save"
+               onclick="openModalDialog(event, '#modal_generic'); return false;">
+                <i class="fa fa-keyboard-o" style="pointer-events: none;"></i> Open generic modal (no contents)
+            </a>
+        </li>
+    </ul>
+
+{% endblock content %}

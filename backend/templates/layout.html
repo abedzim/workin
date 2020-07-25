@@ -1,0 +1,235 @@
+{% extends "base_wlc.html" %}
+{% load staticfiles %}
+{% block headerContent %}
+
+<div class="container">
+				<div class="header-data">
+					<div class="logo">
+						<a href="{% url 'welcome' %}" title=""><img src="{% static 'img/resources/lg.png' %}" alt=""></a>
+					</div><!--logo end-->
+					{% if user.is_authenticated %}
+
+					<div class="search-bar">
+						<form  role="search" action="{% url 'search:results' %}" method='get'>
+							<input name="query" type="search" id="searchInput" class="form-control" placeholder="Search" aria-label="Search" autocomplete="on">
+							<div id="selction-ajax"></div>
+							<button type="submit"><i class="la la-search"></i></button>
+						</form>
+					</div><!--search-bar end-->
+
+					<nav >
+						<ul>
+		
+							<li>
+								<a href="companies.html" title="">
+									<span><img src="{% static 'img/icon2.png' %}" alt=""></span>
+									Companies
+								</a>
+							</li>
+							<li>
+								<a href="#" title="">
+									<span><img src="{% static 'img/icon3.png' %}" alt=""></span>
+									Talking
+								</a>
+							</li>
+							<li>
+								<a href="{% url 'search:results' %}"title="">
+									<span><img src="{% static 'img/icon4.png' %}" alt=""></span>
+									Profiles
+								</a>
+								<ul>
+									<li><a href="user-profile.html" title="">User Profile</a></li>
+									<li><a href="my-profile-feed.html" title="">my-profile-feed</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="{% url 'jobsearch:haystack_search' %}" title="">
+									<span><img src="{% static 'img/icon5.png' %}" alt=""></span>
+									Jobs
+								</a>
+							</li>
+							<li>
+								<a href="#" title="" class="not-box-open">
+									<span><img src="{% static 'img/icon6.png' %}" alt=""></span>
+									Messages
+								</a>
+								<div class="notification-box msg">
+									<div class="nt-title">
+										<h4>Setting</h4>
+										<a href="#" title="">Clear all</a>
+									</div>
+									<div class="nott-list">
+										<div class="notfication-details">
+							  				<div class="noty-user-img">
+							  					<img src="{% static 'img/resources/ny-img1.png' %}" alt="">
+							  				</div>
+							  				<div class="notification-info">
+							  					<h3><a href="messages.html" title="">Jassica William</a> </h3>
+							  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+							  					<span>2 min ago</span>
+							  				</div><!--notification-info -->
+						  				</div>
+						  				<div class="notfication-details">
+							  				<div class="noty-user-img">
+							  					<img src="{% static 'img/resources/ny-img2.png' %}" alt="">
+							  				</div>
+							  				<div class="notification-info">
+							  					<h3><a href="messages.html" title="">Jassica William</a></h3>
+							  					<p>Lorem ipsum dolor sit amet.</p>
+							  					<span>2 min ago</span>
+							  				</div><!--notification-info -->
+						  				</div>
+						  				<div class="notfication-details">
+							  				<div class="noty-user-img">
+							  					<img src="{% static 'img/resources/ny-img3.png' %}" alt="">
+							  				</div>
+							  				<div class="notification-info">
+							  					<h3><a href="messages.html" title="">Jassica William</a></h3>
+							  					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut labore et dolore magna aliqua.</p>
+							  					<span>2 min ago</span>
+							  				</div><!--notification-info -->
+						  				</div>
+						  				<div class="view-all-nots">
+						  					<a href="{% url 'messager:messages_list' %}" title="">View All Messsages</a>
+						  				</div>
+									</div><!--nott-list end-->
+								</div><!--notification-box end-->
+							</li>
+							<li class="nav-item">
+								<a href="#" title="" class="not-box-open">
+									<span><img src="{% static 'img/icon7.png' %}" alt=""></span>
+									Notification
+								</a>
+								<div class="notification-box">
+									<div class="nt-title">
+										<h4>Setting</h4>
+										<a href="#" title="">Clear all</a>
+									</div>
+									<div class="nott-list">
+										<div class="notfication-details">
+							  				<div class="noty-user-img">
+							  					<img src="{% static 'img/resources/ny-img1.png' %}" alt="">
+							  				</div>
+							  				<div class="notification-info">
+							  					<h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
+							  					<span>2 min ago</span>
+							  				</div><!--notification-info -->
+						  				</div>
+						  				<div class="notfication-details">
+							  				<div class="noty-user-img">
+							  					<img src="{% static 'img/resources/ny-img2.png' %}" alt="">
+							  				</div>
+							  				<div class="notification-info">
+							  					<h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
+							  					<span>2 min ago</span>
+							  				</div><!--notification-info -->
+						  				</div>
+						  				<div class="notfication-details">
+							  				<div class="noty-user-img">
+							  					<img src="{% static 'img/resources/ny-img3.png' %}" alt="">
+							  				</div>
+							  				<div class="notification-info">
+							  					<h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
+							  					<span>2 min ago</span>
+							  				</div><!--notification-info -->
+						  				</div>
+						  				<div class="notfication-details">
+							  				<div class="noty-user-img">
+							  					<img src="{% static 'img/resources/ny-img2.png' %}" alt="">
+							  				</div>
+							  				<div class="notification-info">
+							  					<h3><a href="#" title="">Jassica William</a> Comment on your project.</h3>
+							  					<span>2 min ago</span>
+							  				</div><!--notification-info -->
+						  				</div>
+						  				<div class="view-all-nots">
+						  					<a href="#" title="">View All Notification</a>
+						  				</div>
+									</div><!--nott-list end-->
+								</div><!--notification-box end-->
+							</li>
+						</ul>
+					</nav><!--nav end-->
+					<div class="menu-btn">
+						<a href="#" title=""><i class="fa fa-bars"></i></a>
+					</div><!--menu-btn end-->
+					<div class="user-account">
+						<div class="user-info">
+							
+							{% if user.profile.get_mugshot_url %}
+							<img src="{{ user.profile.get_mugshot_url }}" alt="" />
+							{% else %}
+							<img src="static/img/user.png" alt="">
+							{% endif %}
+							<i class="fas fa-sort-down"></i>
+							
+						</div>
+						<div class="user-account-settingss">
+							<h3>Online Status</h3>
+							<ul class="on-off-status">
+								<li>
+									<div class="fgt-sec">
+										<input type="radio" name="cc" id="c5">
+										<label for="c5">
+											<span></span>
+										</label>
+										<small>Online</small>
+									</div>
+								</li>
+								<li>
+									<div class="fgt-sec">
+										<input type="radio" name="cc" id="c6">
+										<label for="c6">
+											<span></span>
+										</label>
+										<small>Offline</small>
+									</div>
+								</li>
+							</ul>
+							<h3>Custom Status</h3>
+							<div class="search_form">
+								<form>
+									<input type="text" name="search">
+									<button type="submit">Ok</button>
+								</form>
+							</div><!--search_form end-->
+							<h3>Setting</h3>
+							<ul class="us-links">
+								<li><a href="profile-account-setting.html" title="">Account Setting</a></li>
+								<li><a href="#" title="">Privacy</a></li>
+								<li><a href="#" title="">Faqs</a></li>
+								<li><a href="#" title="">Terms & Conditions</a></li>
+							</ul>
+							<h3 class="tc"><a href="{% url 'userena_signout' %}" title="">Logout</a></h3>
+						</div><!--user-account-settingss end-->
+					</div>
+				</div><!--header-data end-->
+			</div>
+		<!--header end-->
+		{% else %}
+		<div class="col-6 text-right" id="follow">
+			<form class="form-inline ml-auto">
+	            <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>                
+	            <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+	        </form>
+    	</div>
+		{% endif %}
+
+		<script type="text/javascript">
+          $(function() {
+			   $('#searchInput').autocomplete({
+				serviceUrl: "http://127.0.0.1:8000/usersearch/autocomplete/",
+				minChars: 0,
+				dataType: 'json',
+				type: 'GET',
+				onSelect: function (suggestion) {
+					console.log( suggestion.value + ', data :' + suggestion.data);
+				}
+			});
+
+			}).focus(function () {
+			$(this).autocomplete("search",'');
+		});
+        </script>
+
+{% endblock %}

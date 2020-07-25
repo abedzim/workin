@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% load static i18n %}
+{% load crispy_forms_tags %}
+
+{% block extrastyle %}
+   <link href="{% static 'plugins/css/ace.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'plugins/css/semantic.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'plugins/css/resizable.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+  <link href="{% static 'martor/css/martor.min.css' %}" type="text/css" media="all" rel="stylesheet" />
+{% endblock extrastyle %}
+
+{% block content %}
+
+  <form action="{% url 'articles:write_new' %}" enctype="multipart/form-data"  id="article-form" method="post" role="form">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="form-group">
+      <button type="button" class="btn btn-primary publish">{% trans 'Publish' %}</button>
+      <button type="button" class="btn btn-default draft">{% trans 'Save as draft' %}</button>
+      <a href="{% url 'articles:list' %}" class="btn btn-default">{% trans 'Cancel' %}</a>
+    </div>
+  </form>
+  {{ form.media }}
+
+{% endblock content %}
+{% block extrajs %}
+<script type="text/javascript" src="{% static 'plugins/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'plugins/js/ace.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/semantic.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/mode-markdown.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/ext-language_tools.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/theme-github.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/highlight.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/resizable.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'plugins/js/emojis.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'martor/js/martor.min.js' %}"></script>
+  
+  <script>
+    $('form [name="title"]').attr({'placeholder': 'Post Title'});
+    $('.ui.menu .ui.dropdown.item').dropdown();
+  </script>
+{% endblock %}
+
+{% block modal %}
+  <script src="{% static 'js/articles.js' %}"></script>
+{% endblock modal %}

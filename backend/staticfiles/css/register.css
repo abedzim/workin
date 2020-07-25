@@ -1,0 +1,62 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+	font-size: 12px;
+	color: #000333;
+	background: #e6ecf0;
+}
+
+body div.container {
+	background-color: #FFFFFF;
+	padding-top: 13px;
+	padding-left: 1px;
+	padding-right: 0;
+	width: 660px;
+	border: 0.1px solid #bcbcbc;
+	margin-top: 57px;
+}
+
+form#form {
+	margin-left: 90px;
+	margin-right: 90px;
+}
+
+.backlogin {
+	margin-left: 90px;
+	margin-right: 90px;
+	padding-top: 10px;
+	
+}
+
+#zim {
+	background-color: #f0f9f9;
+	margin-bottom: 1px;
+	padding-bottom: 13px;
+	margin-top: 13px;
+	padding-top: 13px;
+}
+
+#register header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 47px;
+	width: 100%;
+	background: #1A95B6 ;
+	border-bottom: 2px solid #188dab
+}
+
+#zzz {
+	text-align: center;
+	font-size: 27px;
+	padding: 0 0 5px 0;
+	color: #1A95B6;
+}
+
+div.form-check {
+	display: inline-block;
+	margin-right: 20px
+}
+
+

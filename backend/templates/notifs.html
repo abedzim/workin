@@ -1,0 +1,53 @@
+{% load static i18n %}
+{% load humanize %}
+
+<style>
+.zznn > ul {
+    display: inline-block;
+    list-style: outside none none;
+}
+.zznn > ul > li {
+    margin-left: -45px;
+    margin-bottom: 10px;
+}
+.zznn > ul > li > span img {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px
+}
+.zznn > ul > li p{
+    line-height: normal;
+    margin-bottom: -2px
+}
+.timenotif {
+    color: orange;
+    margin-bottom: 15px
+}
+
+</style>
+<div class="zznn">
+<ul>
+  {% if notifications %}
+    {% for notification in notifications %}
+      <li class="clearfix">
+        <span class="float-left">
+        {% if notification.actor.profile.get_mugshot_url %}
+			<img src="{{ notification.actor.profile.get_mugshot_url }}" alt="" />
+		{% else %}
+			<img src="/static/img/user1.png" alt="">
+		{% endif %}
+        </span>
+        <p><a href="{% url 'notifications:unread' %}">@{{ notification|truncatechars:50 }}</a></p>
+        {% comment %} <i class="fa {{ notification.get_icon }} fa-stack-1x"></i> {% endcomment %}
+        <span class="timenotif"><small>{{ notification.timestamp|naturaltime }}</small></span>
+        
+      </li>
+    {% endfor %}
+    <a type="button" class="more" href="{% url 'notifications:unread' %}">{% trans 'See all' %}</a>
+    {% comment %} <a type="button" class="btn btn-light text-center float-right" href="{% url 'notifications:mark_all_read' %}">{% trans 'Mark all as read' %}</a> {% endcomment %}
+  {% else %}
+    <li class="text-center">{% trans 'You have no unread notification' %}</li>
+  {% endif %}
+</ul>
+</div>

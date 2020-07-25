@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>(3) A basic modal box with Bootstrap 3</h1>
+
+    <button id="button-open-modal">Open Modal</button>
+    <button id="button-open-large-modal">Open Large Modal</button>
+    <button id="button-open-small-modal">Open Small Modal</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+{% block extrajs %}
+    <script type="text/javascript">
+
+        'use strict';
+
+        $(document).ready(function() {
+
+            $('#button-open-modal').on('click', function(event) {
+                set_modal_size('');
+                $('#myModal').modal('show');
+            })
+
+            $('#button-open-large-modal').on('click', function(event) {
+                set_modal_size('modal-lg');
+                $('#myModal').modal('show');
+            })
+
+            $('#button-open-small-modal').on('click', function(event) {
+                set_modal_size('modal-sm');
+                $('#myModal').modal('show');
+            })
+
+            // Show modal events
+            $('#myModal')
+                .on('show.bs.modal', function(event) {console.log('show.bs.modal'); })
+                .on('shown.bs.modal', function(event) {console.log('shown.bs.modal'); })
+                .on('hide.bs.modal', function(event) {console.log('hide.bs.modal'); })
+                .on('hidden.bs.modal', function(event) {console.log('hidden.bs.modal'); })
+                .on('loaded.bs.modal', function(event) {console.log('loaded.bs.modal'); });
+        });
+
+        function set_modal_size(css_class) {
+            var dialog = $('#myModal').find('.modal-dialog');
+            dialog.removeClass('modal-lg modal-sm');
+            dialog.addClass(css_class);
+        }
+
+
+    </script>
+{% endblock %}

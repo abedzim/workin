@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load feeder %}
+{% block title %}
+  {% feed_entry_title key path %}
+{% endblock %}
+{% block content %}
+  {% feed_entry key path %}
+{% endblock %}

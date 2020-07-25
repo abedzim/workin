@@ -1,0 +1,526 @@
+{% extends "layout.html" %}
+{% load humanize %}
+
+{% block title %}Accueil{% endblock %}
+{% block css %}
+
+{% endblock %}
+<body>
+	
+	{% block content %}
+		<main>
+			<div class="main-section">
+				<div class="container">
+					<div class="main-section-data">
+						<div class="row">
+							<div class="col-lg-3 col-md-4 pd-left-none no-pd">
+								<div class="main-left-sidebar no-margin">
+									<div class="user-data full-width">
+										<div class="user-profile">
+											<div class="username-dt">
+												<div class="usr-pic">
+													{% if user.profile.get_mugshot_url %}
+													<img src="{{ user.profile.get_mugshot_url }}" alt="" />
+													{% else %}
+													<img src="static/img/user.png" alt="">
+													{% endif %}
+												</div>
+											</div><!--username-dt end-->
+											<div class="user-specs">
+												<h3>{{ user.username}}</h3>
+												<span>{{ user.profile.about_me }}</span>
+											</div>
+										</div><!--user-profile end-->
+										<ul class="user-fw-status">
+											<li>
+												<h4>Following</h4>
+												<span>{{nb_following}}</span>
+											</li>
+											<li>
+												<h4>Followers</h4>
+												<span>{{nb_followers}}</span>
+											</li>
+											<li>
+												<a href="{% url 'show_profile' %}?userToShow={{ request.user }}" title="">Voir Profile</a>
+											</li>
+										</ul>
+									</div><!--user-data end-->
+									<div class="suggestions full-width">
+										<div class="sd-title">
+											<h3>Suggestions</h3>
+											<i class="la la-ellipsis-v"></i>
+										</div><!--sd-title end-->
+										<div class="suggestions-list">
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s1.png" alt="">
+												<div class="sgt-text">
+													<h4>Jessica William</h4>
+													<span>Graphic Designer</span>
+												</div>
+												<span><i class="fa fa-user-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s2.png" alt="">
+												<div class="sgt-text">
+													<h4>John Doe</h4>
+													<span>PHP Developer</span>
+												</div>
+												<span><i class="fa fa-user-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s3.png" alt="">
+												<div class="sgt-text">
+													<h4>Poonam</h4>
+													<span>Wordpress Developer</span>
+												</div>
+												<span><i class="fa fa-user-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s4.png" alt="">
+												<div class="sgt-text">
+													<h4>Bill Gates</h4>
+													<span>C & C++ Developer</span>
+												</div>
+												<span><i class="fa fa-user-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s5.png" alt="">
+												<div class="sgt-text">
+													<h4>Jessica William</h4>
+													<span>Graphic Designer</span>
+												</div>
+												<span><i class="fa fa-user-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s6.png" alt="">
+												<div class="sgt-text">
+													<h4>John Doe</h4>
+													<span>PHP Developer</span>
+												</div>
+												<span><i class="fa fa-user-plus"></i></span>
+											</div>
+											<div class="view-more">
+												<a href="#" title="">Voir Plus</a>
+											</div>
+										</div><!--suggestions-list end-->
+									</div><!--suggestions end-->
+									
+								</div><!--main-left-sidebar end-->
+							</div>
+							<div class="col-lg-6 col-md-8 no-pd">
+								<div class="main-ws-sec">
+									<div class="post-topbar">
+										<div class="user-picy">
+											{% if user.profile.get_mugshot_url %}
+											<img src="{{ user.profile.get_mugshot_url }}" alt="" />
+											{% else %}
+											<img src="static/img/user.png" alt="">
+											{% endif %}
+										</div>
+										<div class="post-st">
+											<ul>
+												<li><a class="" href="#" title="" data-toggle="modal" data-target="#newsFormModal">Post a Project</a></li>
+												<li><a href="{% url 'jobs:jobcreate'%}" class="fm-create"  data-fm-callback="reload">Post a Job</a></li>
+											</ul>
+										</div><!--post-st end-->
+									</div><!--post-topbar end-->
+
+									
+									
+									<div class="posts-section">
+									<div class="stream-update">
+								    <a href="{% url 'welcome' %}"><span class="new-posts"></span>There are new posts</a>
+								  </div>
+
+								    {% for news in nws %}
+											{% if forloop.first  %}
+								      <div class="post-bar stream" id="stream" news-id="{{ news.uuid_id }}">
+								        {% include 'news/news_single.html' with news=news %}
+								      </div>
+											{% endif %}
+								    {% endfor %}
+										
+										<div class="top-profiles">
+											<div class="pf-hd">
+												<h3>Top Profiles</h3>
+												<i class="la la-ellipsis-v"></i>
+											</div>
+											<div class="profiles-slider">
+												<div class="user-profy">
+													<img src="static/img/resources/user1.png" alt="">
+													<h3>John Doe</h3>
+													<span>Graphic Designer</span>
+													<ul>
+														<li><a href="#" title="" class="followw">Follow</a></li>
+														<li><a href="#" title="" class="envlp"><img src="static/img/envelop.png" alt=""></a></li>
+														<li><a href="#" title="" class="hire">hire</a></li>
+													</ul>
+													<a href="#" title="">View Profile</a>
+												</div><!--user-profy end-->
+												<div class="user-profy toppro">
+													<img src="static/img/resources/user2.png" alt="">
+													<h3>John Doe</h3>
+													<span>Graphic Designer</span>
+													<ul>
+														<li><a href="#" title="" class="followw">Follow</a></li>
+														<li><a href="#" title="" class="envlp"><img src="static/img/envelop.png" alt=""></a></li>
+														<li><a href="#" title="" class="hire">hire</a></li>
+													</ul>
+													<a href="#" title="">View Profile</a>
+												</div><!--user-profy end-->
+												<div class="user-profy">
+													<img src="static/img/resources/user3.png" alt="">
+													<h3>John Doe</h3>
+													<span>Graphic Designer</span>
+													<ul>
+														<li><a href="#" title="" class="followw">Follow</a></li>
+														<li><a href="#" title="" class="envlp"><img src="static/img/envelop.png" alt=""></a></li>
+														<li><a href="#" title="" class="hire">hire</a></li>
+													</ul>
+													<a href="#" title="">View Profile</a>
+												</div><!--user-profy end-->
+												
+												<div class="user-profy">
+													<img src="static/img/resources/user3.png" alt="">
+													<h3>John Doe</h3>
+													<span>Graphic Designer</span>
+													<ul>
+														<li><a href="#" title="" class="followw">Follow</a></li>
+														<li><a href="#" title="" class="envlp"><img src="static/img/envelop.png" alt=""></a></li>
+														<li><a href="#" title="" class="hire">hire</a></li>
+													</ul>
+													<a href="#" title="">View Profile</a>
+												</div><!--user-profy end-->
+											</div><!--profiles-slider end-->
+											
+										</div><!--top-profiles end-->
+
+								        {% for news in nws %}
+													{% if not forloop.first %}
+								        	<div class="post-bar stream" id="stream" news-id="{{ news.uuid_id }}">
+								              {% include 'news/news_single.html' with news=news %}
+								          </div>
+													{% endif %}
+								        {% endfor %}
+									    
+										<!-- posty comment -->
+										
+										<div class="process-comm">
+											<a href="#" title=""><img src="static/img/process-icon.png" alt=""></a>
+										</div><!--process-comm end-->
+										
+									</div><!--posts-section end-->
+								</div><!--main-ws-sec end-->
+							</div>
+							{% include 'news/news_form_modal.html' %}
+           		{% include 'news/news_thread_modal.html' %}
+							{% include "fm/modal.html" %}
+							
+							<div class="col-lg-3 pd-right-none no-pd">
+								<div class="right-sidebar">
+									<div class="widget widget-about">
+										<img src="static/img/wd-logo.png" alt="">
+										<h3>Track Time on Workwise</h3>
+										<span>Pay only for the Hours worked</span>
+										<div class="sign_link">
+											<h3><a href="#" title="">Sign up</a></h3>
+											<a href="#" title="">Learn More</a>
+										</div>
+									</div><!--widget-about end-->
+									<div class="widget widget-jobs">
+										<div class="sd-title">
+											<h3>Top Jobs</h3>
+											<i class="la la-ellipsis-v"></i>
+										</div>
+										<div class="jobs-list">
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior Product Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior UI / UX Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Junior Seo Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior PHP Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior Developer Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+										</div><!--jobs-list end-->
+									</div><!--widget-jobs end-->
+									<div class="widget widget-jobs">
+										<div class="sd-title">
+											<h3>Most Viewed This Week</h3>
+											<i class="la la-ellipsis-v"></i>
+										</div>
+										<div class="jobs-list">
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior Product Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Senior UI / UX Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+											<div class="job-info">
+												<div class="job-details">
+													<h3>Junior Seo Designer</h3>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+												</div>
+												<div class="hr-rate">
+													<span>$25/hr</span>
+												</div>
+											</div><!--job-info end-->
+										</div><!--jobs-list end-->
+									</div><!--widget-jobs end-->
+									<div class="widget suggestions full-width">
+										<div class="sd-title">
+											<h3>Most Viewed People</h3>
+											<i class="la la-ellipsis-v"></i>
+										</div><!--sd-title end-->
+										<div class="suggestions-list">
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s1.png" alt="">
+												<div class="sgt-text">
+													<h4>Jessica William</h4>
+													<span>Graphic Designer</span>
+												</div>
+												<span><i class="la la-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s2.png" alt="">
+												<div class="sgt-text">
+													<h4>John Doe</h4>
+													<span>PHP Developer</span>
+												</div>
+												<span><i class="la la-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s3.png" alt="">
+												<div class="sgt-text">
+													<h4>Poonam</h4>
+													<span>Wordpress Developer</span>
+												</div>
+												<span><i class="la la-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s4.png" alt="">
+												<div class="sgt-text">
+													<h4>Bill Gates</h4>
+													<span>C &amp; C++ Developer</span>
+												</div>
+												<span><i class="la la-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s5.png" alt="">
+												<div class="sgt-text">
+													<h4>Jessica William</h4>
+													<span>Graphic Designer</span>
+												</div>
+												<span><i class="la la-plus"></i></span>
+											</div>
+											<div class="suggestion-usd">
+												<img src="static/img/resources/s6.png" alt="">
+												<div class="sgt-text">
+													<h4>John Doe</h4>
+													<span>PHP Developer</span>
+												</div>
+												<span><i class="la la-plus"></i></span>
+											</div>
+											<div class="view-more">
+												<a href="#" title="">View More</a>
+											</div>
+										</div><!--suggestions-list end-->
+									</div>
+								</div><!--right-sidebar end-->
+							</div>
+						</div>
+					</div><!-- main-section-data end-->
+				</div> 
+			</div>
+		</main>
+
+
+
+
+		<div class="post-popup pst-pj">
+			<div class="post-project">
+				<h3>Post a project</h3>
+				<div class="post-project-fields">
+					<form method="post" action="{% url 'welcome' %}">
+					    {% csrf_token %}
+					    <div class="form-group">
+					      {{ form.as_p }}
+					    </div>
+					    <button type="submit" class="btn btn-success">Post</button>
+					</form>
+				</div><!--post-project-fields end-->
+				<a href="#" title=""><i class="la la-times-circle-o"></i></a>
+			</div><!--post-project end-->
+		</div><!--post-project-popup end-->
+
+		<div class="post-popup job_post">
+			<div class="post-project">
+				<h3>Post a job</h3>
+				<div class="post-project-fields">
+					<form method="post" action="#">
+					    {% csrf_token %}
+					    <div class="form-group">
+					      {{ form.as_p }}
+					    </div>
+					    <button type="submit" class="btn btn-success">Post</button>
+					</form>
+				</div><!--post-project-fields end-->
+				<a href="#" title=""><i class="la la-times-circle-o"></i></a>
+			</div><!--post-project end-->
+		</div><!--post-project-popup end-->
+
+<!-- Notifications messages -->
+
+		<div class="chatbox-list">
+			<div class="chatbox">
+				<div class="chat-mg">
+					<a href="#" title=""><img src="static/img/resources/profil1.png" alt=""></a>
+					<span>2</span>
+				</div>
+				<div class="conversation-box">
+					<div class="con-title mg-3">
+						<div class="chat-user-info">
+							<img src="static/img/resources/usr-img1.png" alt="">
+							<h3>Michone Ric <span class="status-info"></span></h3>
+						</div>
+						<div class="st-icons">
+							<a href="#" title=""><i class="la la-cog"></i></a>
+							<a href="#" title="" class="close-chat"><i class="la la-minus-square"></i></a>
+							<a href="#" title="" class="close-chat"><i class="la la-close"></i></a>
+						</div>
+					</div>
+					<div class="chat-hist mCustomScrollbar" data-mcs-theme="dark">
+						<div class="chat-msg">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.</p>
+							<span>Sat, Aug 23, 1:10 PM</span>
+						</div>
+						<div class="date-nd">
+							<span>Sunday, August 24</span>
+						</div>
+						<div class="chat-msg st2">
+							<p>Cras ultricies ligula.</p>
+							<span>5 minutes ago</span>
+						</div>
+						<div class="chat-msg">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.</p>
+							<span>Sat, Aug 23, 1:10 PM</span>
+						</div>
+					</div><!--chat-list end-->
+					<div class="typing-msg">
+						<form>
+							<textarea placeholder="Type a message here"></textarea>
+							<button type="submit"><i class="fa fa-send"></i></button>
+						</form>
+						<ul class="ft-options">
+							<li><a href="#" title=""><i class="la la-smile-o"></i></a></li>
+							<li><a href="#" title=""><i class="la la-camera"></i></a></li>
+							<li><a href="#" title=""><i class="fa fa-paperclip"></i></a></li>
+						</ul>
+					</div><!--typing-msg end-->
+				</div><!--chat-history end-->
+			</div>
+			
+			<div class="chatbox">
+				<div class="chat-mg bx">
+					<a href="#" title=""><img src="static/img/chat.png" alt=""></a>
+					<span>2</span>
+				</div>
+				<div class="conversation-box">
+					<div class="con-title">
+						<h3>Messages</h3>
+						<a href="#" title="" class="close-chat"><i class="la la-minus-square"></i></a>
+					</div>
+					<div class="chat-list">
+						<div class="conv-list active">
+							<div class="usrr-pic">
+								<img src="static/img/resources/usy1.png" alt="">
+								<span class="active-status activee"></span>
+							</div>
+							<div class="usy-info">
+								<h3>John Doe</h3>
+								<span>Lorem ipsum dolor <img src="static/img/smley.png" alt=""></span>
+							</div>
+							<div class="ct-time">
+								<span>1:55 PM</span>
+							</div>
+							<span class="msg-numbers">2</span>
+						</div>
+						<div class="conv-list">
+							<div class="usrr-pic">
+								<img src="static/img/resources/usy2.png" alt="">
+							</div>
+							<div class="usy-info">
+								<h3>John Doe</h3>
+								<span>Lorem ipsum dolor <img src="static/img/smley.png" alt=""></span>
+							</div>
+							<div class="ct-time">
+								<span>11:39 PM</span>
+							</div>
+						</div>
+						<div class="conv-list">
+							<div class="usrr-pic">
+								<img src="static/img/resources/usy3.png" alt="">
+							</div>
+							<div class="usy-info">
+								<h3>John Doe</h3>
+								<span>Lorem ipsum dolor <img src="static/img/smley.png" alt=""></span>
+							</div>
+							<div class="ct-time">
+								<span>0.28 AM</span>
+							</div>
+						</div>
+					</div><!--chat-list end-->
+				</div><!--conversation-box end-->
+			</div>
+		</div><!--chatbox-list end-->
+		
+	{% endblock %}
+</body>

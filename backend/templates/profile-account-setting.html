@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Profil Account-Settings{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block extrastyle %}
+
+<style>
+.selectdatewidget {
+    display: inline-block;
+}
+
+.acc-setting select[name="birth_date_day"] {
+    width: 10%;
+}
+select[name$="_month"].selectdatewidget {
+    width: 25%;
+}
+select[name$="_year"].selectdatewidget {
+    width: 15%;
+}
+
+.acc-setting{
+	border-radius: 15px;
+	padding: 20px;
+}
+.acc-setting label{
+    margin-bottom: 10px;
+    padding: 0;
+    font-weight: bold;
+}
+.textinput{
+	padding-left:5px;
+}
+.acc-setting input{
+    width: 100%;
+    margin-bottom: 20px;
+    
+}
+
+.acc-setting input[type="text"] , input[type="password"], input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid orange;
+    background: transparent;
+    height: 30px;
+    color: black;
+    font-size: 16px;
+	padding-left: O;
+    
+}
+.acc-setting input[type="submit"]
+{
+    border: none;
+    outline: none;
+    background-image: linear-gradient(-90deg, white, green);
+    opacity: 2;
+    border-radius: 20px;
+    height: 40px;
+    color: #fff;
+    font-size: 18px;
+    
+}
+</style>
+
+{% endblock extrastyle %}
+
+{% block content %}
+		<section class="profile-account-setting">
+			<div class="container">
+				<div class="account-tabs-setting">
+					<div class="row">
+
+						<div class="col-lg-3">
+							<div class="acc-leftbar">
+								<div class="nav nav-tabs" id="nav-tab" role="tablist">
+								    {% if user.profile.get_mugshot_url %}
+											<img src="{{ user.profile.get_mugshot_url }}" alt="" class="avatar img-circle img-thumbnail"/>
+										{% else %}
+											<img src="static/img/user.png" alt="" class="avatar img-circle img-thumbnail"/>
+										{% endif %}
+								</div>
+							</div><!--acc-leftbar end-->
+						</div>
+
+						<div class="col-lg-6">
+							<div class="tab-content" id="nav-tabContent">
+								<div>
+									<div class="acc-setting">
+										<h3>Account Setting</h3>
+										<form method='POST' action="" enctype="multipart/form-data">
+                  							{% csrf_token %}
+											{% crispy form %}
+               							</form>
+									</div><!--acc-setting end-->
+								</div> 	
+							</div>
+						</div>
+					</div>
+				</div><!--account-tabs-setting end-->
+			</div>
+		</section>
+{% endblock %}
+
+{% block extrajs %}
+	<script>
+		$(document).ready(function() {
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.avatar').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        	}
+    		}
+    
+    $("#id_mugshot").on('change', function(){
+        readURL(this);
+    });
+		});
+	</script>
+{% endblock %}
+

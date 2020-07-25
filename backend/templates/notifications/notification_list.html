@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% load humanize %}
+{% load static i18n %}
+
+{% block title %}Notifications{% endblock %}
+
+{% block content %}
+
+	<section>
+		<div class="gap gray-bg">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="row" id="page-contents">
+							<div class="col-lg-3">
+							</div><!-- sidebar -->
+							<div class="col-lg-6">
+								<div class="central-meta">
+									<div class="editing-interest">
+										<h5 class="f-title"><i class="ti-bell"></i>All Notifications </h5>
+										
+										<div class="notification-box">
+											<ul>
+											{% for notification in notification_list %}
+												<li>
+													<figure>
+														{% if notification.actor.profile.get_mugshot_url %}
+														<img src="{{ notification.actor.profile.get_mugshot_url }}" alt="" />
+														{% else %}
+														<img src="/static/img/user1.png" alt="">
+														{% endif %}
+													</figure>
+													<div class="notifi-meta">
+														<p><strong>{{ notification.actor.username|title }}</strong> {{ notification.get_verb_display }}</p>
+														<span>{{ notification.time_since|naturaltime }}</span>
+													</div>
+													<i class="del fa fa-close"></i>
+												</li>
+                        
+											{% empty %}
+      											Sorry nothing here
+											{% endfor %}
+											</ul>
+										</div>
+                      
+									</div>
+								</div>
+                				<a class="btn btn-light pull-right" href="{% url 'notifications:mark_all_read' %}">{% trans 'Mark all as read' %}</a>	
+							</div><!-- centerl meta -->
+							<div class="col-lg-3">
+							</div><!-- sidebar -->
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>	
+	</section>
+
+{% endblock %}

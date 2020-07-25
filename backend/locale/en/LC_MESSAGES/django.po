@@ -1,0 +1,2091 @@
+# Saleor
+# Copyright (C) 2017 Mirumee Software
+# This file is distributed under the same license as the Saleor package.
+# Mirumee Software <hello@mirumee.com>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-06 22:05+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: articles/apps.py:7 articles/models.py:67
+#: templates/articles/article_create.html:13
+#: templates/articles/article_detail.html:13
+#: templates/articles/article_list.html:5
+#: templates/articles/article_list.html:18
+msgid "Articles"
+msgstr ""
+
+#: articles/models.py:47 qa/models.py:77
+msgid "Draft"
+msgstr ""
+
+#: articles/models.py:48
+msgid "Published"
+msgstr ""
+
+#: articles/models.py:55
+msgid "Featured image"
+msgstr ""
+
+#: articles/models.py:66
+msgid "Article"
+msgstr ""
+
+#: articles/views.py:37
+msgid "Your article has been created."
+msgstr ""
+
+#: articles/views.py:53
+msgid "Your article has been updated."
+msgstr ""
+
+#: cv/templates/404.html:4 templates/404.html:4
+msgid "Page not found"
+msgstr ""
+
+#: cv/templates/404.html:7 templates/404.html:7
+msgid "Page could not be found."
+msgstr ""
+
+#: cv/templates/404.html:8 templates/404.html:8
+msgid ""
+"If you think this is a bug in userena, please create an issue at Github."
+msgstr ""
+
+#: cv/templates/base.html:32 cv/templates/baseu.html:32 templates/base.html:32
+#: templates/baseu.html:32
+msgid "Choose language"
+msgstr ""
+
+#: cv/templates/base.html:39 cv/templates/baseu.html:39 templates/base.html:39
+#: templates/baseu.html:39
+msgid "Change language"
+msgstr ""
+
+#: cv/templates/base.html:51 cv/templates/baseu.html:51
+#: templates/articles/article_create.html:12
+#: templates/articles/article_detail.html:12
+#: templates/articles/article_list.html:17
+#: templates/articles/article_update.html:12 templates/auth/login_form.html:85
+#: templates/base.html:51 templates/baseu.html:51
+msgid "Home"
+msgstr ""
+
+#: cv/templates/base.html:53 cv/templates/baseu.html:53 templates/base.html:53
+#: templates/baseu.html:53
+msgid "All profiles"
+msgstr ""
+
+#: cv/templates/base.html:54 cv/templates/baseu.html:54
+#: cv/templates/django_private_chat/dialogs.html:15
+#: cv/templates/django_private_chat/messages.html:19
+#: cv/templates/messager/message_list.html:4 cv/templates/messages.html:19
+#: messager/models.py:59 templates/base.html:54 templates/baseu.html:54
+#: templates/django_private_chat/dialogs.html:15
+#: templates/django_private_chat/messages.html:19
+#: templates/messager/message_list.html:4 templates/messages.html:19
+#: userena/contrib/umessages/templates/umessages/message_list.html:4
+msgid "Messages"
+msgstr ""
+
+#: cv/templates/base.html:55 cv/templates/baseu.html:55 templates/base.html:55
+#: templates/baseu.html:55
+msgid "Account"
+msgstr ""
+
+#: cv/templates/base.html:56 cv/templates/baseu.html:56 templates/base.html:56
+#: templates/baseu.html:56
+msgid "Signout"
+msgstr ""
+
+#: cv/templates/base.html:58 cv/templates/baseu.html:58
+#: cv/templates/login.html:11 cv/templates/userena/signin_form.html:4
+#: cv/templates/userena/signin_form.html:10
+#: cv/templates/userena/signin_form.html:27 templates/auth/login_form.html:59
+#: templates/auth/signup.html:41 templates/base.html:58 templates/baseu.html:58
+#: templates/login.html:11 templates/userena/password_reset_form.html:42
+#: templates/userena/signin_form.html:4 templates/userena/signin_form.html:10
+#: templates/userena/signin_form.html:27
+#: userena/templates/userena/signin_form.html:4
+#: userena/templates/userena/signin_form.html:10
+#: userena/templates/userena/signin_form.html:27
+msgid "Signin"
+msgstr ""
+
+#: cv/templates/base.html:59 cv/templates/baseu.html:59
+#: cv/templates/signup.html:11 cv/templates/userena/signup_complete.html:6
+#: cv/templates/userena/signup_form.html:4
+#: cv/templates/userena/signup_form.html:10
+#: cv/templates/userena/signup_form.html:27 templates/auth/login_form.html:60
+#: templates/auth/login_form.html:77 templates/auth/signup.html:42
+#: templates/auth/signup.html:48 templates/auth/signup.html:53
+#: templates/base.html:59 templates/baseu.html:59
+#: templates/userena/password_reset_form.html:43
+#: templates/userena/signup_complete.html:6
+#: templates/userena/signup_form.html:4 templates/userena/signup_form.html:10
+#: templates/userena/signup_form.html:27
+#: userena/templates/userena/signup_complete.html:6
+#: userena/templates/userena/signup_form.html:4
+#: userena/templates/userena/signup_form.html:10
+#: userena/templates/userena/signup_form.html:27
+msgid "Signup"
+msgstr ""
+
+#: cv/templates/base.html:68 cv/templates/baseu.html:68 templates/base.html:68
+#: templates/baseu.html:68
+msgid "Fork me hard"
+msgstr ""
+
+#: cv/templates/base.html:73 cv/templates/baseu.html:73 templates/base.html:73
+#: templates/baseu.html:73
+msgid "Made by"
+msgstr ""
+
+#: cv/templates/base10.html:38
+#: cv/templates/notifications/notification_list.html:4 notifications/apps.py:7
+#: notifications/models.py:138 templates/base10.html:38
+#: templates/notifications/notification_list.html:4
+msgid "Notifications"
+msgstr ""
+
+#: cv/templates/base10.html:44 cv/templates/news/news_list.html:16
+#: news/apps.py:7 news/models.py:32 news/models.py:33 templates/base10.html:44
+#: templates/news/news_list.html:16
+msgid "News"
+msgstr ""
+
+#: cv/templates/base10.html:46 qa/apps.py:7 templates/base10.html:46
+msgid "Q&A"
+msgstr ""
+
+#: cv/templates/base10.html:47 templates/base10.html:47
+msgid "Inbox"
+msgstr ""
+
+#: cv/templates/base10.html:48 templates/base10.html:48
+msgid "Contacts"
+msgstr ""
+
+#: cv/templates/base10.html:54 search/apps.py:7 templates/base10.html:54
+#: templates/base_aq.html:41
+msgid "Search"
+msgstr ""
+
+#: cv/templates/base10.html:65 cv/templates/news/news_thread.html:11
+#: templates/base10.html:65 templates/news/news_thread.html:11
+msgid "User Image"
+msgstr ""
+
+#: cv/templates/base10.html:67 cv/templates/messager/message_list.html:23
+#: cv/templates/messager/single_message.html:8
+#: cv/templates/news/news_thread.html:13
+#: cv/templates/news/news_thread_modal.html:15
+#: cv/templates/notifications/notification_list.html:23
+#: templates/articles/article_detail.html:66 templates/base10.html:67
+#: templates/messager/message_list.html:23
+#: templates/messager/single_message.html:8 templates/news/news_thread.html:13
+#: templates/news/news_thread_modal.html:15
+#: templates/notifications/notification_list.html:23
+msgid "No Profile Picture"
+msgstr ""
+
+#: cv/templates/base10.html:72 templates/base10.html:72
+#: templates/base_aq.html:51
+msgid "Profile Settings"
+msgstr ""
+
+#: cv/templates/base10.html:74 templates/base10.html:74
+#: templates/base_aq.html:53
+msgid "Log Out"
+msgstr ""
+
+#: cv/templates/django_private_chat/dialogs.html:35
+#: cv/templates/django_private_chat/dialogs.html:40
+#: cv/templates/django_private_chat/dialogs.html:293
+#: cv/templates/django_private_chat/messages.html:38
+#: cv/templates/django_private_chat/messages.html:52
+#: cv/templates/django_private_chat/messages.html:364
+#: cv/templates/messages.html:38 cv/templates/messages.html:52
+#: cv/templates/messages.html:364
+#: django_private_chat/templates/django_private_chat/dialogs.html:20
+#: django_private_chat/templates/django_private_chat/dialogs.html:25
+#: templates/django_private_chat/dialogs.html:35
+#: templates/django_private_chat/dialogs.html:40
+#: templates/django_private_chat/dialogs.html:293
+#: templates/django_private_chat/messages.html:38
+#: templates/django_private_chat/messages.html:52
+#: templates/django_private_chat/messages.html:364 templates/messages.html:38
+#: templates/messages.html:52 templates/messages.html:364
+msgid "Chat with"
+msgstr ""
+
+#: cv/templates/django_private_chat/dialogs.html:58
+#: cv/templates/django_private_chat/messages.html:84
+#: cv/templates/messages.html:84
+#: django_private_chat/templates/django_private_chat/dialogs.html:37
+#: templates/django_private_chat/dialogs.html:58
+#: templates/django_private_chat/messages.html:84 templates/messages.html:84
+msgid "is typing..."
+msgstr ""
+
+#: cv/templates/django_private_chat/dialogs.html:64
+#: cv/templates/django_private_chat/messages.html:79
+#: cv/templates/messages.html:79 templates/django_private_chat/dialogs.html:64
+#: templates/django_private_chat/messages.html:79 templates/messages.html:79
+msgid "En ligne"
+msgstr ""
+
+#: cv/templates/django_private_chat/dialogs.html:65
+#: cv/templates/django_private_chat/messages.html:80
+#: cv/templates/messages.html:80
+#: django_private_chat/templates/django_private_chat/dialogs.html:44
+#: templates/django_private_chat/dialogs.html:65
+#: templates/django_private_chat/messages.html:80 templates/messages.html:80
+msgid "Offline"
+msgstr ""
+
+#: cv/templates/django_private_chat/dialogs.html:88
+#: cv/templates/django_private_chat/messages.html:128
+#: cv/templates/messages.html:128 templates/django_private_chat/dialogs.html:88
+#: templates/django_private_chat/messages.html:128 templates/messages.html:128
+msgid "Ecrivez quelque chose"
+msgstr ""
+
+#: cv/templates/django_private_chat/dialogs.html:93
+#: cv/templates/django_private_chat/messages.html:130
+#: cv/templates/messages.html:130 templates/django_private_chat/dialogs.html:93
+#: templates/django_private_chat/messages.html:130 templates/messages.html:130
+msgid "Envoyer"
+msgstr ""
+
+#: cv/templates/fm/modal.html:24 fm/templates/fm/modal.html:24
+msgid "OK"
+msgstr ""
+
+#: cv/templates/fm/modal.html:27 cv/templates/news/news_form_modal.html:25
+#: fm/templates/fm/modal.html:27 templates/articles/article_create.html:23
+#: templates/articles/article_update.html:23
+#: templates/news/news_form_modal.html:31
+msgid "Cancel"
+msgstr ""
+
+#: cv/templates/frontend/includes/generic_form_inner.html:13
+#: cv/templates/frontend/includes/simple_form_inner.html:11
+#: django_private_chat/templates/django_private_chat/dialogs.html:72
+#: templates/frontend/includes/generic_form_inner.html:13
+#: templates/frontend/includes/simple_form_inner.html:11
+#: userena/contrib/umessages/templates/umessages/message_form.html:13
+msgid "Send"
+msgstr ""
+
+#: cv/templates/frontend/modals/confirm.html:8
+#: cv/templates/frontend/modals/generic.html:11
+#: cv/templates/frontend/modals/generic.html:22 templates/fm/modal.html:54
+#: templates/fm/modal.html:68 templates/frontend/modals/confirm.html:8
+#: templates/frontend/modals/generic.html:11
+#: templates/frontend/modals/generic.html:22
+#: templates/news/news_form_modal.html:11
+msgid "Close"
+msgstr ""
+
+#: cv/templates/frontend/modals/confirm.html:12
+#: templates/frontend/modals/confirm.html:12
+msgid "Confirmation required"
+msgstr ""
+
+#: cv/templates/frontend/modals/confirm.html:18
+#: templates/frontend/modals/confirm.html:18
+msgid "Are you sure ?"
+msgstr ""
+
+#: cv/templates/frontend/modals/confirm.html:21
+#: templates/frontend/modals/confirm.html:21
+msgid "No"
+msgstr ""
+
+#: cv/templates/frontend/modals/confirm.html:22
+#: templates/frontend/modals/confirm.html:22
+msgid "Yes"
+msgstr ""
+
+#: cv/templates/frontend/modals/generic.html:23
+#: cv/templates/userena/profile_form.html:22 templates/fm/modal.html:71
+#: templates/frontend/modals/generic.html:23
+#: templates/userena/profile_form.html:22
+#: userena/templates/userena/profile_form.html:22
+msgid "Save changes"
+msgstr ""
+
+#: cv/templates/login.html:16 cv/templates/signup.html:19
+#: templates/auth/login_form.html:67 templates/auth/login_form.html:72
+#: templates/login.html:16
+msgid "Log in"
+msgstr ""
+
+#: cv/templates/login.html:20 templates/login.html:20
+msgid "New User?"
+msgstr ""
+
+#: cv/templates/login.html:25 cv/templates/userena/signin_form.html:28
+#: templates/auth/login_form.html:76 templates/auth/signup.html:57
+#: templates/login.html:25 templates/userena/signin_form.html:28
+#: userena/templates/userena/signin_form.html:28
+msgid "Forgot your password?"
+msgstr ""
+
+#: cv/templates/messager/message_list.html:13
+#: templates/messager/message_list.html:13
+msgid "Conversations"
+msgstr ""
+
+#: cv/templates/messager/message_list.html:21
+#: cv/templates/messager/single_message.html:6
+#: templates/articles/article_detail.html:64
+#: templates/messager/message_list.html:21
+#: templates/messager/single_message.html:6
+msgid "Picture Profile"
+msgstr ""
+
+#: cv/templates/messager/message_list.html:36
+#: templates/messager/message_list.html:36
+msgid "This is the begining of a great new conversation."
+msgstr ""
+
+#: cv/templates/messager/message_list.html:37
+#: templates/messager/message_list.html:37
+msgid "Let's get started now!"
+msgstr ""
+
+#: cv/templates/messager/message_list.html:46
+#: templates/messager/message_list.html:46
+msgid "Write a message..."
+msgstr ""
+
+#: cv/templates/news/news_confirm_delete.html:5
+#: templates/news/news_confirm_delete.html:5
+msgid "Delete news"
+msgstr ""
+
+#: cv/templates/news/news_confirm_delete.html:8
+#: templates/news/news_confirm_delete.html:8
+msgid "Delete a posted news"
+msgstr ""
+
+#: cv/templates/news/news_confirm_delete.html:10
+#: templates/news/news_confirm_delete.html:10
+msgid ""
+"Are you sure you want to continue? If you do this you will delete this news"
+msgstr ""
+
+#: cv/templates/news/news_confirm_delete.html:14
+#: templates/news/news_confirm_delete.html:14
+msgid "Delete"
+msgstr ""
+
+#: cv/templates/news/news_form_modal.html:7
+msgid "Share something new!"
+msgstr ""
+
+#: cv/templates/news/news_form_modal.html:23
+#: templates/news/news_form_modal.html:29
+msgid "Post"
+msgstr ""
+
+#: cv/templates/news/news_list.html:18 templates/news/news_list.html:18
+msgid "Share something"
+msgstr ""
+
+#: cv/templates/news/news_list.html:23 templates/news/news_list.html:23
+msgid "Most Recent Posts"
+msgstr ""
+
+#: cv/templates/news/news_list.html:33 templates/news/news_list.html:33
+msgid "There are new posts"
+msgstr ""
+
+#: cv/templates/news/news_thread.html:19 templates/news/news_thread.html:19
+msgid "Click to remove this news"
+msgstr ""
+
+#: cv/templates/news/news_thread_modal.html:31
+#: templates/news/news_thread_modal.html:31
+msgid "Reply"
+msgstr ""
+
+#: cv/templates/notifications/most_recent.html:17
+#: templates/notifications/most_recent.html:17
+msgid "See all"
+msgstr ""
+
+#: cv/templates/notifications/most_recent.html:18
+#: cv/templates/notifications/notification_list.html:14
+#: templates/notifications/most_recent.html:18
+#: templates/notifications/notification_list.html:14
+msgid "Mark all as read"
+msgstr ""
+
+#: cv/templates/notifications/most_recent.html:20
+#: templates/notifications/most_recent.html:20
+msgid "You have no unread notification"
+msgstr ""
+
+#: cv/templates/notifications/notification_list.html:12
+#: templates/notifications/notification_list.html:12
+msgid "Unread notifications for"
+msgstr ""
+
+#: cv/templates/notifications/notification_list.html:28
+#: templates/notifications/notification_list.html:28
+msgid "Mark as read"
+msgstr ""
+
+#: cv/templates/signup.html:4
+msgid "Signup to WorkIn"
+msgstr ""
+
+#: cv/templates/signup.html:15
+msgid "Create an account"
+msgstr ""
+
+#: cv/templates/signup.html:19
+msgid "Already have an account ?"
+msgstr ""
+
+#: cv/templates/userena/activate_fail.html:4
+#: cv/templates/userena/activate_retry.html:5
+#: templates/userena/activate_fail.html:4
+#: templates/userena/activate_retry.html:5
+#: userena/templates/userena/activate_fail.html:4
+#: userena/templates/userena/activate_retry.html:5
+msgid "Account activation failed."
+msgstr ""
+
+#: cv/templates/userena/activate_fail.html:5
+#: cv/templates/userena/activate_retry.html:6
+#: templates/userena/activate_fail.html:5
+#: templates/userena/activate_retry.html:6
+#: userena/templates/userena/activate_fail.html:5
+#: userena/templates/userena/activate_retry.html:6
+msgid "Your account could not be activated..."
+msgstr ""
+
+#: cv/templates/userena/activate_fail.html:8
+#: templates/userena/activate_fail.html:8
+#: userena/templates/userena/activate_fail.html:8
+msgid ""
+"Your account could not be activated. This could be because your activation "
+"link has aged."
+msgstr ""
+
+#: cv/templates/userena/activate_fail.html:9
+#: templates/userena/activate_fail.html:9
+#: userena/templates/userena/activate_fail.html:9
+msgid ""
+"Please try signing up again or contact us if you think something went wrong."
+msgstr ""
+
+#: cv/templates/userena/activate_retry.html:9
+#: templates/userena/activate_retry.html:9
+#: userena/templates/userena/activate_retry.html:9
+msgid "Your account could not be activated because activation link is expired."
+msgstr ""
+
+#: cv/templates/userena/activate_retry.html:10
+#: templates/userena/activate_retry.html:10
+#: userena/templates/userena/activate_retry.html:10
+msgid "Request a new activation link."
+msgstr ""
+
+#: cv/templates/userena/activate_retry_success.html:5
+#: templates/userena/activate_retry_success.html:5
+#: userena/templates/userena/activate_retry_success.html:5
+msgid "Account re-activation succeeded."
+msgstr ""
+
+#: cv/templates/userena/activate_retry_success.html:6
+#: templates/userena/activate_retry_success.html:6
+#: userena/templates/userena/activate_retry_success.html:6
+msgid "Account re-activation"
+msgstr ""
+
+#: cv/templates/userena/activate_retry_success.html:9
+#: templates/userena/activate_retry_success.html:9
+#: userena/templates/userena/activate_retry_success.html:9
+msgid "You requested a new activation of your account.."
+msgstr ""
+
+#: cv/templates/userena/activate_retry_success.html:10
+#: cv/templates/userena/signup_complete.html:12
+#: templates/userena/activate_retry_success.html:10
+#: templates/userena/signup_complete.html:12
+#: userena/templates/userena/activate_retry_success.html:10
+#: userena/templates/userena/signup_complete.html:12
+msgid ""
+"You have been sent an e-mail with an activation link to the supplied email."
+msgstr ""
+
+#: cv/templates/userena/activate_retry_success.html:11
+#: cv/templates/userena/signup_complete.html:13
+#: templates/userena/activate_retry_success.html:11
+#: templates/userena/signup_complete.html:13
+#: userena/templates/userena/activate_retry_success.html:11
+#: userena/templates/userena/signup_complete.html:13
+#, python-format
+msgid ""
+"We will store your signup information for %(userena_activation_days)s days "
+"on our server. "
+msgstr ""
+
+#: cv/templates/userena/disabled.html:4 templates/userena/disabled.html:4
+#: userena/templates/userena/disabled.html:4
+msgid "Disabled account"
+msgstr ""
+
+#: cv/templates/userena/disabled.html:5 templates/userena/disabled.html:5
+#: userena/templates/userena/disabled.html:5
+msgid "Your account has been disabled"
+msgstr ""
+
+#: cv/templates/userena/disabled.html:7 templates/userena/disabled.html:7
+#: userena/templates/userena/disabled.html:7
+msgid "It seems your account has been disabled."
+msgstr ""
+
+#: cv/templates/userena/disabled.html:8 templates/userena/disabled.html:8
+#: userena/templates/userena/disabled.html:8
+msgid ""
+"If you feel that injustice has been done to you, feel free to contact the "
+"administrators to find out why"
+msgstr ""
+
+#: cv/templates/userena/email_change_complete.html:4
+#: templates/userena/email_change_complete.html:4
+#: userena/templates/userena/email_change_complete.html:4
+msgid "Email verification"
+msgstr ""
+
+#: cv/templates/userena/email_change_complete.html:5
+#: templates/userena/email_change_complete.html:5
+#: userena/templates/userena/email_change_complete.html:5
+msgid "Confirm your new email"
+msgstr ""
+
+#: cv/templates/userena/email_change_complete.html:8
+#: templates/userena/email_change_complete.html:8
+#: userena/templates/userena/email_change_complete.html:8
+#, python-format
+msgid "You have received an email at %(email)s."
+msgstr ""
+
+#: cv/templates/userena/email_change_complete.html:9
+#: templates/userena/email_change_complete.html:9
+#: userena/templates/userena/email_change_complete.html:9
+#, python-format
+msgid ""
+"To associate this email address with your account (%(username)s) click on "
+"the link provided in this email."
+msgstr ""
+
+#: cv/templates/userena/email_confirm_complete.html:4
+#: templates/userena/email_confirm_complete.html:4
+#: userena/templates/userena/email_confirm_complete.html:4
+msgid "Email changed!"
+msgstr ""
+
+#: cv/templates/userena/email_confirm_complete.html:6
+#: templates/userena/email_confirm_complete.html:6
+#: userena/templates/userena/email_confirm_complete.html:6
+msgid "New email"
+msgstr ""
+
+#: cv/templates/userena/email_confirm_complete.html:8
+#: templates/userena/email_confirm_complete.html:8
+#: userena/templates/userena/email_confirm_complete.html:8
+#, python-format
+msgid ""
+"Your new email address is saved. You can continue using %(site)s with this "
+"email."
+msgstr ""
+
+#: cv/templates/userena/email_confirm_fail.html:4
+#: templates/userena/email_confirm_fail.html:4
+#: userena/templates/userena/email_confirm_fail.html:4
+msgid "Email verification failed."
+msgstr ""
+
+#: cv/templates/userena/email_confirm_fail.html:5
+#: cv/templates/userena/email_confirm_fail.html:8
+#: templates/userena/email_confirm_fail.html:5
+#: templates/userena/email_confirm_fail.html:8
+#: userena/templates/userena/email_confirm_fail.html:5
+#: userena/templates/userena/email_confirm_fail.html:8
+msgid "Your email could not be verified..."
+msgstr ""
+
+#: cv/templates/userena/email_confirm_fail.html:9
+#: templates/userena/email_confirm_fail.html:9
+#: userena/templates/userena/email_confirm_fail.html:9
+msgid "You could try changing it again in your account settings."
+msgstr ""
+
+#: cv/templates/userena/email_form.html:4
+#: cv/templates/userena/password_form.html:6
+#: cv/templates/userena/profile_form.html:6 templates/userena/email_form.html:4
+#: templates/userena/password_form.html:6 templates/userena/profile_form.html:6
+#: userena/templates/userena/email_form.html:4
+#: userena/templates/userena/password_form.html:6
+#: userena/templates/userena/profile_form.html:6
+#, python-format
+msgid "Account &raquo; %(username)s"
+msgstr ""
+
+#: cv/templates/userena/email_form.html:9
+#: cv/templates/userena/password_form.html:11
+#: cv/templates/userena/profile_detail.html:14
+#: cv/templates/userena/profile_form.html:12
+#: templates/userena/email_form.html:9 templates/userena/password_form.html:11
+#: templates/userena/profile_detail.html:14
+#: templates/userena/profile_form.html:12
+#: userena/templates/userena/email_form.html:9
+#: userena/templates/userena/password_form.html:11
+#: userena/templates/userena/profile_detail.html:14
+#: userena/templates/userena/profile_form.html:12
+msgid "View profile"
+msgstr ""
+
+#: cv/templates/userena/email_form.html:10
+#: cv/templates/userena/password_form.html:12
+#: cv/templates/userena/profile_form.html:13
+#: templates/userena/email_form.html:10 templates/userena/password_form.html:12
+#: templates/userena/profile_form.html:13
+#: userena/templates/userena/email_form.html:10
+#: userena/templates/userena/password_form.html:12
+#: userena/templates/userena/profile_form.html:13
+msgid "Edit profile"
+msgstr ""
+
+#: cv/templates/userena/email_form.html:11
+#: cv/templates/userena/password_form.html:4
+#: cv/templates/userena/password_form.html:13
+#: cv/templates/userena/password_form.html:21
+#: cv/templates/userena/profile_detail.html:16
+#: cv/templates/userena/profile_form.html:14
+#: templates/userena/email_form.html:11 templates/userena/password_form.html:4
+#: templates/userena/password_form.html:13
+#: templates/userena/password_form.html:21
+#: templates/userena/profile_detail.html:16
+#: templates/userena/profile_form.html:14
+#: userena/templates/userena/email_form.html:11
+#: userena/templates/userena/password_form.html:4
+#: userena/templates/userena/password_form.html:13
+#: userena/templates/userena/password_form.html:21
+#: userena/templates/userena/profile_detail.html:16
+#: userena/templates/userena/profile_form.html:14
+msgid "Change password"
+msgstr ""
+
+#: cv/templates/userena/email_form.html:12
+#: cv/templates/userena/email_form.html:19
+#: cv/templates/userena/password_form.html:14
+#: cv/templates/userena/profile_detail.html:17
+#: cv/templates/userena/profile_form.html:15
+#: templates/userena/email_form.html:12 templates/userena/email_form.html:19
+#: templates/userena/password_form.html:14
+#: templates/userena/profile_detail.html:17
+#: templates/userena/profile_form.html:15
+#: userena/templates/userena/email_form.html:12
+#: userena/templates/userena/email_form.html:19
+#: userena/templates/userena/password_form.html:14
+#: userena/templates/userena/profile_detail.html:17
+#: userena/templates/userena/profile_form.html:15
+msgid "Change email"
+msgstr ""
+
+#: cv/templates/userena/email_form.html:16 templates/userena/email_form.html:16
+#: userena/templates/userena/email_form.html:16
+msgid "Change email address"
+msgstr ""
+
+#: cv/templates/userena/emails/activation_email_message.html:4
+#: cv/templates/userena/emails/confirmation_email_message_new.html:4
+#: templates/userena/emails/activation_email_message.html:4
+#: templates/userena/emails/confirmation_email_message_new.html:4
+#: userena/templates/userena/emails/activation_email_message.html:4
+#: userena/templates/userena/emails/confirmation_email_message_new.html:4
+#, python-format
+msgid "Dear %(username)s,</p>"
+msgstr ""
+
+#: cv/templates/userena/emails/activation_email_message.html:5
+#: templates/userena/emails/activation_email_message.html:5
+#: userena/templates/userena/emails/activation_email_message.html:5
+#, python-format
+msgid "<p>Thank you for signing up at %(site)s.</p>"
+msgstr ""
+
+#: cv/templates/userena/emails/activation_email_message.html:7
+#: cv/templates/userena/emails/activation_email_message.txt:6
+#: templates/userena/emails/activation_email_message.html:7
+#: templates/userena/emails/activation_email_message.txt:6
+#: userena/templates/userena/emails/activation_email_message.html:7
+#: userena/templates/userena/emails/activation_email_message.txt:6
+msgid "To activate your account you should click on the link below:"
+msgstr ""
+
+#: cv/templates/userena/emails/activation_email_message.html:11
+#: cv/templates/userena/emails/activation_email_message.txt:10
+#: cv/templates/userena/emails/confirmation_email_message_new.html:13
+#: cv/templates/userena/emails/confirmation_email_message_new.txt:12
+#: cv/templates/userena/emails/confirmation_email_message_old.html:13
+#: cv/templates/userena/emails/confirmation_email_message_old.txt:8
+#: cv/templates/userena/emails/password_reset_message.html:18
+#: cv/templates/userena/emails/password_reset_message.txt:14
+#: templates/userena/emails/activation_email_message.html:11
+#: templates/userena/emails/activation_email_message.txt:10
+#: templates/userena/emails/confirmation_email_message_new.html:13
+#: templates/userena/emails/confirmation_email_message_new.txt:12
+#: templates/userena/emails/confirmation_email_message_old.html:13
+#: templates/userena/emails/confirmation_email_message_old.txt:8
+#: templates/userena/emails/password_reset_message.html:18
+#: templates/userena/emails/password_reset_message.txt:14
+#: userena/templates/userena/emails/activation_email_message.html:11
+#: userena/templates/userena/emails/activation_email_message.txt:10
+#: userena/templates/userena/emails/confirmation_email_message_new.html:13
+#: userena/templates/userena/emails/confirmation_email_message_new.txt:12
+#: userena/templates/userena/emails/confirmation_email_message_old.html:13
+#: userena/templates/userena/emails/confirmation_email_message_old.txt:8
+#: userena/templates/userena/emails/password_reset_message.html:18
+#: userena/templates/userena/emails/password_reset_message.txt:14
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: cv/templates/userena/emails/activation_email_message.html:12
+#: cv/templates/userena/emails/activation_email_message.txt:12
+#: cv/templates/userena/emails/confirmation_email_message_new.html:14
+#: cv/templates/userena/emails/confirmation_email_message_new.txt:14
+#: cv/templates/userena/emails/confirmation_email_message_old.html:16
+#: cv/templates/userena/emails/confirmation_email_message_old.txt:10
+#: cv/templates/userena/emails/password_reset_message.html:19
+#: cv/templates/userena/emails/password_reset_message.txt:16
+#: templates/userena/emails/activation_email_message.html:12
+#: templates/userena/emails/activation_email_message.txt:12
+#: templates/userena/emails/confirmation_email_message_new.html:14
+#: templates/userena/emails/confirmation_email_message_new.txt:14
+#: templates/userena/emails/confirmation_email_message_old.html:16
+#: templates/userena/emails/confirmation_email_message_old.txt:10
+#: templates/userena/emails/password_reset_message.html:19
+#: templates/userena/emails/password_reset_message.txt:16
+#: userena/templates/userena/emails/activation_email_message.html:12
+#: userena/templates/userena/emails/activation_email_message.txt:12
+#: userena/templates/userena/emails/confirmation_email_message_new.html:14
+#: userena/templates/userena/emails/confirmation_email_message_new.txt:14
+#: userena/templates/userena/emails/confirmation_email_message_old.html:16
+#: userena/templates/userena/emails/confirmation_email_message_old.txt:10
+#: userena/templates/userena/emails/password_reset_message.html:19
+#: userena/templates/userena/emails/password_reset_message.txt:16
+msgid "Sincerely"
+msgstr ""
+
+#: cv/templates/userena/emails/activation_email_message.txt:2
+#: cv/templates/userena/emails/confirmation_email_message_new.txt:2
+#: cv/templates/userena/emails/confirmation_email_message_old.html:4
+#: cv/templates/userena/emails/confirmation_email_message_old.txt:2
+#: templates/userena/emails/activation_email_message.txt:2
+#: templates/userena/emails/confirmation_email_message_new.txt:2
+#: templates/userena/emails/confirmation_email_message_old.html:4
+#: templates/userena/emails/confirmation_email_message_old.txt:2
+#: userena/templates/userena/emails/activation_email_message.txt:2
+#: userena/templates/userena/emails/confirmation_email_message_new.txt:2
+#: userena/templates/userena/emails/confirmation_email_message_old.html:4
+#: userena/templates/userena/emails/confirmation_email_message_old.txt:2
+#, python-format
+msgid "Dear %(username)s,"
+msgstr ""
+
+#: cv/templates/userena/emails/activation_email_message.txt:4
+#: templates/userena/emails/activation_email_message.txt:4
+#: userena/templates/userena/emails/activation_email_message.txt:4
+#, python-format
+msgid "Thank you for signing up at %(site)s."
+msgstr ""
+
+#: cv/templates/userena/emails/activation_email_subject.txt:2
+#: templates/userena/emails/activation_email_subject.txt:2
+#: userena/templates/userena/emails/activation_email_subject.txt:2
+#, python-format
+msgid "Your signup at %(site)s."
+msgstr ""
+
+#: cv/templates/userena/emails/confirmation_email_message_new.html:6
+#: cv/templates/userena/emails/confirmation_email_message_new.txt:4
+#: templates/userena/emails/confirmation_email_message_new.html:6
+#: templates/userena/emails/confirmation_email_message_new.txt:4
+#: userena/templates/userena/emails/confirmation_email_message_new.html:6
+#: userena/templates/userena/emails/confirmation_email_message_new.txt:4
+#, python-format
+msgid "You requested a change of your email address at %(site)s."
+msgstr ""
+
+#: cv/templates/userena/emails/confirmation_email_message_new.html:9
+#: cv/templates/userena/emails/confirmation_email_message_new.txt:7
+#: templates/userena/emails/confirmation_email_message_new.html:9
+#: templates/userena/emails/confirmation_email_message_new.txt:7
+#: userena/templates/userena/emails/confirmation_email_message_new.html:9
+#: userena/templates/userena/emails/confirmation_email_message_new.txt:7
+msgid "Please confirm this email address by clicking on the link below:"
+msgstr ""
+
+#: cv/templates/userena/emails/confirmation_email_message_old.html:6
+#: cv/templates/userena/emails/confirmation_email_message_old.txt:4
+#: templates/userena/emails/confirmation_email_message_old.html:6
+#: templates/userena/emails/confirmation_email_message_old.txt:4
+#: userena/templates/userena/emails/confirmation_email_message_old.html:6
+#: userena/templates/userena/emails/confirmation_email_message_old.txt:4
+#, python-format
+msgid "There was a request to change your email address at %(site)s."
+msgstr ""
+
+#: cv/templates/userena/emails/confirmation_email_message_old.html:10
+#: cv/templates/userena/emails/confirmation_email_message_old.txt:6
+#: templates/userena/emails/confirmation_email_message_old.html:10
+#: templates/userena/emails/confirmation_email_message_old.txt:6
+#: userena/templates/userena/emails/confirmation_email_message_old.html:10
+#: userena/templates/userena/emails/confirmation_email_message_old.txt:6
+#, python-format
+msgid ""
+"An email has been send to %(new_email)s which contains a verification link. "
+"Click on the link in this email to activate it."
+msgstr ""
+
+#: cv/templates/userena/emails/confirmation_email_subject_new.html:4
+#: cv/templates/userena/emails/confirmation_email_subject_new.txt:2
+#: templates/userena/emails/confirmation_email_subject_new.html:4
+#: templates/userena/emails/confirmation_email_subject_new.txt:2
+#: userena/templates/userena/emails/confirmation_email_subject_new.html:4
+#: userena/templates/userena/emails/confirmation_email_subject_new.txt:2
+#, python-format
+msgid "Email verification for %(site)s."
+msgstr ""
+
+#: cv/templates/userena/emails/confirmation_email_subject_old.txt:2
+#: templates/userena/emails/confirmation_email_subject_old.txt:2
+#: userena/templates/userena/emails/confirmation_email_subject_old.txt:2
+#, python-format
+msgid "A request to change your email address is made at %(site)s."
+msgstr ""
+
+#: cv/templates/userena/emails/password_reset_message.html:5
+#: templates/userena/emails/password_reset_message.html:5
+#: userena/templates/userena/emails/password_reset_message.html:5
+#, python-format
+msgid ""
+"You're receiving this e-mail because you requested a password reset\n"
+"            for your user account at %(site_name)s"
+msgstr ""
+
+#: cv/templates/userena/emails/password_reset_message.html:9
+#: cv/templates/userena/emails/password_reset_message.txt:5
+#: templates/userena/emails/password_reset_message.html:9
+#: templates/userena/emails/password_reset_message.txt:5
+#: userena/templates/userena/emails/password_reset_message.html:9
+#: userena/templates/userena/emails/password_reset_message.txt:5
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: cv/templates/userena/emails/password_reset_message.html:15
+#: templates/userena/emails/password_reset_message.html:15
+#: userena/templates/userena/emails/password_reset_message.html:15
+#, python-format
+msgid "Your username, in case you've forgotten: %(username)s"
+msgstr ""
+
+#: cv/templates/userena/emails/password_reset_message.txt:2
+#: templates/userena/emails/password_reset_message.txt:2
+#: userena/templates/userena/emails/password_reset_message.txt:2
+#, python-format
+msgid ""
+"You're receiving this e-mail because you requested a password reset\n"
+"for your user account at %(site_name)s"
+msgstr ""
+
+#: cv/templates/userena/emails/password_reset_message.txt:10
+#: templates/userena/emails/password_reset_message.txt:10
+#: userena/templates/userena/emails/password_reset_message.txt:10
+#, python-format
+msgid ""
+"\n"
+"Your username, in case you've forgotten: %(username)s\n"
+msgstr ""
+
+#: cv/templates/userena/password_complete.html:4
+#: templates/userena/password_complete.html:4
+#: userena/templates/userena/password_complete.html:4
+msgid "Password changed"
+msgstr ""
+
+#: cv/templates/userena/password_complete.html:5
+#: templates/userena/password_complete.html:5
+#: userena/templates/userena/password_complete.html:5
+msgid "Your password has been changed"
+msgstr ""
+
+#: cv/templates/userena/password_complete.html:8
+#: templates/userena/password_complete.html:8
+#: userena/templates/userena/password_complete.html:8
+msgid "From now on you can use your new password to signin"
+msgstr ""
+
+#: cv/templates/userena/password_form.html:17
+#: templates/userena/password_form.html:17
+#: userena/templates/userena/password_form.html:17
+msgid "Change Password"
+msgstr ""
+
+#: cv/templates/userena/password_reset_complete.html:4
+#: templates/userena/password_reset_complete.html:4
+#: userena/templates/userena/password_reset_complete.html:4
+msgid "Password reset"
+msgstr ""
+
+#: cv/templates/userena/password_reset_complete.html:5
+#: templates/userena/password_reset_complete.html:5
+#: userena/templates/userena/password_reset_complete.html:5
+msgid "Your password has been reset"
+msgstr ""
+
+#: cv/templates/userena/password_reset_complete.html:8
+#: templates/userena/password_reset_complete.html:8
+#: userena/templates/userena/password_reset_complete.html:8
+#, python-format
+msgid ""
+"You can now <a href=\"%(signin_url)s\">signin</a> with your new password."
+msgstr ""
+
+#: cv/templates/userena/password_reset_confirm_form.html:4
+#: cv/templates/userena/password_reset_confirm_form.html:13
+#: cv/templates/userena/password_reset_form.html:4
+#: templates/userena/password_reset_confirm_form.html:4
+#: templates/userena/password_reset_confirm_form.html:13
+#: userena/templates/userena/password_reset_confirm_form.html:4
+#: userena/templates/userena/password_reset_confirm_form.html:13
+#: userena/templates/userena/password_reset_form.html:4
+msgid "Reset password"
+msgstr ""
+
+#: cv/templates/userena/password_reset_confirm_form.html:9
+#: cv/templates/userena/password_reset_form.html:9
+#: templates/userena/password_reset_confirm_form.html:9
+#: templates/userena/password_reset_form.html:50
+#: userena/templates/userena/password_reset_confirm_form.html:9
+#: userena/templates/userena/password_reset_form.html:9
+msgid "Reset Password"
+msgstr ""
+
+#: cv/templates/userena/password_reset_done.html:4
+#: cv/templates/userena/password_reset_done.html:5
+#: templates/userena/password_reset_done.html:4
+#: templates/userena/password_reset_done.html:5
+#: userena/templates/userena/password_reset_done.html:4
+#: userena/templates/userena/password_reset_done.html:5
+msgid "Password reset email sent"
+msgstr ""
+
+#: cv/templates/userena/password_reset_done.html:8
+#: templates/userena/password_reset_done.html:8
+#: userena/templates/userena/password_reset_done.html:8
+msgid ""
+"An e-mail has been sent to you which explains how to reset your password."
+msgstr ""
+
+#: cv/templates/userena/password_reset_form.html:13
+#: templates/userena/password_reset_form.html:55
+#: userena/templates/userena/password_reset_form.html:13
+msgid "Send password"
+msgstr ""
+
+#: cv/templates/userena/profile_detail.html:4
+#: templates/userena/profile_detail.html:4
+#: userena/templates/userena/profile_detail.html:4
+#, python-format
+msgid "%(username)s's profile."
+msgstr ""
+
+#: cv/templates/userena/profile_detail.html:15
+#: templates/userena/profile_detail.html:15
+#: userena/templates/userena/profile_detail.html:15
+msgid "Edit details"
+msgstr ""
+
+#: cv/templates/userena/profile_detail.html:25
+#: templates/userena/profile_detail.html:25
+#: userena/templates/userena/profile_detail.html:25
+msgid "Your mugshot"
+msgstr ""
+
+#: cv/templates/userena/profile_detail.html:29
+#: templates/userena/profile_detail.html:29
+#: userena/templates/userena/profile_detail.html:29
+msgid "Name"
+msgstr ""
+
+#: cv/templates/userena/profile_detail.html:33
+#: templates/userena/profile_detail.html:33
+#: userena/templates/userena/profile_detail.html:33
+msgid "Email"
+msgstr ""
+
+#: cv/templates/userena/profile_detail.html:37
+#: templates/userena/profile_detail.html:37
+#: userena/templates/userena/profile_detail.html:37
+msgid "Age"
+msgstr ""
+
+#: cv/templates/userena/profile_detail.html:41
+#: templates/userena/profile_detail.html:41
+#: userena/templates/userena/profile_detail.html:41
+msgid "Website"
+msgstr ""
+
+#: cv/templates/userena/profile_detail.html:45
+#: templates/userena/profile_detail.html:45
+#: userena/templates/userena/profile_detail.html:45
+msgid "Location"
+msgstr ""
+
+#: cv/templates/userena/profile_detail.html:49
+#: templates/userena/profile_detail.html:49
+#: userena/templates/userena/profile_detail.html:49
+msgid "About me"
+msgstr ""
+
+#: cv/templates/userena/profile_form.html:4
+#: templates/userena/profile_form.html:4
+#: userena/templates/userena/profile_form.html:4
+msgid "Account setup"
+msgstr ""
+
+#: cv/templates/userena/profile_form.html:19
+#: templates/userena/profile_form.html:19
+#: userena/templates/userena/profile_form.html:19
+msgid "Edit Profile"
+msgstr ""
+
+#: cv/templates/userena/profile_list.html:4
+#: templates/userena/profile_list.html:4
+#: userena/templates/userena/profile_list.html:4
+msgid "Profiles"
+msgstr ""
+
+#: cv/templates/userena/profile_list.html:21
+#: templates/userena/profile_list.html:21
+#: userena/templates/userena/profile_list.html:21
+msgid "previous"
+msgstr ""
+
+#: cv/templates/userena/profile_list.html:25
+#: templates/userena/profile_list.html:25
+#: userena/templates/userena/profile_list.html:25
+#, python-format
+msgid ""
+"\n"
+"      Page %(page)s of %(num_pages)s\n"
+"      "
+msgstr ""
+
+#: cv/templates/userena/profile_list.html:31
+#: templates/userena/profile_list.html:31
+#: userena/templates/userena/profile_list.html:31
+msgid "next"
+msgstr ""
+
+#: cv/templates/userena/signout.html:4 templates/userena/signout.html:4
+#: userena/templates/userena/signout.html:4
+msgid "Signed out"
+msgstr ""
+
+#: cv/templates/userena/signout.html:5 templates/userena/signout.html:5
+#: userena/templates/userena/signout.html:5
+msgid "You have been signed out"
+msgstr ""
+
+#: cv/templates/userena/signout.html:8 templates/userena/signout.html:8
+#: userena/templates/userena/signout.html:8
+msgid "You have been signed out. Till we meet again."
+msgstr ""
+
+#: cv/templates/userena/signup_complete.html:4
+#: templates/userena/signup_complete.html:4
+#: userena/templates/userena/signup_complete.html:4
+msgid "Signup almost done!"
+msgstr ""
+
+#: cv/templates/userena/signup_complete.html:9
+#: templates/userena/signup_complete.html:9
+#: userena/templates/userena/signup_complete.html:9
+msgid "Thank you for signing up with us!"
+msgstr ""
+
+#: cv/templates/userena/signup_complete.html:15
+#: templates/userena/signup_complete.html:15
+#: userena/templates/userena/signup_complete.html:15
+msgid "You can now use the supplied credentials to signin."
+msgstr ""
+
+#: django_private_chat/models.py:12
+msgid "Dialog owner"
+msgstr ""
+
+#: django_private_chat/models.py:14
+msgid "Dialog opponent"
+msgstr ""
+
+#: django_private_chat/models.py:17
+msgid "Chat with "
+msgstr ""
+
+#: django_private_chat/models.py:21
+msgid "Dialog"
+msgstr ""
+
+#: django_private_chat/models.py:22
+msgid "Author"
+msgstr ""
+
+#: django_private_chat/models.py:24
+msgid "Message text"
+msgstr ""
+
+#: django_private_chat/models.py:25
+msgid "Read"
+msgstr ""
+
+#: django_private_chat/templates/django_private_chat/dialogs.html:43
+msgid "Online"
+msgstr ""
+
+#: django_private_chat/templates/django_private_chat/dialogs.html:67
+msgid "Write a message"
+msgstr ""
+
+#: friendships/models.py:87 messager/models.py:58
+#: userena/contrib/umessages/forms.py:11
+msgid "Message"
+msgstr ""
+
+#: friendships/models.py:94
+msgid "Friendship Request"
+msgstr ""
+
+#: friendships/models.py:95
+msgid "Friendship Requests"
+msgstr ""
+
+#: friendships/models.py:377
+msgid "Friend"
+msgstr ""
+
+#: friendships/models.py:378
+msgid "Friends"
+msgstr ""
+
+#: friendships/models.py:478
+msgid "Following Relationship"
+msgstr ""
+
+#: friendships/models.py:479
+msgid "Following Relationships"
+msgstr ""
+
+#: friendships/models.py:587
+msgid "Blocker Relationship"
+msgstr ""
+
+#: friendships/models.py:588
+msgid "Blocked Relationships"
+msgstr ""
+
+#: messager/apps.py:7
+msgid "Messager"
+msgstr ""
+
+#: messager/models.py:48
+msgid "Sender"
+msgstr ""
+
+#: messager/models.py:51
+msgid "Recipient"
+msgstr ""
+
+#: new_millionaire/settings.py:254
+msgid "Arabic"
+msgstr ""
+
+#: new_millionaire/settings.py:255
+msgid "Azerbaijani"
+msgstr ""
+
+#: new_millionaire/settings.py:256
+msgid "Bulgarian"
+msgstr ""
+
+#: new_millionaire/settings.py:257
+msgid "Bengali"
+msgstr ""
+
+#: new_millionaire/settings.py:258
+msgid "Catalan"
+msgstr ""
+
+#: new_millionaire/settings.py:259
+msgid "Czech"
+msgstr ""
+
+#: new_millionaire/settings.py:260
+msgid "Danish"
+msgstr ""
+
+#: new_millionaire/settings.py:261
+msgid "German"
+msgstr ""
+
+#: new_millionaire/settings.py:262 userena/runtests/settings.py:30
+msgid "English"
+msgstr ""
+
+#: new_millionaire/settings.py:263 userena/runtests/settings.py:36
+msgid "Spanish"
+msgstr ""
+
+#: new_millionaire/settings.py:264
+msgid "Colombian Spanish"
+msgstr ""
+
+#: new_millionaire/settings.py:265
+msgid "Estonian"
+msgstr ""
+
+#: new_millionaire/settings.py:266
+msgid "Persian"
+msgstr ""
+
+#: new_millionaire/settings.py:267 userena/runtests/settings.py:32
+msgid "French"
+msgstr ""
+
+#: new_millionaire/settings.py:268
+msgid "Hindi"
+msgstr ""
+
+#: new_millionaire/settings.py:269
+msgid "Hungarian"
+msgstr ""
+
+#: new_millionaire/settings.py:270
+msgid "Armenian"
+msgstr ""
+
+#: new_millionaire/settings.py:271
+msgid "Indonesian"
+msgstr ""
+
+#: new_millionaire/settings.py:272
+msgid "Italian"
+msgstr ""
+
+#: new_millionaire/settings.py:273
+msgid "Japanese"
+msgstr ""
+
+#: new_millionaire/settings.py:274
+msgid "Korean"
+msgstr ""
+
+#: new_millionaire/settings.py:275
+msgid "Lithuanian"
+msgstr ""
+
+#: new_millionaire/settings.py:276
+msgid "Mongolian"
+msgstr ""
+
+#: new_millionaire/settings.py:277
+msgid "Norwegian"
+msgstr ""
+
+#: new_millionaire/settings.py:278 userena/runtests/settings.py:31
+msgid "Dutch"
+msgstr ""
+
+#: new_millionaire/settings.py:279 userena/runtests/settings.py:33
+msgid "Polish"
+msgstr ""
+
+#: new_millionaire/settings.py:280
+msgid "Portuguese"
+msgstr ""
+
+#: new_millionaire/settings.py:281 userena/runtests/settings.py:35
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: new_millionaire/settings.py:282
+msgid "Romanian"
+msgstr ""
+
+#: new_millionaire/settings.py:283
+msgid "Russian"
+msgstr ""
+
+#: new_millionaire/settings.py:284
+msgid "Slovak"
+msgstr ""
+
+#: new_millionaire/settings.py:285
+msgid "Albanian"
+msgstr ""
+
+#: new_millionaire/settings.py:286
+msgid "Serbian"
+msgstr ""
+
+#: new_millionaire/settings.py:287
+msgid "Swahili"
+msgstr ""
+
+#: new_millionaire/settings.py:288
+msgid "Swedish"
+msgstr ""
+
+#: new_millionaire/settings.py:289
+msgid "Thai"
+msgstr ""
+
+#: new_millionaire/settings.py:290
+msgid "Turkish"
+msgstr ""
+
+#: new_millionaire/settings.py:291
+msgid "Ukrainian"
+msgstr ""
+
+#: new_millionaire/settings.py:292
+msgid "Vietnamese"
+msgstr ""
+
+#: new_millionaire/settings.py:293
+msgid "Simplified Chinese"
+msgstr ""
+
+#: new_millionaire/settings.py:294
+msgid "Traditional Chinese"
+msgstr ""
+
+#: news/models.py:29
+msgid "Is a reply?"
+msgstr ""
+
+#: news/views.py:60
+#, python-brace-format
+msgid "Text is {lenght} characters longer than accepted."
+msgstr ""
+
+#: notifications/models.py:101
+msgid "liked"
+msgstr ""
+
+#: notifications/models.py:102
+msgid "commented"
+msgstr ""
+
+#: notifications/models.py:103
+msgid "cavorited"
+msgstr ""
+
+#: notifications/models.py:104
+msgid "started to follow you"
+msgstr ""
+
+#: notifications/models.py:105
+msgid "answered"
+msgstr ""
+
+#: notifications/models.py:106
+msgid "accepted"
+msgstr ""
+
+#: notifications/models.py:107
+msgid "edited"
+msgstr ""
+
+#: notifications/models.py:108
+msgid "also commented"
+msgstr ""
+
+#: notifications/models.py:109
+msgid "logged in"
+msgstr ""
+
+#: notifications/models.py:110
+msgid "logged out"
+msgstr ""
+
+#: notifications/models.py:111
+msgid "voted on"
+msgstr ""
+
+#: notifications/models.py:112
+msgid "shared"
+msgstr ""
+
+#: notifications/models.py:113
+msgid "created an account"
+msgstr ""
+
+#: notifications/models.py:114
+msgid "replied to"
+msgstr ""
+
+#: notifications/models.py:137
+msgid "Notification"
+msgstr ""
+
+#: notifications/views.py:30
+#, python-brace-format
+msgid "All notifications to {request.user.username} have been marked as read."
+msgstr ""
+
+#: notifications/views.py:48
+#, python-brace-format
+msgid "The notification {notification.slug} has been marked as read."
+msgstr ""
+
+#: profiles/forms.py:16
+msgid "First name"
+msgstr ""
+
+#: profiles/forms.py:20
+msgid "Last name"
+msgstr ""
+
+#: profiles/models.py:13 userena/tests/profiles/models.py:12
+msgid "Male"
+msgstr ""
+
+#: profiles/models.py:14 userena/tests/profiles/models.py:13
+msgid "Female"
+msgstr ""
+
+#: profiles/models.py:19 userena/tests/profiles/models.py:18
+#: userena/tests/profiles/models.py:33
+msgid "user"
+msgstr ""
+
+#: profiles/models.py:23 userena/tests/profiles/models.py:21
+msgid "gender"
+msgstr ""
+
+#: profiles/models.py:27 userena/tests/profiles/models.py:25
+msgid "website"
+msgstr ""
+
+#: profiles/models.py:29
+msgid "birth date"
+msgstr ""
+
+#: profiles/models.py:30 userena/tests/profiles/models.py:27
+msgid "about me"
+msgstr ""
+
+#: qa/models.py:35
+msgid "Vote"
+msgstr ""
+
+#: qa/models.py:36
+msgid "Votes"
+msgstr ""
+
+#: qa/models.py:75
+msgid "Open"
+msgstr ""
+
+#: qa/models.py:76
+msgid "Closed"
+msgstr ""
+
+#: qa/models.py:93
+msgid "Question"
+msgstr ""
+
+#: qa/models.py:94
+msgid "Questions"
+msgstr ""
+
+#: qa/models.py:150
+msgid "Answer"
+msgstr ""
+
+#: qa/models.py:151
+msgid "Answers"
+msgstr ""
+
+#: qa/views.py:66
+msgid "Your question has been created."
+msgstr ""
+
+#: qa/views.py:83
+msgid "Thank you! Your answer has been posted."
+msgstr ""
+
+#: qa/views.py:119 qa/views.py:146
+msgid "Database integrity error."
+msgstr ""
+
+#: templates/articles/article_create.html:14
+#: templates/articles/article_detail.html:83
+#: templates/articles/article_list.html:80
+msgid "Write a new article"
+msgstr ""
+
+#: templates/articles/article_create.html:21
+msgid "Publish"
+msgstr ""
+
+#: templates/articles/article_create.html:22
+#: templates/articles/article_update.html:22
+msgid "Save as draft"
+msgstr ""
+
+#: templates/articles/article_detail.html:23
+msgid "by"
+msgstr ""
+
+#: templates/articles/article_detail.html:28
+#: templates/articles/article_list.html:38
+msgid "Posted"
+msgstr ""
+
+#: templates/articles/article_detail.html:32
+#: templates/articles/article_detail.html:36
+#: templates/articles/article_list.html:28
+msgid "Featured Image"
+msgstr ""
+
+#: templates/articles/article_detail.html:44
+msgid "Leave a Comment"
+msgstr ""
+
+#: templates/articles/article_detail.html:52
+msgid "Add comment"
+msgstr ""
+
+#: templates/articles/article_detail.html:83
+#: templates/articles/article_list.html:80
+msgid "New Article"
+msgstr ""
+
+#: templates/articles/article_detail.html:84
+msgid "Edit this article"
+msgstr ""
+
+#: templates/articles/article_detail.html:84
+msgid "Edit"
+msgstr ""
+
+#: templates/articles/article_detail.html:90
+#: templates/articles/article_list.html:87
+msgid "Cloud tag"
+msgstr ""
+
+#: templates/articles/article_list.html:35
+msgid "Read More"
+msgstr ""
+
+#: templates/articles/article_list.html:47
+msgid "There is no published article yet"
+msgstr ""
+
+#: templates/articles/article_list.html:47
+msgid "Be the first one to publish one"
+msgstr ""
+
+#: templates/articles/article_list.html:53
+msgid "Newer"
+msgstr ""
+
+#: templates/articles/article_list.html:65
+msgid "Older"
+msgstr ""
+
+#: templates/articles/article_list.html:81
+#: templates/articles/article_update.html:13
+msgid "Drafts"
+msgstr ""
+
+#: templates/articles/article_update.html:14
+msgid "Update an article"
+msgstr ""
+
+#: templates/articles/article_update.html:21
+msgid "Update"
+msgstr ""
+
+#: templates/auth/login_form.html:77
+msgid "New User ?"
+msgstr ""
+
+#: templates/auth/login_form.html:86
+msgid "About"
+msgstr ""
+
+#: templates/auth/login_form.html:87
+msgid "Services"
+msgstr ""
+
+#: templates/auth/login_form.html:88
+msgid "Jobs"
+msgstr ""
+
+#: templates/auth/signup.html:58
+msgid "Dèja?"
+msgstr ""
+
+#: templates/news/news_form_modal.html:15
+msgid "Share something new"
+msgstr ""
+
+#: userena/contrib/umessages/admin.py:25
+msgid "Date/time"
+msgstr ""
+
+#: userena/contrib/umessages/fields.py:57
+#, python-format
+msgid "The following usernames are incorrect: %(users)s."
+msgstr ""
+
+#: userena/contrib/umessages/forms.py:10
+msgid "To"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:20
+msgid "from user"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:23
+msgid "to user"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:27
+msgid "latest message"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:34
+msgid "contact"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:35
+msgid "contacts"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:38
+#, python-format
+msgid "%(um_from_user)s and %(um_to_user)s"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:66
+#: userena/contrib/umessages/models.py:82
+msgid "recipient"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:69
+#: userena/contrib/umessages/models.py:119
+msgid "message"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:71
+msgid "read at"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:75
+msgid "recipient deleted at"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:83
+#: userena/contrib/umessages/models.py:106
+msgid "recipients"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:86
+#, python-format
+msgid "%(message)s"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:97
+msgid "body"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:101
+msgid "sender"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:108
+msgid "sent at"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:111
+msgid "sender deleted at"
+msgstr ""
+
+#: userena/contrib/umessages/models.py:120
+msgid "messages"
+msgstr ""
+
+#: userena/contrib/umessages/templates/umessages/message_detail.html:4
+#, python-format
+msgid "Conversation with %(recipient)s"
+msgstr ""
+
+#: userena/contrib/umessages/templates/umessages/message_detail.html:12
+#, python-format
+msgid "Received on %(sent_at)s"
+msgstr ""
+
+#: userena/contrib/umessages/templates/umessages/message_form.html:4
+#: userena/contrib/umessages/templates/umessages/message_list.html:9
+msgid "Compose"
+msgstr ""
+
+#: userena/contrib/umessages/templates/umessages/message_form.html:10
+msgid "Compose message"
+msgstr ""
+
+#: userena/contrib/umessages/templates/umessages/message_list.html:8
+#, python-format
+msgid "%(unread_message_count)s new messages."
+msgstr ""
+
+#: userena/contrib/umessages/templates/umessages/message_list.html:20
+#, python-format
+msgid "%(latest_message)s (%(unread_between_count)s new)"
+msgstr ""
+
+#: userena/contrib/umessages/views.py:126
+msgid "Message is sent."
+msgstr ""
+
+#: userena/contrib/umessages/views.py:206
+msgid "Message is succesfully restored."
+msgid_plural "Messages are succesfully restored."
+msgstr[0] ""
+msgstr[1] ""
+
+#: userena/contrib/umessages/views.py:210
+msgid "Message is successfully removed."
+msgid_plural "Messages are successfully removed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: userena/forms.py:41
+msgctxt "Username"
+msgid "Username"
+msgstr ""
+
+#: userena/forms.py:42
+msgctxt "help, text"
+msgid "Username must contain only letters, numbers, dots and underscores."
+msgstr ""
+
+#: userena/forms.py:45 userena/forms.py:172
+msgctxt "Email"
+msgid "Email"
+msgstr ""
+
+#: userena/forms.py:48
+msgctxt "Create password"
+msgid "Create password"
+msgstr ""
+
+#: userena/forms.py:51
+msgctxt "Repeat password"
+msgid "Repeat password"
+msgstr ""
+
+#: userena/forms.py:66
+msgid ""
+"This username is already taken but not confirmed. Please check your email "
+"for verification steps."
+msgstr ""
+
+#: userena/forms.py:67
+msgctxt "help text"
+msgid "This username is already taken."
+msgstr ""
+
+#: userena/forms.py:69
+msgctxt "help text"
+msgid "This username is not allowed."
+msgstr ""
+
+#: userena/forms.py:76
+msgid ""
+"This email is already in use but not confirmed. Please check your email for "
+"verification steps."
+msgstr ""
+
+#: userena/forms.py:77 userena/tests/tests_forms.py:60
+msgid "This email is already in use. Please supply a different email."
+msgstr ""
+
+#: userena/forms.py:89 userena/tests/tests_forms.py:36
+msgid "The two password fields didn't match."
+msgstr ""
+
+#: userena/forms.py:133
+msgctxt "Terms"
+msgid "I have read and agree to the Terms of Service"
+msgstr ""
+
+#: userena/forms.py:134
+msgctxt "Terms"
+msgid "You must agree to the terms to register."
+msgstr ""
+
+#: userena/forms.py:157
+msgctxt "Email or username"
+msgid "Email or username"
+msgstr ""
+
+#: userena/forms.py:158
+msgctxt "help text"
+msgid "Either supply us with your email or username."
+msgstr ""
+
+#: userena/forms.py:159
+msgctxt "Password"
+msgid "Password"
+msgstr ""
+
+#: userena/forms.py:163 userena/forms.py:170
+msgctxt "Remember me"
+msgid "Remember me"
+msgstr ""
+
+#: userena/forms.py:173
+msgctxt "help text"
+msgid "Please supply your email."
+msgstr ""
+
+#: userena/forms.py:188
+msgctxt "help text"
+msgid ""
+"Please enter a correct username or email and password. Note that both fields "
+"are case-sensitive."
+msgstr ""
+
+#: userena/forms.py:194
+msgctxt "Email"
+msgid "New email"
+msgstr ""
+
+#: userena/forms.py:212
+msgctxt "help text"
+msgid "You're already known under this email."
+msgstr ""
+
+#: userena/forms.py:214
+msgctxt "help text"
+msgid "This email is already in use. Please supply a different email."
+msgstr ""
+
+#: userena/forms.py:228
+msgctxt "First name"
+msgid "First name"
+msgstr ""
+
+#: userena/forms.py:231
+msgctxt "Last name"
+msgid "Last name"
+msgstr ""
+
+#: userena/mail.py:21
+msgid "Either message_plain or message_html should be not None"
+msgstr ""
+
+#: userena/managers.py:272
+#, python-format
+msgid "No profile found for %(username)s"
+msgstr ""
+
+#: userena/models.py:51
+msgctxt "user"
+msgid "user"
+msgstr ""
+
+#: userena/models.py:54
+msgctxt "last"
+msgid "last active"
+msgstr ""
+
+#: userena/models.py:57
+msgctxt "last"
+msgid "The last date that the user was active."
+msgstr ""
+
+#: userena/models.py:59
+msgctxt "activation key"
+msgid "activation key"
+msgstr ""
+
+#: userena/models.py:63
+msgctxt "notification send"
+msgid "notification send"
+msgstr ""
+
+#: userena/models.py:65
+msgctxt "designate"
+msgid ""
+"Designates whether this user has already got a notification about activating "
+"their account."
+msgstr ""
+
+#: userena/models.py:67
+msgctxt "unconfirmed"
+msgid "unconfirmed email address"
+msgstr ""
+
+#: userena/models.py:69
+msgctxt "temporary"
+msgid "Temporary email address when the user requests an email change."
+msgstr ""
+
+#: userena/models.py:71
+msgctxt "unconfirmer"
+msgid "unconfirmed email verification key"
+msgstr ""
+
+#: userena/models.py:75
+msgctxt "creation"
+msgid "creation date of email confirmation key"
+msgstr ""
+
+#: userena/models.py:82
+msgctxt "registration"
+msgid "userena registration"
+msgstr ""
+
+#: userena/models.py:83
+msgctxt "registration"
+msgid "userena registrations"
+msgstr ""
+
+#: userena/models.py:184
+msgctxt "open"
+msgid "Open"
+msgstr ""
+
+#: userena/models.py:185
+msgctxt "registered"
+msgid "Registered"
+msgstr ""
+
+#: userena/models.py:186
+msgctxt "closed"
+msgid "Closed"
+msgstr ""
+
+#: userena/models.py:193
+msgctxt "mugshot"
+msgid "mugshot"
+msgstr ""
+
+#: userena/models.py:197
+msgctxt "a personal image"
+msgid "A personal image displayed in your profile."
+msgstr ""
+
+#: userena/models.py:199
+msgctxt "privacy"
+msgid "privacy"
+msgstr ""
+
+#: userena/models.py:203
+msgctxt "who can view"
+msgid "Designates who can view your profile."
+msgstr ""
+
+#: userena/models.py:283
+#, python-format
+msgid "%(first_name)s %(last_name)s"
+msgstr ""
+
+#: userena/models.py:348
+msgctxt "language"
+msgid "language"
+msgstr ""
+
+#: userena/models.py:352
+msgctxt "defaut language"
+msgid "Default language."
+msgstr ""
+
+#: userena/runtests/settings.py:34
+msgid "Portugese"
+msgstr ""
+
+#: userena/runtests/settings.py:37
+msgid "Greek"
+msgstr ""
+
+#: userena/settings.py:47
+msgid "a month"
+msgstr ""
+
+#: userena/tests/profiles/models.py:26
+msgid "location"
+msgstr ""
+
+#: userena/tests/profiles/models.py:28
+msgid "language"
+msgstr ""
+
+#: userena/tests/tests_forms.py:29
+msgid "Username must contain only letters, numbers, dots and underscores."
+msgstr ""
+
+#: userena/tests/tests_forms.py:44
+msgid "This username is already taken."
+msgstr ""
+
+#: userena/tests/tests_forms.py:52
+msgid "This username is not allowed."
+msgstr ""
+
+#: userena/views.py:174
+msgid "Your account has been activated and you have been signed in."
+msgstr ""
+
+#: userena/views.py:274
+msgid "Your email address has been changed."
+msgstr ""
+
+#: userena/views.py:424
+msgid "You have been signed in."
+msgstr ""
+
+#: userena/views.py:464
+msgid "You have been signed out."
+msgstr ""
+
+#: userena/views.py:667 userena/views.py:705
+msgid "Your profile has been updated."
+msgstr ""

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <link href="{% static 'css/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+        <link href="{% static 'css/chat/styleChat.css' %}" rel="stylesheet" type="text/css" media="all">
+        <link href="{% static 'css/css/style1.css' %}" rel="stylesheet" type="text/css" media="all">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+
+        {% block css %}{% endblock %}
+    </head>
+
+    <body>
+        {% block content %}{% endblock %}
+
+        <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'js/handlebars-v1.3.0.js' %}" type="text/javascript"></script>
+        {% block extra_js %}{% endblock %}
+    </body>
+
+</html>

@@ -1,0 +1,434 @@
+{# This template is here just to demonstrate how to customize the default one. #}
+{# It has none to very few changes #}
+{% extends "layout.html" %}
+{% load static %}
+{% load i18n %}
+{% block css %}
+{% endblock css %}
+
+{% block content %}
+		<section class="messages-page">
+			<div class="container">
+				<div class="messages-sec">
+					<div class="row">
+
+						<!-- Debut de liste -->
+						<div class="col-lg-4 col-md-12 no-pdd">
+							<div class="msgs-list">
+								<div class="msg-title">
+									<h3>{% trans "Messages" %}</h3>
+									<ul>
+										<li><a href="#" title=""><i class="fa fa-cog"></i></a></li>
+										<li><a href="#" title=""><i class="fa fa-ellipsis-v"></i></a></li>
+									</ul>
+								</div><!--msg-title end-->
+								<div class="user-list-div">
+									<ul>
+										{% for dialog in object_list %}
+										<li class="active">
+											{% if dialog.owner == request.user %}
+	                                        	{% with dialog.opponent.username as username %}
+												<div class="usr-msg-details">
+													<div class="usr-ms-img">
+														<img src="images/resources/m-img1.png" alt="">
+														<span class="msg-status"></span>
+													</div>
+													<div class="usr-mg-info">
+														<h3><a href="{% url 'dialogs_detail' username %}" id="user-{{ username }}"
+	                                               class="btn btn-danger">{% trans "Chat with" %} {{ username }}</a></h3>
+													</div><!--usr-mg-info end-->
+													<span class="posted_time">1:55 PM</span>
+													<span class="msg-notifc">1</span>
+												</div><!--usr-msg-details end-->
+												{% endwith%}
+											{% else %}
+												{% with dialog.owner.username as username %}
+												<div class="usr-msg-details">
+													<div class="usr-ms-img">
+														<img src="images/resources/m-img1.png" alt="">
+														<span class="msg-status"></span>
+													</div>
+													<div class="usr-mg-info">
+														<h3><a href="{% url 'dialogs_detail' username %}" id="user-{{ username }}">{% trans "Chat with" %} {{ username }}</a></h3>
+													</div><!--usr-mg-info end-->
+													<span class="posted_time">1:55 PM</span>
+													<span class="msg-notifc">1</span>
+												</div><!--usr-msg-details end-->
+												{% endwith %}
+                                    	{% endif %}
+
+										</li>
+										{% endfor %}
+									</ul>
+								</div><!--messages-list end-->
+							</div><!--msgs-list end-->
+
+						</div>
+
+							<!-- debut de conversation -->
+
+						<div class="col-lg-8 col-md-12 pd-right-none pd-left-none">
+							<div class="main-conversation-box">
+								<div class="message-bar-head">
+									<div class="usr-msg-details">
+										<div class="usr-ms-img">
+											<img src="images/resources/m-img1.png" alt="">
+										</div>
+										<div class="usr-mg-info">
+											<h3>{{ opponent_username }}</h3>
+											<p class="text-success" id="online-status" style="display: none">{% trans "En ligne" %}</p>
+                    						<p class="text-danger" id="offline-status" style="display: none">{% trans "Offline" %}</p>
+										</div><!--usr-mg-info end-->
+									</div>
+									<a href="#" title=""><span class="pull-right" hidden id="typing-text">
+				                        <strong>{{ opponent_username }} {% trans "is typing..." %}</strong>
+				                    	</span></i>
+				                	</a>
+								</div><!--message-bar-head end-->
+
+								<div class="messages-line">
+
+								<div id="messages" class="messages">
+									{% for msg in active_dialog.messages.all %}
+									<div class="main-message-box">
+										<div class="messg-usr-img">
+											<img src="images/resources/m-img1.png" alt="">
+										</div><!--messg-usr-img end-->
+									</div><!--main-message-box end-->
+									<div class="main-message-box ta-right">
+										<div class="message-dt">
+											<div class="message-inner-dt">
+												<div  class="row  {% if msg.read %}msg-read{% else %}msg-unread{% endif %} {% if msg.sender != request.user %}opponent{% endif %}"
+                                     			data-id="{{ msg.id }}">
+
+												<p id="ab" class="{% if msg.sender == request.user %}pull-right{% else %}pull-left{% endif %}">
+			                                        {{ msg.text }}
+
+			                                    </p>
+
+			                                	</div>
+
+												</div><!--message-inner-dt end-->
+											<span class="timestamp">&ndash; 
+												<span data-livestamp="{{ msg.get_formatted_create_datetime }}">	{{ msg.get_formatted_create_datetime }}
+												</span>
+			                                </span>
+										</div><!--message-dt end-->
+										<div class="messg-usr-img">
+											<img src="images/resources/m-img2.png" alt="">
+										</div><!--messg-usr-img end-->
+									</div><!--main-message-box end-->
+									{% endfor %}
+									</div><!--main-message-box end-->
+								</div><!--messages-line end-->
+								<div class="message-send-area">
+									<form>
+										<div class="mf-field">
+											<textarea id="chat-message" class="form-control message"
+                                  placeholder="{% trans 'Ecrivez quelque chose' %}"></textarea>
+											<input id="btn-send-message" type="submit" class="btn btn-primary pull-right send-message"
+                                   style="margin-left: 10px;" value="{% trans 'Envoyer' %}"/>
+										</div>
+										<ul>
+											<li><a href="#" title=""><i class="fa fa-smile-o"></i></a></li>
+											<li><a href="#" title=""><i class="fa fa-camera"></i></a></li>
+											<li><a href="#" title=""><i class="fa fa-paperclip"></i></a></li>
+										</ul>
+									</form>
+
+								</div><!--message-send-area end-->
+							</div>
+							</div><!--main-conversation-box end-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!--messages-page end-->
+
+
+
+		<footer>
+			<div class="footy-sec mn no-margin">
+				<div class="container">
+					<ul>
+						<li><a href="#" title="">Help Center</a></li>
+						<li><a href="#" title="">Privacy Policy</a></li>
+						<li><a href="#" title="">Community Guidelines</a></li>
+						<li><a href="#" title="">Cookies Policy</a></li>
+						<li><a href="#" title="">Career</a></li>
+						<li><a href="#" title="">Forum</a></li>
+						<li><a href="#" title="">Language</a></li>
+						<li><a href="#" title="">Copyright Policy</a></li>
+					</ul>
+					<p><img src="images/copy-icon2.png" alt="">Copyright 2017</p>
+					<img class="fl-rgt" src="images/logo2.png" alt="">
+				</div>
+			</div>
+		</footer>
+
+	</div><!--theme-layout end-->
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollmonitor/1.2.0/scrollMonitor.js"
+            integrity="sha256-BseZlDlA+yL4qu+Voi82iFa5aaifralQEXIjOjaXgeo=" crossorigin="anonymous"></script>
+    <script>
+        var base_ws_server_path = "{{ ws_server_path }}";
+        $(document).ready(function () {
+            var websocket = null;
+            var monitor = null;
+
+            function initReadMessageHandler(containerMonitor, elem) {
+                var id = $(elem).data('id');
+                var elementWatcher = containerMonitor.create(elem);
+                elementWatcher.enterViewport(function () {
+                    var opponent_username = getOpponnentUsername();
+                    var packet = JSON.stringify({
+                        type: 'read_message',
+                        session_key: '{{ request.session.session_key }}',
+                        username: opponent_username,
+                        message_id: id
+                    });
+                    $(elem).removeClass('msg-unread').addClass('msg-read');
+                    websocket.send(packet);
+                });
+            }
+
+            function initScrollMonitor() {
+                var containerElement = $("#messages");
+                var containerMonitor = scrollMonitor.createContainer(containerElement);
+                $('.msg-unread').each(function (i, elem) {
+                    if ($(elem).hasClass('opponent')){
+                        initReadMessageHandler(containerMonitor, elem);
+                    }
+
+                });
+                return containerMonitor
+            }
+
+            function getOpponnentUsername() {
+                return "{{ opponent_username }}";
+            }
+
+            // TODO: Use for adding new dialog
+            function addNewUser(packet) {
+                $('#user-list').html('');
+                packet.value.forEach(function (userInfo) {
+                    if (userInfo.username == getUsername()) return;
+                    var tmpl = Handlebars.compile($('#user-list-item-template').html());
+                    $('#user-list').append(tmpl(userInfo))
+                });
+            }
+
+            function addNewMessage(packet) {
+                var msg_class = "";
+                if (packet['sender_name'] == $("#owner_username").val()) {
+                    msg_class = "pull-right";
+                } else {
+                    msg_class = "pull-left";
+                }
+                var msgElem =
+                    $('<div class="row msg-unread" data-id="' + packet.message_id + '">' +
+                        '<p class="' + msg_class + '">' +
+                        '<span class="username">' + packet['sender_name'] + ': </span>' +
+                        packet['message'] +
+                        ' <span class="timestamp">&ndash; <span data-livestamp="' + packet['created'] + '"> ' + packet['created'] + '</span></span> ' +
+                        '</p> ' +
+                        '</div>');
+                $('#messages').append(msgElem);
+                scrollToLastMessage()
+            }
+
+            function scrollToLastMessage() {
+                var $msgs = $('#messages');
+                $msgs.animate({"scrollTop": $msgs.prop('scrollHeight')})
+            }
+
+            function generateMessage(context) {
+                var tmpl = Handlebars.compile($('#chat-message-template').html());
+                return tmpl({msg: context})
+            }
+
+            function setUserOnlineOffline(username, online) {
+                var elem = $("#user-" + username);
+                if (online) {
+                    elem.attr("class", "btn btn-success");
+                } else {
+                    elem.attr("class", "btn btn-danger");
+                }
+            }
+
+            function gone_online() {
+                $("#offline-status").hide();
+                $("#online-status").show();
+            }
+
+            function gone_offline() {
+                $("#online-status").hide();
+                $("#offline-status").show();
+            }
+
+            function flash_user_button(username) {
+                var btn = $("#user-" + username);
+                btn.fadeTo(700, 0.1, function () {
+                    $(this).fadeTo(800, 1.0);
+                });
+            }
+
+            function setupChatWebSocket() {
+                var opponent_username = getOpponnentUsername();
+                websocket = new WebSocket(base_ws_server_path + '{{ request.session.session_key }}/' + opponent_username);
+
+                websocket.onopen = function (event) {
+                    var opponent_username = getOpponnentUsername();
+
+                    var onOnlineCheckPacket = JSON.stringify({
+                        type: "check-online",
+                        session_key: '{{ request.session.session_key }}',
+                        username: opponent_username
+                        {#                      Sending username because the user needs to know if his opponent is online #}
+                    });
+                    var onConnectPacket = JSON.stringify({
+                        type: "online",
+                        session_key: '{{ request.session.session_key }}'
+
+                    });
+
+                    console.log('connected, sending:', onConnectPacket);
+                    websocket.send(onConnectPacket);
+                    console.log('checking online opponents with:', onOnlineCheckPacket);
+                    websocket.send(onOnlineCheckPacket);
+                    monitor = initScrollMonitor();
+                };
+
+
+                window.onbeforeunload = function () {
+
+                    var onClosePacket = JSON.stringify({
+                        type: "offline",
+                        session_key: '{{ request.session.session_key }}',
+                        username: opponent_username,
+                        {# Sending username because to let opponnent know that the user went offline #}
+                    });
+                    console.log('unloading, sending:', onClosePacket);
+                    websocket.send(onClosePacket);
+                    websocket.close();
+                };
+
+
+                websocket.onmessage = function (event) {
+                    var packet;
+
+                    try {
+                        packet = JSON.parse(event.data);
+                        console.log(packet)
+                    } catch (e) {
+                        console.log(e);
+                    }
+
+                    switch (packet.type) {
+                        case "new-dialog":
+                            // TODO: add new dialog to dialog_list
+                            break;
+                        case "user-not-found":
+                            // TODO: dispay some kind of an error that the user is not found
+                            break;
+                        case "gone-online":
+                            if (packet.usernames.indexOf(opponent_username) != -1) {
+                                gone_online();
+                            } else {
+                                gone_offline();
+                            }
+                            for (var i = 0; i < packet.usernames.length; ++i) {
+                                setUserOnlineOffline(packet.usernames[i], true);
+                            }
+                            break;
+                        case "gone-offline":
+                            if (packet.username == opponent_username) {
+                                gone_offline();
+                            }
+                            setUserOnlineOffline(packet.username, false);
+                            break;
+                        case "new-message":
+                            var username = packet['sender_name'];
+                           if (username == opponent_username || username == $("#owner_username").val()){
+                                addNewMessage(packet);
+                                if (username == opponent_username) {
+                                    initReadMessageHandler(monitor, $("div[data-id='" + packet['message_id'] + "']"));
+                                }
+                            } else {
+                                if ($("#user-"+username).length == 0){
+                                    var new_button = $(''+
+                                        '<a href="/'+ username + '"' +
+                                        'id="user-'+username+'" class="btn btn-danger">{% trans "Chat with" %} '+username+'</a>');
+                                    $("#user-list-div").find("ul").append()
+                                }
+                                flash_user_button(username);
+
+                            }
+                            break;
+                        case "opponent-typing":
+                            var typing_elem = $('#typing-text');
+                            if (!typing_elem.is(":visible")) {
+                                typing_elem.fadeIn(500);
+                            } else {
+                                typing_elem.stop(true);
+                                typing_elem.fadeIn(0);
+                            }
+                            typing_elem.fadeOut(3000);
+                            break;
+                        case "opponent-read-message":
+                            if (packet['username'] == opponent_username) {
+                                $("div[data-id='" + packet['message_id'] + "']").removeClass('msg-unread').addClass('msg-read');
+                            }
+                            break;
+
+                        default:
+                            console.log('error: ', event)
+                    }
+                }
+            }
+
+            function sendMessage(message) {
+                var opponent_username = getOpponnentUsername();
+                var newMessagePacket = JSON.stringify({
+                    type: 'new-message',
+                    session_key: '{{ request.session.session_key }}',
+                    username: opponent_username,
+                    message: message
+                });
+                websocket.send(newMessagePacket)
+            }
+
+            $('#chat-message').keypress(function (e) {
+                if (e.which == 13 && this.value) {
+                    sendMessage(this.value);
+                    this.value = "";
+                    return false
+                } else {
+                    var opponent_username = getOpponnentUsername();
+                    var packet = JSON.stringify({
+                        type: 'is-typing',
+                        session_key: '{{ request.session.session_key }}',
+                        username: opponent_username,
+                        typing: true
+                    });
+                    websocket.send(packet);
+                }
+            });
+
+            $('#btn-send-message').click(function (e) {
+                var $chatInput = $('#chat-message');
+                var msg = $chatInput.val();
+                if (!msg) return;
+                sendMessage($chatInput.val());
+                $chatInput.val('')
+            });
+
+            setupChatWebSocket();
+            scrollToLastMessage();
+        });
+
+    </script>
+{% endblock %}

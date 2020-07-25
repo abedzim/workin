@@ -1,0 +1,17 @@
+body {
+    padding-top: 50px;
+}
+
+.main.container {
+    padding: 40px 15px;
+}
+
+input[type='number'] {
+    max-width: 120px;
+}
+
+.explain {
+    color: #666;
+    margin: 0 0 10px 20px;
+}
+

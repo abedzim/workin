@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Editing Django models in the front end</h1>
+    <div>Read the full documentation at
+        <a href="https://editing-django-models-in-the-frontend.readthedocs.io">Read the Docs</a>
+    </div>
+
+    <br />
+    <h3>Index</h3>
+
+    <ol>
+        <li>
+            <a href="{% url 'frontend:basic-modal' %}">A basic modal box with jQuery</a>
+            <div class="explain">
+                Adapted from <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2">w3schools example</a>,
+                provides a simple modal box using jQuery only
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'frontend:basic-modal-which-returns-a-value' %}">A basic modal box which returns a value</a>
+            <div class="explain">
+                In this example, we also collect a value from the user
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'frontend:basic-modal-with-bootstrap3' %}">A basic modal box with Bootstrap 3</a>
+            <div class="explain">
+                An example using Bootstrap 3 modal plugin
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'frontend:generic-empty-modal-for-django' %}">A generic empty modal for Django</a>
+            <div class="explain">
+                Here we display a generic modal to be used as a generic container for user interaction
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'frontend:modal-with-simple-content' %}">Modal with simple content</a>
+            <div class="explain">
+                A modal which requires it's content from the server via Ajax
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'frontend:modal-with-form' %}">Form validation in the modal</a>
+            <div class="explain">
+                The real user interaction starts when we have a form ready for submission
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'frontend:artists' %}">Creating and updating a Django Model in the front-end</a>
+            <div class="explain">
+                Here we apply what we've build so far to a specific Django model
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'frontend:artists2' %}">Editing a Django Model in the front-end, using a common basecode for creation and updating</a>
+            <div class="explain">
+                As the previous example, but sharing code between "add" and "change"
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'frontend:artists-and-albums' %}">A fully generic solution for Django models editing in the front-end</a>
+            <div class="explain">
+                The Holy Grail of Django models editing in the front-end
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'frontend:songs' %}">Front-end generic helpers to work with any Model</a>
+            <div class="explain">
+                Techniques to reduce replications in the front-end and share code for different Models
+            </div>
+        </li>
+    </ol>
+
+{% endblock content %}

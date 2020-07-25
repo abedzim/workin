@@ -1,0 +1,4 @@
+{% load feeder %}
+{% for key in feeds.keys %}
+    {% single_feed key format_string limit %}
+{% endfor %}

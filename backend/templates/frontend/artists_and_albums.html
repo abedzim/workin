@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+
+        <h2>(9) A fully generic solution for Django models editing in the front-end</h2>
+
+        <div class="col-sm-6">
+            <br />
+            <h1>Artists</h1>
+            <div class="explain">Artists are edited using a specific artist_edit() view</div>
+            {% if not artists %}
+                <div>No artists availalbe yet</div>
+            {% else %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Edit</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in artists %}
+                        <tr>
+                            <td>
+                                <a href=""
+                                   data-action="{% url 'frontend:artist-change' row.id %}"
+                                   onclick="openModalDialogWithForm(event, '#modal_generic', null, afterObjectEditSuccess); return false;"
+                                   data-title="Change artist: {{ row }}"
+                                >
+                                    <i class="fa fa-edit"></i> Edit
+                                </a>
+                            </td>
+                            <td>{{ row }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            <div>
+                <button
+                    href=""
+                    data-action="{% url 'frontend:artist-add' %}"
+                    data-title="New artist"
+                    onclick="openModalDialogWithForm(event, '#modal_generic', null, afterObjectEditSuccess); return false;"
+                    type="button"class="btn btn-primary">
+                    New
+                </button>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div style="color: #f00; font-weight: bold;">
+                <i class="fa fa-arrow-down"></i>
+                The Holy Grail of Django models editing in the front-end is here
+                <i class="fa fa-arrow-down"></i>
+            </div>
+            <h1>Albums</h1>
+            <div class="explain">Albums are edited using a fully generic generic_edit_view() view</div>
+            {% if not albums %}
+                <div>No albums availalbe yet</div>
+            {% else %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Edit</th>
+                            <th>Artist</th>
+                            <th>Description</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in albums %}
+                        <tr>
+                            <td>
+                                <a href=""
+                                   data-action="{% url 'frontend:album-change' row.id %}"
+                                   onclick="openModalDialogWithForm(event, '#modal_generic', null, afterObjectEditSuccess); return false;"
+                                   data-title="Change album: {{ row }}"
+                                >
+                                    <i class="fa fa-edit"></i> Edit
+                                </a>
+                            </td>
+                            <td>{{ row.artist }}</td>
+                            <td>{{ row }}</td>
+                            <td>{{ row.year }}</td>
+                            <td>
+                                <a href="{% url 'frontend:album-change' row.id %}">
+                                    <i class="fa fa-edit"></i> Edit (standalone)
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            <div>
+                <button
+                    href=""
+                    data-action="{% url 'frontend:album-add' %}"
+                    data-title="New album"
+                    onclick="openModalDialogWithForm(event, '#modal_generic', null, afterObjectEditSuccess); return false;"
+                    type="button"class="btn btn-primary">
+                    New
+                </button>
+                <a href="{% url 'frontend:album-add' %}" class="btn btn-primary">
+                    New (standalone)
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+{% block extrajs %}
+
+    <script language="javascript">
+
+        // function afterObjectEditLoad(modal) {
+        //     modal.draggable({
+        //         handle: ".modal-header"
+        //     });
+        // }
+
+        function afterObjectEditSuccess(modal) {
+            var object_id = modal.find('input[name=object_id]').val();
+            console.log(object_id);
+            location.reload(true);
+        }
+
+        $( document ).ready(function() {
+            // $('.modal-dialog').draggable({
+            //     handle: ".modal-header"
+            // });
+        });
+
+    </script>
+
+{% endblock extrajs %}
+

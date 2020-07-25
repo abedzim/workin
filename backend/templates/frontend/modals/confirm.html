@@ -1,0 +1,26 @@
+{% load i18n %}
+
+<div class="modal draggable" id="modal_confirm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                    <span class="sr-only">{% trans 'Close' %}</span>
+                </button>
+                <div class="title-wrapper">
+                    <i class="fa fa-question-circle modal-icon"></i>
+                    <span class="modal-title">{% trans 'Confirmation required' %}</span>
+                </div>
+                <small class="modal-subtitle font-bold"></small>
+            </div>
+            <div class="modal-body">
+                <p></p>
+                <h1>{% trans 'Are you sure ?' %}</h1>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">{% trans 'No' %}</button>
+                <button type="button" class="btn btn-danger btn-yes" data-dismiss="modal">{% trans 'Yes' %}</button>
+            </div>
+        </div>
+    </div>
+</div>

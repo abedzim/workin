@@ -1,0 +1,27 @@
+{% load i18n %}
+
+<div class="modal draggable" id="modal_gen" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated bounceInRight">
+            <div class="modal-header">
+                <span class="spinner">
+                    <i class="fa fa-spinner fa-spin"></i>
+                </span>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                    <span class="sr-only">{% trans 'Close' %}</span>
+                </button>
+                <div class="title-wrapper">
+                    <i class="fa fa-laptop modal-icon"></i>
+                    <span class="modal-title">title goes here</span>
+                </div>
+                <small class="modal-subtitle font-bold">subtitle goes here</small>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">{% trans 'Close' %}</button>
+                <button type="button" class="btn btn-primary btn-save">{% trans 'Save changes' %}</button>
+            </div>
+        </div>
+    </div>
+</div>

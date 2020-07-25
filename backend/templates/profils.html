@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load humanize custom_tags %}
+{% load i18n %}
+{% block title %}Search results{% endblock %}
+
+{% block content%}
+	<section>
+		<div class="gap gray-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="section-heading">
+							<h2>Our Team</h2>
+						</div>
+					</div>	
+                    {% for user in users_list %}
+					{% if user.is_active %}
+					<div class="col-lg-3 col-sm-6">
+						<div class="our-teambox">
+							<figure>
+                                {% if user.profile.get_mugshot_url %}
+									<img src="{{ user.profile.get_mugshot_url }}" alt="" class="avatar" />
+								{% else %}
+									<img src="/static/img/user1.png" alt="" class="avatar" />
+								{% endif %}
+                            </figure>
+							<div class="team-info">
+                                {% if user.profile.user.get_full_name%}
+								<h4><a class="" href="{% url 'userena_profile_detail' user.username %}" title="voir profil">{{ user.profile.user.get_full_name }}</a></h4>
+                                {% else %}
+                                <h4><a class="" href="{% url 'userena_profile_detail' user.username %}" title="voir profil">@{{ user.profile.user.username }}</a></h4>
+                                {% endif %}
+                                {% if user.profile.about_me %}
+								<span>{{ user.profile.about_me }}</span>
+                                {% else %}
+                                <span>...</span>
+                                {% endif %}
+							</div>
+						</div>
+					</div>
+					{% endif %}
+                    {% empty %}
+                    <p>No results found !</p>
+					
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</section><!-- our team -->
+{% endblock %}

@@ -1,0 +1,135 @@
+{% load i18n %}
+{% load static %}
+{% load translate_url from urls %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/loginform.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    {% get_available_languages as LANGUAGES %}
+    {% for lang_code, language_name in LANGUAGES %}
+      <link rel="alternate" hreflang="{{ lang_code }}" href="{% translate_url url=request.path lang_code=lang_code %}" />
+    {% endfor %}
+
+    <style>
+         .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: orange;
+            text-align: center;
+            }
+
+           .w3-allerta {
+              font-family: "Allerta Stencil", Sans-serif;
+            }
+
+          .language-picker {
+            cursor: pointer;
+            user-select: none;
+          }
+          .scrollable-menu {
+              height: auto;
+              max-height: 40rem;
+              overflow-x: hidden;
+            }
+          }
+    </style>
+    
+    
+    
+    
+    </head>
+
+    <body>
+  
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top w3-allerta">
+          <a class="navbar-brand w3-allerta" href="#" style="color: orange; font-weight: bold;">WorkIn</a>
+
+          <div class="navbar__login collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active"></li>
+
+            </ul>
+            <ul class="float-right" style="list-style: none;">
+                {% get_available_languages as LANGUAGES %}
+
+                {# We display language picker only if there're languages to pick from #}
+                {% if LANGUAGES|length > 1 %}
+                  {% get_current_language as LANGUAGE_CODE %}
+                  <li>
+                    <div class="language-picker dropdown show">
+                      <a class="dropdown-toggle dropdown-link " id="language-picker-button">
+                        {{ LANGUAGE_CODE|language_name_local }}
+                      </a>
+                      {% include "_language_picker.html" %}
+                    </div>
+                  </li>
+                {% endif %}
+            </ul>
+
+            <form class="form-inline my-2 my-lg-0">
+              {% csrf_token %}
+              <a class="btn my-2 my-sm-0" href="{% url 'userena_signin' %}">{% trans 'Log in' %}</a>
+              <a class="btnn my-2 my-sm-0" href="{% url 'userena_signup' %}">{% trans "Register" context "Login form secondary action" %}</a>
+            </form>
+
+          </div>
+        </nav>
+
+        <div class="container w3-allerta">
+<!--            <img src="/static/img/user.png" id="avatar" >-->
+            <h1 class="" style="font-size:32px;">-{% trans "Log in" %}-</h1>
+            <form method="post" novalidate>
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                {% include 'includes/form.html' %}
+                <input type="submit" name="" value="{% trans 'Log in' %}">
+            </form>
+
+            <small>
+              <a class="small" href="{% url 'userena_password_reset' %}">{% trans 'Forgot your password?' %}</a>
+                {% trans "New here?" context "Login form secondary title" %} <a href="{% url 'userena_signup' %}">{% trans 'Signup' %}</a>
+            </small>
+
+        </div>
+
+        <footer class="footer bg-light">
+          <div class="content">
+              <ul class="foote_bottom_ul_amrc">
+                <li><a href="">{% trans 'Home' %}</a></li>
+                <li><a href="">{% trans 'About' context "About"%}</a></li>
+                <li><a href="">{% trans 'Services'%}</a></li>
+                <li><a href="">{% trans 'Jobs' %}</a></li>
+                <li><a href="{% url 'articles:list' %}">Blog</a></li>
+                <li><a href="">{% trans 'Conditions'%}</a></li>
+                <li><a href="">{% trans 'Privacy policy' context "pp" %}</a></li>
+                <li><a href="">Cookies</a></li>
+                <li><a href="">{% trans 'Companies' context "companies"%}</a></li>
+                <li><a href="">{% trans 'Settings' %}</a></li>
+                <li><a href="">{% trans 'Our team' context "Team" %}</a></li>
+                <li><a href="">{% trans 'Contact' %}</a></li>
+              </ul>
+              <p class="text-center">Copyright @2019 | Designed With by <a href="#" style="font-weight:bold;">WorkIn.com</a></p>
+          </div>
+        </footer>
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      
+        <script src="{% static 'js/language-picker.js' %}"></script>
+        <script src="{% static 'js/navbar.js' %}"></script>
+        
+    
+    
+    
+    </body>
+
+
+
+
+</html>

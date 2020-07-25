@@ -1,0 +1,111 @@
+{% load static %}
+{% load fm_tags %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='UTF-8'>
+		<title>WorkIn - {% block title %}Bienvenu{% endblock %}</title>
+  		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="icon" type="image/png" href="{% static 'img/logo.png' %}">
+
+		<link rel="stylesheet" type="text/css" href="/static/css/animate.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/css/jquery.mCustomScrollbar.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/css/slick.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/css/slick-theme.css">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style1.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/css/responsive.css' %}">
+
+		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	
+
+		<link rel="stylesheet" type="text/css" href="/static/css/news.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/notifications.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/chat/styleChat.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/autocomplete.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/jquery-ui.css"/> 
+	
+	    <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+	    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+		
+		<script type="text/javascript" src="/static/js/jquery.min.js"> </script> 
+		<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+		<script src="static/js/moment.js"></script>
+		    
+	    
+	    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-42049022-13');</script>
+	    <link rel="stylesheet" href="/static/fonts/all.css"/>
+		<style>
+		@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css");
+		</style>
+
+		{% block extrastyle %}
+    	{% endblock extrastyle %}
+	</head>
+	<body>
+		<div class="wrapper">
+		
+			<header>
+			{% block headerContent %}{% endblock %}
+			</header>
+			
+			<div class="content">
+			{% block content %}{% endblock %}
+			</div>
+			
+		</div>
+		
+		<script type="text/javascript" src="static/js/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="static/js/popper.min.js"></script>
+		<script type="text/javascript" src="static/js/js/bootstrap-datepicker.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.mCustomScrollbar.js"></script>
+		<script type="text/javascript" src="/static/js/slick.min.js"></script>
+		<script type="text/javascript" src="/static/js/scrollbar.js"></script>
+		<script type="text/javascript" src="/static/js/script.js"></script>
+		<script type="text/javascript" src="/static/js/bootstrap.js"></script>
+		<script type="text/javascript" src="/static/js/news.js"></script>
+		<script type="text/javascript" src="/static/js/bootcamp.js"></script>
+		<script type="text/javascript" src="/static/js/websocketbridge.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.waypoints.min.js"></script>
+	    <script type="text/javascript" src="/static/js/jquery.autocomplete.js' %}"></script>
+	    <script type="text/javascript" src="/static/js/our_search_code1.js' %}"></script>
+	    <script type="text/javascript" src="/static/js/handlebars-v1.3.0.js' %}"></script>
+		<link rel="stylesheet" href="{% static 'fm/css/modal.css' %}" />
+		<script type="text/javascript" src="{% static 'fm/js/fm.js' %}"></script>
+
+		<script type="text/javascript">
+            $(function() {
+                $.fm({debug: true});
+            });
+        </script>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.es.min.js"></script>
+		<script>
+		$(function () {
+			$('#datetimepicker1').datepicker({
+				format: "mm/dd/yyyy",
+				language: "en",
+				autoclose: true,
+				todayHighlight: true
+			});
+		});
+		</script>
+		
+		{% block extrajs %}{% endblock %}
+
+		{% block modals %}
+		{% endblock modals %}
+
+		
+	</body>
+</html>

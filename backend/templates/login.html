@@ -1,0 +1,30 @@
+{% extends 'base11.html' %}
+{% load i18n %}
+
+{% block title %}Log in to Django Boards{% endblock %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-lg-4 col-md-6 col-sm-8">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">{% trans "Signin" %}</h3>
+          <form method="post" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {% include 'includes/form.html' %}
+            <button type="submit" class="btn btn-primary btn-block">{% trans 'Log in' %}</button>
+          </form>
+        </div>
+        <div class="card-footer text-muted text-center">
+          {% trans 'New User?' %} <a href="{% url 'userena_signup' %}">Sign up</a>
+        </div>
+      </div>
+      <div class="text-center py-2">
+        <small>
+          <a href="{% url 'userena_password_reset' %}" class="text-muted">{% trans 'Forgot your password?' %}</a>
+        </small>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% load i18n %}
+{% load static %}
+{% load fm_tags %}
+{% comment %} <div tabindex="-1" role="dialog" aria-hidden="true" id="fm-modal" class="fm-modal modal">
+    <div class="modal-loader" style="display: none;">
+        <img class="modal-loader-img" src="{% static "fm/img/loading-bars.svg" %}">
+    </div>
+    <div class="modal-dialog modal-content">
+        <div data-dismiss="modal" class="close-modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-wrapper" style="display: none;">
+                        <div class="modal-head"></div>
+                        <div class="modal-body"></div>
+                        <div class="modal-buttons">
+                            {% block modal_buttons %}
+                            <button class="btn btn-primary" type="submit">
+                                {% trans 'OK' %}
+                            </button>
+                            <button data-dismiss="modal" class="btn btn-default" type="button"><i class="fa fa-times"></i>
+                                {% trans 'Cancel' %}
+                            </button>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+{% load i18n %}
+{% load static %}
+{% load fm_tags %}
+<div class="fm-modal modal fade draggable" id="fm-modal"  tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-loader" style="display: none;">
+        <img class="modal-loader-img" src="{% static "fm/img/loading-bars.svg" %}">
+    </div>
+    <div class="modal-dialog ">
+        <div class="modal-content animated bounceInDown">
+            <div class="modal-wrapper">
+                <div class="modal-header">
+                    <span class="spinner">
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </span>
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+                        <span class="sr-only">{% trans 'Close' %}</span>
+                    </button>
+                    <div class="title-wrapper">
+                        <span class="modal-title"><i class="fa fa-laptop modal-icon"></i></span>
+                        {% comment %} <span class="modal-title">title goes here</span> {% endcomment %}
+                    </div>
+                    <small class="modal-subtitle font-bold">subtitle goes here</small>
+                </div>
+
+                <div class="modal-body"></div>
+                <div class="modal-buttons">
+                    {% block modal_buttons %}
+                        <button data-dismiss="modal" id="btnnn" class="btn btn-danger btn-sm" type="button"><i class="fa fa-times"></i>
+                            {% trans 'Close' %}
+                        </button>
+                        <button id="btnn" class="btn btn-success btn-sm" type="submit">
+                            {% trans 'Save' %}
+                        </button>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

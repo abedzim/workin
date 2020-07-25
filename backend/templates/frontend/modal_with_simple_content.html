@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>(5) Modal with simple content</h1>
+
+    <ul>
+        <li>
+            <a href=""
+               data-action="{% url 'frontend:simple-content' %}"
+               data-title="Simple content (1)"
+               data-subtitle="Modal content is obtained via Ajax call"
+               data-icon="fa-keyboard-o"
+               data-button-save-label="Save"
+               onclick="openMyModal(event); return false;">
+                <i class="fa fa-keyboard-o"></i> Modal with simple content (1)
+            </a>
+        </li>
+        <li>
+            <a href=""
+               data-action="{% url 'frontend:simple-content-forbidden' %}"
+               data-dialog-class="modal-lg"
+               data-title="Simple content (formidden)"
+               data-subtitle="Modal content is obtained via Ajax call"
+               data-icon="fa-keyboard-o"
+               data-button-save-label="Save"
+               onclick="openMyModal(event); return false;">
+                <i class="fa fa-keyboard-o"></i> Modal with simple content (detecting server errors)
+            </a>
+        </li>
+        <li>
+            <a href=""
+               data-action="{% url 'frontend:simple-content2' %}"
+               data-dialog-class="modal-lg"
+               data-title="Simple content (2)"
+               data-subtitle="Modal content is obtained via Ajax call"
+               data-icon="fa-keyboard-o"
+               data-button-save-label="Save"
+               onclick="openMyModal(event); return false;">
+                <i class="fa fa-keyboard-o"></i> Modal with simple content (2)
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'frontend:simple-content2' %}">
+                Simple content (2) as a standalone page
+            </a>
+        </li>
+    </ul>
+
+{% endblock content %}
+
+
+{% block extrajs %}
+
+    <script language="javascript">
+
+        /*
+        function openMyModal(event) {
+            var modal = initModalDialog(event, '#modal_generic');
+            var url = $(event.target).data('action');
+            modal.find('.modal-body').load(url, function() {
+                modal.modal('show');
+            });
+        }
+        */
+
+        function openMyModal(event) {
+            var modal = initModalDialog(event, '#modal_generic');
+            var url = $(event.target).data('action');
+            $.ajax({
+                type: "GET",
+                url: url
+            }).done(function(data, textStatus, jqXHR) {
+                modal.find('.modal-body').html(data);
+                modal.modal('show');
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                alert("SERVER ERROR: " + errorThrown);
+            });
+        }
+
+    </script>
+
+{% endblock extrajs %}
+

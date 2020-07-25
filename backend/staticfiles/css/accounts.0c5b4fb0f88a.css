@@ -1,0 +1,19 @@
+body {
+  background-image: url("../img/type.23d7c17f318f.png");
+}
+
+.logo {
+  font-family: 'Peralta', cursive;
+}
+
+.logo a {
+  color: rgba(0,0,0,.9);
+}
+
+.logo a:hover,
+.logo a:active {
+  text-decoration: none;
+}
+#zim {
+	margin-top: 15px
+}

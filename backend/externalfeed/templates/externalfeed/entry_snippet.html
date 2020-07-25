@@ -1,0 +1,7 @@
+{% load i18n %}
+{% if entry %}
+    <h3>{{ entry.title }}</h3>
+    <p>{{ entry.summary|safe }}</p>
+{% else %}
+    <p>{% trans "Entry not found" %}</p>
+{% endif %}

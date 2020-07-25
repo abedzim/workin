@@ -1,0 +1,121 @@
+
+{% load i18n %}
+{% load humanize static %}
+{% load custom_tags thumbnail %}
+
+
+<div class="central-meta item" post-id="{{ news.id }}">
+	<div class="user-post">
+		<div class="friend-info">
+			<figure>
+				{% if news.user.profile.get_mugshot_url %}
+					<img src="{{ news.user.profile.get_mugshot_url }}" alt="" />
+				{% else %}
+					<img src="/static/img/user1.png" alt="">
+				{% endif %}
+			</figure>
+		<div class="friend-name">
+		<ins>
+			<a href="{% url 'userena_profile_detail' news.user.username %}" title="">
+			{% if news.user.get_full_name %}
+			{{ news.user.get_full_name }}
+			{% else %}
+			{{ news.user.username }}
+			{% endif %}
+			</a>
+			<a href="#" class="edit-post pull-right"><i class="fa fa-angle-down"></i></a>
+			<ul class="ed-options">
+				<li><a href="#" title="">Edit Post</a></li>
+				<li><a href="{% url 'share:delete' news.pk %}" title="">Delete</a></li>
+				<li><a href="#" title="">Hide</a></li>
+			</ul>
+		</ins>
+			<span><i class="far fa-clock"></i> {{ news.timestamp|naturaltime }}</span>
+		</div>
+		<div class="post-meta">
+		<div class="description">
+			<p>{{ news|linebreaks|urlize }}</p>
+		</div>
+		{% if news.image %}
+		{% thumbnail news.image "300x300" as im %}
+		<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="">
+		{% endthumbnail %}
+		{% endif %}
+		<div class="we-video-info interaction" id="interaction">
+			<ul class="like-com">
+			<li>
+				<span class="like_l like" title="{% for i in news.get_likers %}{{ i }}&#10;{% endfor %}">
+					{% if request.user in news.get_likers %}
+						<i class="heart fas fa-heart"  aria-hidden="true"></i>
+					{% else %}
+						<i class="heart far fa-heart" aria-hidden="true"></i>
+					{% endif %}
+    			
+					<ins class="like-count">{{ news.count_likers }}</ins>
+				</span>
+				{% comment %} <a href="{% url 'welcome' %}">icijhqvbbvkjbvbdqb</a> {% endcomment %}
+			</li>
+
+			<li id="cmt">
+				<span class="comment" style="cursor: pointer;">
+					<i class="fa fa-comments" aria-hidden="true"></i>
+					<ins>{{ news.count_thread }}</ins>
+				</span>
+			</li>
+			</ul>
+		</div>
+		<div class="hidden-data {{ news.pk }}" style="display: none;">
+			<span class="post-pk">{{ news.pk }}</span>
+		</div>
+		</div>
+		</div>
+	<!--##########COMMENTS##########-->
+		<div class="coment-area" style="display:none">
+			<ul class="we-comet comment-list">
+				{% for reply in news.get_thread %}
+				<li class="comment-list__comment">
+					<div class="comet-avatar">
+						{% if reply.user.profile.get_mugshot_url %}
+							<img src="{{ reply.user.profile.get_mugshot_url }}" style="with:45px;height:45px;" alt="" />
+						{% else %}
+							<img src="/static/img/user1.png" alt="">
+						{% endif %}
+					</div>
+					<div class="we-comment">
+						<div class="coment-head">
+							<h5><a class="user" href="{% url 'userena_profile_detail' reply.user.username %}" title="">{{ reply.user.username }}</a></h5>
+								<span>{{ reply.timestamp|naturaltime}}</span>
+									{% comment %} <a class="we-reply" href="#" title="Reply"><i class="fa fa-reply"></i></a> {% endcomment %}
+						</div>
+						<p class="comments">{{ reply|linebreaks }}</p>
+					</div>
+				</li>
+				{% endfor %}
+				<li class="post-comment" post-id="{{ news.id }}">
+					<div class="comet-avatar">
+						{% if request.user.profile.get_mugshot_url %}
+							<img src="{{ request.user.profile.get_mugshot_url }}" alt="" />
+						{% else %}
+							<img src="/static/img/user1.png" alt="">
+						{% endif %}
+					</div>
+
+					<div class="post-comt-box comment-input-wrapper">
+						<form id="replyNewsForm" role="form" method="post" action="#" onsubmit="return false">
+						{% csrf_token %}
+							<input type="hidden" name="parent" value="">
+							<textarea id="replyInput" name="reply" rows="1" maxlength="280" placeholder="Post your comment"></textarea>
+							<span id="replyCounter" class="pull-left">280</span>
+							
+						</form>	
+						<button class="btn btn-danger" id="replyNews" type="submit">submit</button>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+
