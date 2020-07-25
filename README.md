@@ -2,7 +2,7 @@
 
 # Introduction
 
-Workin is a simple professional social-network and job portal.
+Workin is a simple professional social-network website and ios-android app.
 
 
 ![kk2](https://user-images.githubusercontent.com/48800269/88468195-4b53ca00-cee0-11ea-9b8e-87cb9fff46c9.png)
