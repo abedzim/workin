@@ -3,6 +3,15 @@
 ## Introduction
 
 Workin is a simple professional social-network website and ios-android app.
+### Used Tech Stack
+
+*Django
+-
+*Postgresql
+-
+*DRF
+-
+
 
 
 ![kk2](https://user-images.githubusercontent.com/48800269/88468195-4b53ca00-cee0-11ea-9b8e-87cb9fff46c9.png)
