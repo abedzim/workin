@@ -5,12 +5,12 @@
 Workin is a simple professional social-network website and ios-android app.
 ### Used Tech Stack
 
-*Django
--
-*Postgresql
--
-*DRF
--
+* Django
+
+* Postgresql
+
+* DRF
+
 
 
 
