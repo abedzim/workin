@@ -6,10 +6,12 @@ Workin is a simple professional social-network website and ios-android app.
 ### Used Tech Stack
 
 * Django
-
 * Postgresql
+* Django REST framework
+* Django-Channel (for direct message and real time notifications)
+* GeoDjango
+* React Native
 
-* DRF
 
 
 
