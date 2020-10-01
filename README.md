@@ -49,4 +49,4 @@ react-native start
 
 Don't be harsh with me that was my first huge work in programming so dont mind the mess in this project. Fell free to use and edit.
 
-You can contact me  to contact@fr.abedzim.com / contact@en.abedzim.com
+You can contact me  to contact@abedzim.com
