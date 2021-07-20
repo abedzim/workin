@@ -24,7 +24,7 @@
     "react": "16.8.6",
     "react-apollo": "^2.1.11",
     "react-moment": "^0.9.2",
-    "react-native": "0.60.5",
+    "react-native": "0.62.3",
     "react-native-actionsheet": "^2.4.2",
     "react-native-cookies": "^3.3.0",
     "react-native-document-picker": "^3.2.4",
